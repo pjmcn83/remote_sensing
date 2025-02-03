@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>data_corrections</title>
+<title>CASA0023 Remote Sensing - Learning Diary - 3&nbsp; Remote Sensing Data and Corrections</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,44 +20,193 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="3_data_corrections_files/libs/clipboard/clipboard.min.js"></script>
-<script src="3_data_corrections_files/libs/quarto-html/quarto.js"></script>
-<script src="3_data_corrections_files/libs/quarto-html/popper.min.js"></script>
-<script src="3_data_corrections_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="3_data_corrections_files/libs/quarto-html/anchor.min.js"></script>
-<link href="3_data_corrections_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="3_data_corrections_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="3_data_corrections_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="3_data_corrections_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="3_data_corrections_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./2_portfolio.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
-<script src="3_data_corrections_files/libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="3_data_corrections_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 </head>
 
-<body class="fullcontent">
+<body class="nav-sidebar floating">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3_data_corrections.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Remote Sensing Data and Corrections</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CASA0023 Remote Sensing - Learning Diary</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Remote Sensing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2_portfolio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Portfolio</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_data_corrections.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Remote Sensing Data and Corrections</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-summary" id="toc-sec-summary" class="nav-link active" data-scroll-target="#sec-summary"><span class="header-section-number">3.1</span> Summary</a></li>
+  <li><a href="#sec-applications" id="toc-sec-applications" class="nav-link" data-scroll-target="#sec-applications"><span class="header-section-number">3.2</span> Applications - Effectiveness of relative and absolute correction</a>
+  <ul class="collapse">
+  <li><a href="#sec-bernando" id="toc-sec-bernando" class="nav-link" data-scroll-target="#sec-bernando"><span class="header-section-number">3.2.1</span> <span class="citation" data-cites="bernando2016">(<strong>bernando2016?</strong>)</span></a></li>
+  <li><a href="#sec-hu" id="toc-sec-hu" class="nav-link" data-scroll-target="#sec-hu"><span class="header-section-number">3.2.2</span> <span class="citation" data-cites="hu2011">Hu et al. (2011)</span></a></li>
+  <li><a href="#sec-review" id="toc-sec-review" class="nav-link" data-scroll-target="#sec-review"><span class="header-section-number">3.2.3</span> Review</a></li>
+  </ul></li>
+  <li><a href="#sec-refection" id="toc-sec-refection" class="nav-link" data-scroll-target="#sec-refection"><span class="header-section-number">3.3</span> Reflection</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Remote Sensing Data and Corrections</span></h1>
+</div>
 
 
-<section id="remote-sensing-data-and-corrections" class="level1">
-<h1>Remote Sensing Data and Corrections</h1>
-<section id="sec-summary" class="level2">
-<h2 class="anchored" data-anchor-id="sec-summary">Summary</h2>
-<p>This week we delved deeper into remote sensing topics particularly data corrections, joining and enhancements. Lots of new terms were raised and some of the concepts were challenging to understand so it’s easiest to summarise these terms by building a <strong>?@tbl-remote-sensing-glossary</strong>. A lot of these terms could have entire lectures dedicated to them so I attempt to put these into a simple terms as possible. Due to the large number of terms considered, ChatGPT was used to provide an initial sweep of terms and sources, then these were fact checked and more detail added where necessary. Sources include NASA, ESA, USGS, Landsat Science, ESRI and many of the sources listed in the references.</p>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-summary" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-summary"><span class="header-section-number">3.1</span> Summary</h2>
+<p>This week we delved deeper into remote sensing topics particularly data corrections, joining and enhancements. Lots of new terms were raised and some of the concepts were challenging to understand so it’s easiest to summarise these terms by building a <span class="quarto-unresolved-ref">?tbl-remote-sensing-glossary</span>. A lot of these terms could have entire lectures dedicated to them so I attempt to put these into a simple terms as possible. Due to the large number of terms considered, ChatGPT was used to provide an initial sweep of terms and sources, then these were fact checked and more detail added where necessary. Sources include NASA, ESA, USGS, Landsat Science, ESRI and many of the sources listed in the references.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="tbl-remote_sensing_glossary" class="anchored">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;1: Glossary of remote sensing terminology</caption>
+<caption>Table&nbsp;3.1: Glossary of remote sensing terminology</caption>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">Term</th>
@@ -208,20 +357,20 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 </div>
-<p>Another key point raised throughout the lecture was that regression plays a key part in many of the corrections that we looked into. This links back to the <span class="citation" data-cites="wk1-applications">@wk1-applications</span> discussion were I initially found it difficult to understand some of the comparisons that were being made. So this lecture really helped to consolidate those comparison by clearly explaining the important role that regression plays in remote sensing.</p>
+<p>Another key point raised throughout the lecture was that regression plays a key part in many of the corrections that we looked into. This links back to the <span class="citation" data-cites="wk1-applications">(<a href="references.html#ref-wk1-applications" role="doc-biblioref"><strong>wk1-applications?</strong></a>)</span> discussion were I initially found it difficult to understand some of the comparisons that were being made. So this lecture really helped to consolidate those comparison by clearly explaining the important role that regression plays in remote sensing.</p>
 </section>
-<section id="sec-applications" class="level2">
-<h2 class="anchored" data-anchor-id="sec-applications">Applications - Effectiveness of relative and absolute correction</h2>
+<section id="sec-applications" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sec-applications"><span class="header-section-number">3.2</span> Applications - Effectiveness of relative and absolute correction</h2>
 <p>There is almost endless possibilities to expand on in the topics covered this week so it’s a difficult job to focus on any one area. However, in week 1 I said that I’d like to investigate was atmospheric scattering therefore I will focus this section on atmospheric correction but also comparing against radiometric normalisation. This specifically looks at the differences and inaccuracy of <strong>relative</strong> and <strong>absolute</strong> correction.</p>
-<section id="sec-bernando" class="level3">
-<h3 class="anchored" data-anchor-id="sec-bernando"><span class="citation" data-cites="bernando2016">@bernando2016</span></h3>
-<p>The availability of absolute atmospheric correction inputs can be generalised over an area or season leading the potential accuracy issues. This is why <span class="citation" data-cites="bernardo2016">@bernardo2016</span> investigated the effectiveness of an absolute atmospheric correction against a relative radiometric normalisation. Their study was specifically to estimate total suspended matter (TSM) concentrations in the Barra Bonita Hydroelectric Reservior, São Paulo however the general methodology could potentially be applied to other areas.</p>
+<section id="sec-bernando" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="sec-bernando"><span class="header-section-number">3.2.1</span> <span class="citation" data-cites="bernando2016">(<a href="references.html#ref-bernando2016" role="doc-biblioref"><strong>bernando2016?</strong></a>)</span></h3>
+<p>The availability of absolute atmospheric correction inputs can be generalised over an area or season leading the potential accuracy issues. This is why <span class="citation" data-cites="bernardo2016">Bernardo et al. (<a href="references.html#ref-bernardo2016" role="doc-biblioref">2016</a>)</span> investigated the effectiveness of an absolute atmospheric correction against a relative radiometric normalisation. Their study was specifically to estimate total suspended matter (TSM) concentrations in the Barra Bonita Hydroelectric Reservior, São Paulo however the general methodology could potentially be applied to other areas.</p>
 <p>The reflectance errors were measured compared by assessing root mean squared error (RMSE) and the mean absolute percent error (MAPE). With a comparison made agaisnt the FLAASH (absolute method) against IRMAD - iteratively reweighted multivariate alteration detection (relative method) correction methods.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="tbl-refectance-errors" class="anchored">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;2: Reflectance errors from FLAASH and IRMAD corrections <span class="citation" data-cites="bernando2016">@bernando2016</span></caption>
+<caption>Table&nbsp;3.2: Reflectance errors from FLAASH and IRMAD corrections <span class="citation" data-cites="bernando2016">(<a href="references.html#ref-bernando2016" role="doc-biblioref"><strong>bernando2016?</strong></a>)</span></caption>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">OLI band</th>
@@ -277,23 +426,23 @@ ul.task-list li input[type="checkbox"] {
 <p>The findings clearly show greater levels in inaccuracy from the absolute method (FLAASH) in both methods of comparison across nearly all bands. The only exception is the Green band’s RMSE percentage using the relative method (IRMAD). The percentage difference in correction methods for the coastal band of 131-133% (absolute) versus 25-31% (relative) is a staggering figure. It would have been really interesting to see other examples of this analysis to see if this is a general trend or just an anomaly for the area.</p>
 <p>The authors do state various limitations to their study including the assumptions made in each methods potentially leading to errors themselves. This could be a good area for further investigations but what I’d really like to see is a similar paper comparing these methods in various locations to identify whether this is a general trend.</p>
 </section>
-<section id="sec-hu" class="level3">
-<h3 class="anchored" data-anchor-id="sec-hu"><span class="citation" data-cites="hu2011">@hu2011</span></h3>
+<section id="sec-hu" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="sec-hu"><span class="header-section-number">3.2.2</span> <span class="citation" data-cites="hu2011">Hu et al. (<a href="references.html#ref-hu2011" role="doc-biblioref">2011</a>)</span></h3>
 <p>We have seen one example of a comparison between absolute and relative corrections but we shouldn’t just accept one study’s conclusion. We need to be more critical and if we can’t question findings ourselves through our own study then we can use other articles to help challenge or support these findings.</p>
-<p>So I have picked a similar study with a similar methodology in <span class="citation" data-cites="hu2011">@hu2011</span>. I will focus on the key differences in the methodology but first let’s summarise the similarities:</p>
+<p>So I have picked a similar study with a similar methodology in <span class="citation" data-cites="hu2011">Hu et al. (<a href="references.html#ref-hu2011" role="doc-biblioref">2011</a>)</span>. I will focus on the key differences in the methodology but first let’s summarise the similarities:</p>
 <ul>
 <li>compares using landsat images</li>
 <li>compares a single study area using time series images</li>
 <li>uses FLAASH for absolute atmospheric correction</li>
 <li>uses multivariate alternative detection (MAD) for relative radiometric normalisation</li>
 </ul>
-<p>Although the use of MAD is similar to <span class="citation" data-cites="bernando2016">@bernando2016</span>’s technique of iteratively reweighted MAD (IRMAD), it provides a more basic detection of change as it is a one-pass approach and does not iteratively refine the results, also IRMAD are much less noisy than MAD(<span class="citation" data-cites="nielson2005">@nielson2005</span>, <span class="citation" data-cites="nielson2007">@nielson2007</span>). There is also a third approach, regularised IRMAD which can perform even better but this was not part of the studies being compared.</p>
-<p>Despite the differences in the relative correction calculations we can still review the results to help our comparison. <span class="citation" data-cites="hu2011">@hu2011</span> used regression to assess the difference between absolute and relative corrections and the findings can be reviewed through the standard deviation results of each method.</p>
+<p>Although the use of MAD is similar to <span class="citation" data-cites="bernando2016">(<a href="references.html#ref-bernando2016" role="doc-biblioref"><strong>bernando2016?</strong></a>)</span>’s technique of iteratively reweighted MAD (IRMAD), it provides a more basic detection of change as it is a one-pass approach and does not iteratively refine the results, also IRMAD are much less noisy than MAD(<span class="citation" data-cites="nielson2005">(<a href="references.html#ref-nielson2005" role="doc-biblioref"><strong>nielson2005?</strong></a>)</span>, <span class="citation" data-cites="nielson2007">(<a href="references.html#ref-nielson2007" role="doc-biblioref"><strong>nielson2007?</strong></a>)</span>). There is also a third approach, regularised IRMAD which can perform even better but this was not part of the studies being compared.</p>
+<p>Despite the differences in the relative correction calculations we can still review the results to help our comparison. <span class="citation" data-cites="hu2011">Hu et al. (<a href="references.html#ref-hu2011" role="doc-biblioref">2011</a>)</span> used regression to assess the difference between absolute and relative corrections and the findings can be reviewed through the standard deviation results of each method.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="tbl-std_comparison" class="anchored">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;3: Standard Deviation of the difference in each band for relative normalisation against atmospheric correction</caption>
+<caption>Table&nbsp;3.3: Standard Deviation of the difference in each band for relative normalisation against atmospheric correction</caption>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">Band</th>
@@ -331,26 +480,37 @@ ul.task-list li input[type="checkbox"] {
 
 </div>
 </div>
-<p>The overall results show that both methods reduce radiometric distortion, but relative normalisation corrects it more effectively. This is shown by the lower standard deviations of relative normalisation versus atmospheric correction across all bands (<strong>?@tbl-std-comparison</strong>).</p>
+<p>The overall results show that both methods reduce radiometric distortion, but relative normalisation corrects it more effectively. This is shown by the lower standard deviations of relative normalisation versus atmospheric correction across all bands (<span class="quarto-unresolved-ref">?tbl-std-comparison</span>).</p>
 </section>
-<section id="sec-review" class="level3">
-<h3 class="anchored" data-anchor-id="sec-review">Review</h3>
+<section id="sec-review" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="sec-review"><span class="header-section-number">3.2.3</span> Review</h3>
 <p>I suspect that whilst the papers talk about absolute corrections having high percentage error in certain bands that this could be specific to the location of the study and the assumptions made throughout. There are so many variables at play that it would be highly improbable to produce a study that could feasible review all of these aspects.</p>
 <p>In an ideal world we would be able to say exactly what corrections and enhancements to apply to an image to provide the optimal output. However that is just not possible, if we think about the sheer amount of variables, including atmospheric conditions, topological factors, sensor differences, then we can begin to see why there is no simple set of tools for analysis.</p>
 <p>This is evident in both the papers discussed and have previously seen in other papers. It could appear that the scope is quite limited as they focus on very small samples (Bernando - Barra Bonita Hydroelectric Reservior area, São Paulo; Hu et al - Yellow River Source, Eastern Tibet) for their analysis (previously discussed in week 1). However if we consider this from a technical point of view then simply the amount of computational power required to process much larger samples is very restrictive and time-consuming.</p>
 </section>
 </section>
-<section id="sec-refection" class="level2">
-<h2 class="anchored" data-anchor-id="sec-refection">Reflection</h2>
-<p>Before reflecting on some of the more technical aspects discussed I think it’s first important to highlight the role that Virginia Norwood played in modern remote sensing. This was covered right at the beginning of the lecture and is quite an interesting story. A whole review could written about this but I think the fact the Virginia Norwood is known as the “mother of Landsat” says a great deal, and the full story of her life can be found in multiple articles including <span class="citation" data-cites="mcclain2023">@mcclain2023</span> and <span class="citation" data-cites="inventorshallofhame2025">@inventorshallofhame2025</span>.</p>
-<p>So back to the reflection, this week was definitely challenging, particularly with the amount of different terms, ideas and formulas raised. However when I really began to delve deeper into these concepts and particularly those discussed in <a href="#sec-applications">Section&nbsp;1.2</a> they really become clearer. You can really start to see the benefit these corrections and enhancements can have as part of wider studies.</p>
+<section id="sec-refection" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sec-refection"><span class="header-section-number">3.3</span> Reflection</h2>
+<p>Before reflecting on some of the more technical aspects discussed I think it’s first important to highlight the role that Virginia Norwood played in modern remote sensing. This was covered right at the beginning of the lecture and is quite an interesting story. A whole review could written about this but I think the fact the Virginia Norwood is known as the “mother of Landsat” says a great deal, and the full story of her life can be found in multiple articles including <span class="citation" data-cites="mcclain2023">McClain (<a href="references.html#ref-mcclain2023" role="doc-biblioref">2023</a>)</span> and <span class="citation" data-cites="inventorshallofhame2025">(<a href="references.html#ref-inventorshallofhame2025" role="doc-biblioref"><strong>inventorshallofhame2025?</strong></a>)</span>.</p>
+<p>So back to the reflection, this week was definitely challenging, particularly with the amount of different terms, ideas and formulas raised. However when I really began to delve deeper into these concepts and particularly those discussed in <a href="#sec-applications"><span>Section&nbsp;3.2</span></a> they really become clearer. You can really start to see the benefit these corrections and enhancements can have as part of wider studies.</p>
 <p>As mentioned previously I’m looking forward to putting this ideas into practice through the Earth Observation Data Hub pilot scheme that Camden will soon have access to. I want to explore what data we will get access to and can finally understand the differences between products and particular what information can be derived from different bands. This will be a big improvement in the previous EO work that I’ve done which involved blindly following guides to try to get a result that seems similar.</p>
 <p>One final note, even though it’s good to understand the processing required and it really helped boost my overall understanding of the challenges with remote sensing data, I’m so glad that most of the processing is already built into packages or in the Analysis Ready Data.</p>
-</section>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-bernardo2016" class="csl-entry" role="listitem">
+Bernardo, Nariane, Fernanda Watanabe, Thanan Rodrigues, and Enner Alcântara. 2016. <span>“An Investigation into the Effectiveness of Relative and Absolute Atmospheric Correction for Retrieval the <span>TSM</span> Concentration in Inland Waters.”</span> <em>Modeling Earth Systems and Environment</em> 2 (3): 114. <a href="https://doi.org/10.1007/s40808-016-0176-9">https://doi.org/10.1007/s40808-016-0176-9</a>.
+</div>
+<div id="ref-hu2011" class="csl-entry" role="listitem">
+Hu, Yong, Liangyun Liu, Lingling Liu, and Quanjun Jiao. 2011. <span>“Comparison of Absolute and Relative Radiometric Normalization Use <span>Landsat</span> Time Series Images.”</span> In <em><span>MIPPR</span> 2011: <span>Remote</span> Sensing Image Processing, Geographic Information Systems, and Other Applications</em>, edited by Faxiong Zhang and Faxiong Zhang, 8006:800616. <span>SPIE / International Society for Optics and Photonics</span>. <a href="https://doi.org/10.1117/12.902076">https://doi.org/10.1117/12.902076</a>.
+</div>
+<div id="ref-mcclain2023" class="csl-entry" role="listitem">
+McClain, Dylan Loeb. 2023. <span>“Virginia <span>Norwood</span>, <span>‘<span>Mother</span>’</span> of <span>Satellite Imaging Systems</span>, <span>Dies</span> at 96.”</span> <em>The New York Times: Science</em>, April 12, 2023. <a href="https://www.nytimes.com/2023/04/12/science/space/virginia-norwood-dead.html">https://www.nytimes.com/2023/04/12/science/space/virginia-norwood-dead.html</a>.
+</div>
+</div>
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -584,6 +744,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./2_portfolio.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Portfolio</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
