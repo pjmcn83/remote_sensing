@@ -40,5 +40,12 @@
     "title": "References",
     "section": "",
     "text": "Carrasco, Luis, Aneurin W. O’Neil, R. Daniel Morton, and Clare S.\nRowland. 2019. “Evaluating Combinations of\nTemporally Aggregated Sentinel-1, Sentinel-2\nand Landsat 8 for Land Cover Mapping with\nGoogle Earth Engine.” Remote Sensing 11 (3,\n3): 288. https://doi.org/10.3390/rs11030288.\n\n\nMandanici, Emanuele, and Gabriele Bitelli. 2016. “Preliminary\nComparison of Sentinel-2 and\nLandsat 8 Imagery for a Combined\nUse.” Remote Sensing 8 (12, 12): 1014. https://doi.org/10.3390/rs8121014.\n\n\nNasiri, Vahid, Azade Deljouei, Fardin Moradi, Seyed Mohammad Moein\nSadeghi, and Stelian Alexandru Borz. 2022. “Land Use\nand Land Cover Mapping Using Sentinel-2, Landsat-8\nSatellite Images, and Google Earth Engine: A\nComparison of Two Composition Methods.”\nRemote Sensing 14 (9, 9): 1977. https://doi.org/10.3390/rs14091977."
+  },
+  {
+    "objectID": "2_portfolio.html",
+    "href": "2_portfolio.html",
+    "title": "2  Portfolio",
+    "section": "",
+    "text": "This week we discussed how to build our online portfolio using Quarto (web page) and Xarigan (presentation). This also included how to host pages through GitHub.\nOur main task this week was to build a presentation in Xarigan about a specific remote sensing satelitte.\nI choose to create my presentation on the commercial satellite, Pleiades Neo, as I have a working knowledge of the imagery produced."
   }
 ]

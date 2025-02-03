@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: "."
 
 book:
   title: "CASA0023 Remote Sensing - Learning Diary"
@@ -8,7 +9,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-#    - 2_portfolio.qmd
+    - 2_portfolio.qmd
 #    - 3_Data_Corrections.qmd
     - references.qmd
   reader-mode: true

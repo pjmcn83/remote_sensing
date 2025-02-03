@@ -1,0 +1,108 @@
+# Wk 3 Remote Sensing Data and Corrections
+
+## Summary {#sec-summary}
+
+This week we delved deeper into remote sensing topics particularly data corrections, joining and enhancements. Lots of new terms were raised and some of the concepts were challenging to understand so it's easiest to summarise these terms by building a @tbl-remote-sensing-glossary. A lot of these terms could have entire lectures dedicated to them so I attempt to put these into a simple terms as possible. Due to the large number of terms considered, ChatGPT was used to provide an initial sweep of terms and sources, then these were fact checked and more detail added where necessary. Sources include NASA, ESA, USGS, Landsat Science, ESRI and many of the sources listed in the references.
+
+```{r include=FALSE}
+library(tidyverse)
+library(knitr)
+library(here)
+library(kableExtra)
+
+#read in data
+glos <- readxl::read_excel(here("tables", "rs_glossary.xlsx"))%>% 
+  knitr::kable(booktabs = TRUE)%>% 
+  kable_styling(position = "center", full_width = T)%>%
+  # any specifc row changes you want
+    row_spec(.,
+  row=0,
+  bold = TRUE)
+```
+
+```{r echo=FALSE}
+#| label: tbl-remote_sensing_glossary
+#| tbl-cap: "Glossary of remote sensing terminology"
+glos
+```
+
+Another key point raised throughout the lecture was that regression plays a key part in many of the corrections that we looked into. This links back to the @wk1-applications discussion were I initially found it difficult to understand some of the comparisons that were being made. So this lecture really helped to consolidate those comparison by clearly explaining the important role that regression plays in remote sensing.
+
+## Applications - Effectiveness of relative and absolute correction {#sec-applications}
+
+There is almost endless possibilities to expand on in the topics covered this week so it's a difficult job to focus on any one area. However, in week 1 I said that I'd like to investigate was atmospheric scattering therefore I will focus this section on atmospheric correction but also comparing against radiometric normalisation. This specifically looks at the differences and inaccuracy of **relative** and **absolute** correction.
+
+### @bernando2016 {#sec-bernando}
+
+The availability of absolute atmospheric correction inputs can be generalised over an area or season leading the potential accuracy issues. This is why @bernardo2016 investigated the effectiveness of an absolute atmospheric correction against a relative radiometric normalisation. Their study was specifically to estimate total suspended matter (TSM) concentrations in the Barra Bonita Hydroelectric Reservior, São Paulo however the general methodology could potentially be applied to other areas.
+
+The reflectance errors were measured compared by assessing root mean squared error (RMSE) and the mean absolute percent error (MAPE). With a comparison made agaisnt the FLAASH (absolute method) against IRMAD - iteratively reweighted multivariate alteration detection (relative method) correction methods.
+
+```{r include=FALSE}
+#read in data
+referrors <- read_csv(here("tables","flaash_irmad_comparison.csv"), locale = locale(encoding = "UTF-8"))%>% 
+  knitr::kable(booktabs = TRUE)%>% 
+  kable_styling(position = "center", full_width = T)%>%
+    column_spec(c(2,3), background = "#F5F5F5") %>%
+    column_spec(c(4,5), background = "#D3D3D3") %>%
+    row_spec(., row=0, bold = TRUE)
+```
+
+```{r echo=FALSE}
+#| label: tbl-refectance-errors
+#| tbl-cap: "Reflectance errors from FLAASH and IRMAD corrections @bernando2016"
+referrors
+```
+
+The findings clearly show greater levels in inaccuracy from the absolute method (FLAASH) in both methods of comparison across nearly all bands. The only exception is the Green band's RMSE percentage using the relative method (IRMAD). The percentage difference in correction methods for the coastal band of 131-133% (absolute) versus 25-31% (relative) is a staggering figure. It would have been really interesting to see other examples of this analysis to see if this is a general trend or just an anomaly for the area.
+
+The authors do state various limitations to their study including the assumptions made in each methods potentially leading to errors themselves. This could be a good area for further investigations but what I'd really like to see is a similar paper comparing these methods in various locations to identify whether this is a general trend.
+
+### @hu2011 {#sec-hu}
+
+We have seen one example of a comparison between absolute and relative corrections but we shouldn't just accept one study's conclusion. We need to be more critical and if we can't question findings ourselves through our own study then we can use other articles to help challenge or support these findings.
+
+So I have picked a similar study with a similar methodology in @hu2011. I will focus on the key differences in the methodology but first let's summarise the similarities:
+
+-   compares using landsat images
+-   compares a single study area using time series images
+-   uses FLAASH for absolute atmospheric correction
+-   uses multivariate alternative detection (MAD) for relative radiometric normalisation
+
+Although the use of MAD is similar to @bernando2016's technique of iteratively reweighted MAD (IRMAD), it provides a more basic detection of change as it is a one-pass approach and does not iteratively refine the results, also IRMAD are much less noisy than MAD(@nielson2005, @nielson2007). There is also a third approach, regularised IRMAD which can perform even better but this was not part of the studies being compared.
+
+Despite the differences in the relative correction calculations we can still review the results to help our comparison. @hu2011 used regression to assess the difference between absolute and relative corrections and the findings can be reviewed through the standard deviation results of each method.
+
+```{r include=FALSE}
+#read in data
+sdcomp <- read_csv(here("tables","sd_rel_ab_comparison.csv"), locale = locale(encoding = "UTF-8"))%>% 
+  knitr::kable(booktabs = TRUE)%>% 
+  kable_styling(position = "center", full_width = T)%>%
+    row_spec(., row=0, bold = TRUE)
+```
+
+```{r echo=FALSE}
+#| label: tbl-std_comparison
+#| tbl-cap: "Standard Deviation of the difference in each band for relative normalisation against atmospheric correction"
+sdcomp
+```
+
+The overall results show that both methods reduce radiometric distortion, but relative normalisation corrects it more effectively. This is shown by the lower standard deviations of relative normalisation versus atmospheric correction across all bands (@tbl-std-comparison).
+
+### Review {#sec-review}
+
+I suspect that whilst the papers talk about absolute corrections having high percentage error in certain bands that this could be specific to the location of the study and the assumptions made throughout. There are so many variables at play that it would be highly improbable to produce a study that could feasible review all of these aspects.
+
+In an ideal world we would be able to say exactly what corrections and enhancements to apply to an image to provide the optimal output. However that is just not possible, if we think about the sheer amount of variables, including atmospheric conditions, topological factors, sensor differences, then we can begin to see why there is no simple set of tools for analysis.
+
+This is evident in both the papers discussed and have previously seen in other papers. It could appear that the scope is quite limited as they focus on very small samples (Bernando - Barra Bonita Hydroelectric Reservior area, São Paulo; Hu et al - Yellow River Source, Eastern Tibet) for their analysis (previously discussed in week 1). However if we consider this from a technical point of view then simply the amount of computational power required to process much larger samples is very restrictive and time-consuming.
+
+## Reflection {#sec-refection}
+
+Before reflecting on some of the more technical aspects discussed I think it's first important to highlight the role that Virginia Norwood played in modern remote sensing. This was covered right at the beginning of the lecture and is quite an interesting story. A whole review could written about this but I think the fact the Virginia Norwood is known as the "mother of Landsat" says a great deal, and the full story of her life can be found in multiple articles including @mcclain2023 and @inventorshallofhame2025.
+
+So back to the reflection, this week was definitely challenging, particularly with the amount of different terms, ideas and formulas raised. However when I really began to delve deeper into these concepts and particularly those discussed in @sec-applications they really become clearer. You can really start to see the benefit these corrections and enhancements can have as part of wider studies.
+
+As mentioned previously I'm looking forward to putting this ideas into practice through the Earth Observation Data Hub pilot scheme that Camden will soon have access to. I want to explore what data we will get access to and can finally understand the differences between products and particular what information can be derived from different bands. This will be a big improvement in the previous EO work that I've done which involved blindly following guides to try to get a result that seems similar.
+
+One final note, even though it's good to understand the processing required and it really helped boost my overall understanding of the challenges with remote sensing data, I'm so glad that most of the processing is already built into packages or in the Analysis Ready Data.
