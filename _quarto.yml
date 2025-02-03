@@ -7,7 +7,7 @@ book:
   date: "01/21/2025"
   chapters:
     - index.qmd
-#    - 1_Intro_to_RS.qmd
+    - intro.qmd
 #    - 2_portfolio.qmd
 #    - 3_Data_Corrections.qmd
     - references.qmd
