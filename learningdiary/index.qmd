@@ -1,9 +1,17 @@
-# Preface {.unnumbered}
+# Welcome {.unnumbered}
 
-This is a Quarto book.
+This is my learning diary for the CASA0023 Remotely Sensing Cities an Environments module. Firstly, let's talk a bit about myself and my background.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+## Personal Introduction
 
-```{r}
-1 + 1
-```
+Hi! I'm Paul and I am a part-time degree apprenticeship student. I have a strong GIS background spanning nearly 20 years but with very little working experience with remote sensing.
+
+Most of my working life spent has been in Local Government and I am currently the GIS Administrator for the London Borough of Camden. I have predominantly used proprietary GIS software such as MapInfo, ArcGIS and Cadcorp. In more recent years I have also been using QGIS.
+
+In terms of remote sensing, myself and especially Camden are very new to how this can shape decision making and policy. In the 2023/24 we took part in an Earth Observation Pilot scheme run by the Geospatial Commission and supported by AirBus. However, at the time we did not have the necessary skills, knowledge or software to really make full use of this pilot. If only this course started a year earlier!!
+
+Despite this lack of knowledge, the GIS Team did manage to use some EO data to build a site suitability model for Urban Greening locations (although my personal input was limited to support and project management). The main limitation we had in using the EO data available was that the technical aspects were conducted between QGIS and ArcGIS Pro (with an advanced licence and all spatial extensions). As such the workflow is not reproducible and therefore limited to a snapshot in time especially as access to the EO data was withdraw at the end of the pilot.
+
+In January 2025 Camden have been invited to take part in a new EO Data Hub pilot which will provide more constant and consistent temporal and spatial resolution data. The exact details of the products included are not yet known but should fit very nicely into the topics learnt in the Remote Sensing Cities and Environment module as well as the Building Spatial Applications with Big Data module.
+
+My overall aims for this module are to be able to successfully process and analyse EO data using best practice techniques with the key being that they are reproducible techniques. These can then be used as a new decision making and policy making tool for the London Borough of Camden as this is an area that has never been explored at Camden and is rarely explored in Local Government in general.
