@@ -1,0 +1,3 @@
+Satellite,SpatialResolution,SwathWidth,RevisitTime,Sensor,NumberOfBands,ComparableBands
+Landsat-8,30m,185km,Operational Land Imager (OLI),16 days,11,"blue: 485 nm, green: 563 nm, red: 655 nm, NIR: 865 nm, short-wave infrared 1 (SWIR1): 1610 nm, SWIR2: 2200 nm"
+Sentinel-2,up to 10m,290km,Multispectral Instruments (MSI),5 days,13,"blue: 490 nm, green: 560 nm, red: 665 nm, NIR: 842 nm, SWIR1: 1910 nm, and SWIR2: 2190 nm"
