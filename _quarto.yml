@@ -10,7 +10,7 @@ book:
     - index.qmd
     - intro.qmd
     - 2_portfolio.qmd
-#    - 3_Data_Corrections.qmd
+    - 3_data_corrections.qmd
     - references.qmd
   reader-mode: true
 

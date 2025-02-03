@@ -1,4 +1,4 @@
-# Wk 3 Remote Sensing Data and Corrections
+# Remote Sensing Data and Corrections
 
 ## Summary {#sec-summary}
 
