@@ -1,0 +1,17 @@
+Surface Cover Type,Factor
+"Semi-natural vegetation (e.g. trees,  woodland,  species-rich grassland) maintained or established on site.)",1
+Wetland or open water (semi-natural; not chlorinated) maintained or established on site.,1
+Intensive green roof or vegetation over structure. Substrate minimum settled depth of 150mm.,0.8
+Standard trees planted in connected tree pits with a minimum soil volume equivalent to at least two thirds of the projected canopy area of the mature tree,0.8
+Extensive green roof with substrate of minimum settled depth of 80mm (or 60mm beneath vegetation blanket).,0.7
+Flower-rich perennial planting,0.7
+Rain gardens and other vegetated sustainable drainage elements,0.7
+Hedges (line of mature shrubs one or two shrubs wide),0.6
+Standard trees planted in pits with soil volumes less than two thirds of the projected canopy area of the mature tree.,0.6
+Green wall. Modular system or climbers rooted in soil,0.6
+Groundcover planting.,0.5
+"Amenity grassland (species-poor, regularly mown lawn).",0.4
+Extensive green roof of sedum mat or other lightweight systems that do not meet GRO Code 2014.,0.3
+Water features (chlorinated) or unplanted detention basins.,0.2
+Permeable paving,0.1
+"Sealed surfaces (e.g. concrete,  asphalt, waterproofing, stone).",0

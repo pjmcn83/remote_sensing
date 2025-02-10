@@ -1,0 +1,111 @@
+# Policy Applications
+
+## Introduction {#sec-intro}
+
+### London {#sec-london}
+
+As the Capital and most populous city in the UK, London covers a vast area of more than 1,500 square kilometres, with a diverse population of over 8.5 million (@ons2021) and a varying landscape of high density urban area (mainly in the centre) juxtaposed with a large amount of land cover being green or blue (@gla2025). The majority of which sit in the outer London boroughs but there various public green spaces throughout all of London. London was also declared the world's first National Park City in 2019 with over 50% of the city to be green by 2050 (@gla2025). The administration of London is split into 32 London Boroughs each with their own unique geographies, social demographics and autonomy.
+
+### London Plan {#sec-london-plan}
+
+The London Plan os the strategic development strategy for the city. It's current iteration was by by the Greater London Authority in 2021 (@gla2021). The London Plan sets out the metropolitan policies from London with the 32 London Boroughs following the policies set out to meet their economic, social and environmental responsibilities. The scope of the London Plan is very broad covering topics of building design, heritage, housing, economy and transport. Reviewing all of these could descend into a dissertation size document so I will focus on a GG3 - Greating a healthly city.
+
+#### GG3 Good Growth - Creating a healthy city {#sec-gg3}
+
+There are many ways in which to make improve health within cities however these are made more difficult when balancing against improving the economic and social aspects of a city. Policy GG3 encompasses many different approaches in it's objectives @tbl-london_plan_gg3 but a key aspect of this is reducing health problems caused by inactivity through greater access to public open spaces which specifically related to GG3G but also GG3B.
+
+GG3F aims to reduce exposure to poor air quality which also links back to the aforementioned goals related to public open spaces but also that of GG3C where a Healthy Streets Approach is a priority. The Healthy Streets Approach was published by Transport for London in 2017 and is a framework for creating healthier streets. Some of the aspects promoting sustainable travel, providing cleaner air, places to rest and a relaxing environment @tfl2017. All these aspects play a strong part in meeting the goals of GG3.
+
+```{r include=FALSE}
+library(tidyverse)
+library(knitr)
+library(here)
+library(kableExtra)
+
+#read in data
+gg3 <- readxl::read_excel(here("tables", "londonplan_gg3.xlsx"))%>% 
+  knitr::kable(booktabs = TRUE)%>% 
+  kable_styling(position = "left", full_width = T)%>%
+  # Merge the first row across two columns
+  add_header_above(c("To improve Londoners’ health and reduce health inequalities, those involved in planning and development must:" = 2))
+```
+
+```{r echo=FALSE}
+#| label: tbl-london_plan_gg3
+#| tbl-cap: "Policy GG3 of the London Plan"
+gg3
+```
+
+The London Plan goes into more specific policies and goals which also relate to building a healthy city. Specifically, Chapter 8 of the London Plan focuses on Green Infrastructure and Natural Environment and Chapter 9 on Sustainable Infrastruture.
+
+#### Green Infrastructure and Natural Environment {#sec-gi}
+
+*Policy G5 Urban Greening* @fig-gla_g5 states that major development should conform to an Urban Greening Factor (UGF) which is a framework for judging how green a development should be. The scoring criteria provides a weighting on the type and maturity of green land cover with the UGF calculated as follows:
+
+::: text-center
+*(Factor A x Area) + (Factor B x Area) + (Factor C x Area) etc. divided by Total Site Area.*
+:::
+
+This provides a good basis for scoring development greeness however as the recommendations are open to be amended by London Boroughs this may cause discrepancies in their implementation (discussed in @sec-londonboroughs)
+
+![Policy G5 Urban Greening of the London Plan](images/londonplan_policyG5.png){#fig-gla_g5}
+
+#### Sustainable Infrastructure {#sec-si}
+
+Chapter 9 of the London focuses on Sustainable Infrastructure with specific goals relating to *Improving Air Quality* (SI1) and *Managing heat risk* (SI4). Both of this goals can be interlinked with that of overaching policy of creating a healthy city and the goals of Green Infrastructure (@sec-gi). Some of these topics will be discussed in @sec-implementation.
+
+#### The roles of the London Boroughs {#sec-londonboroughs}
+
+***Talk about the diversity and differences in borough generally but using UGF as an example***
+
+A key part of the London Plan is that the ideas and policies created are to be taken forward and implented by each London Borough. Whilst this does open up to differing interpretations and implementations we must be mindful of the very diverse population and land cover of London.
+
+Taking the example of green infrastructure @sec-gi and particularly the development of the Urban Greening Factor, it is positive that a specific scoring framework is put in place. However the policy remains ambiguous by allowing Boroughs to develop their own UGF. This potentially means that there could be 32 different UGFs being applied across all the London Boroughs. Although potentially confusing, particularly for developers, this is very deliberate due to the diverse and distinct differences between the London Boroughs. Particularly when you consider the socio-demographic differences and the availability of open space between boroughs but also specifically between inner and outer London. It would be very difficult to identify the needs of each Borough whilst generalising to the whole of London. Therefore allowing boroughs to implement their own localised UDF is appropriate.
+
+## Implentation {#sec-implementation}
+
+*The application criterion will refer to how the remotely sensed data you sourced could be used to assist with contributing to the policy goal. How could the data be applied to solve the policy challenge.*
+
+Policy GG3 of the London Plan (@sec-gg3) aims to create a healthy London for all to enjoy but how can remote sensing help achieve this goal. I will explore how this is possible in the context of the specific policies mentioned in @sec-london-plan.
+
+### Policy G5 - Urban Greening Factor {#sec-g5}
+
+The simplest way that remote sensing can be used to contribute to GG3 is by identifying current land cover as existing green cover counts towards the UDF scores. By using Earth Observation data this reduces the need for manual surveying and is also something that can be monitored as the development progresses. Temporal comparison of green areas provides key statistics to make sure developers have met their targets and also help report on differences in percentage cover of green infrastructure across London which is fundamental to goals such as those of the National Park City (@gla2025).
+
+The large temporal scale of remotely sensed data, particularly with the Landsat series going back to the 1970's, allows comparison of green spaces in the past to the present day and continuing into the future. In the example of UGF we can calculate the areas of different types of green spaces to be used in the UGF calculation, but this could be extended further by using Normalised Difference Vegetation Index (NDVI) to assess the condition of vegetation in these areas to ensure that the green areas remain valuable for as long as possible.
+
+### Policy SI1 - Improving Air Quality {sec-si1}
+
+Sentinel-5 Precursor (S5P) uses TROPOMI (Troposheric Monitoring Instrument) to monitor atmospheric composition which provides specific data products related to pollution based particles, such as Nitrogen Dioxide, Sulfur Dioxide, Carbon Monoxide and Ozone. S5P can be used to monitor air quality, however with a coarse spatial resolution identifying pollution hot spots may prove difficult without an element of enhancement and particularly data fusion.
+
+Once the data is prepared it would be possible to monitor where pollution is prevalent and which particular particles are leading to the poor air quality. This then allows for targeted efforts in these areas whether that be further monitoring using air quality monitors or prioritising air quality improvement projects, including dual purpose urban or highway greening project which helped met the priorities of the Healthy Street Approach (@sec-gg3).
+
+### Policy SI4 - Managing Heat Risk {sec-si4}
+
+Landsat 8 and 9 use a thermal infrared sensor collected at 100m spatial resolution and then resampled to 30m (@almeida2021). This provides a high enough resolution to identify specific areas at significant heat risk therefore helping to identify key areas that should be prioritised for mitigation projects. Or if the area is large enough then to build specific policies for these areas such as specific Neighbourhood Plans.
+
+### Generalised Application - Highway Greening
+
+In 2022/23, the London Boroughs of Camden and Islington used the ideas in these policies to create the Green Infrastructure for Streets guidance (@lbclbiudl2024) and Highway Greening Accelerator programme (@camden2024) with the aim to improve microclimate, air quality and reduce flood risk. There are secondary benefits to making grey areas green again from improving biodiversity and street scenes to improved mental health which all help meet the aims of London Plan.
+
+NDVI imagery was produced using Pleiades Neo data to identify areas of vegetation (@fig-camden-ndvi). This information was then used to build a weighted risk classification index combining other datasets such Flood Risk and public open space boundaries. This was then fed into a site suitability analysis tool to build a dataset that could be used to identify areas of increased need of urban greening projects.
+
+![Normalised Difference Vegetation Index (NDVI) for an area of Camden around the Hampstead area](images/ndvi2023.png){#fig-camden-ndvi fig-align="center"}
+
+------------------------------------------------------------------------
+
+## Reflection {#sec-refection}
+
+Having worked in Local Government for almost 20 years and within the London Borough of Camden for nearly 9 of those I believe I can give a good insight into how remote sensing is and could be used to help meet the policies of the London Plan.
+
+Firstly how is remote sensing used currently, and the answer is....barely at all! 
+
+Camden were fortunate to become part of the Geospatial commission Earth Observation Pilot which ran between 2023/24 but other than that use of remotely sensed data has been virtually non-existent. This is due to previously scare availability of EO data, cost, lack of appropriate software and technical knowledge. Even some projects from the overarching remit of the GLA are outsourced, such as their analysis of Climate Risk which was completed by Bloomberg Associates (@gla2024) rather than procuring, processing and analysing the data in house.
+
+> *"The view from above offers repeatable, independent, and cost effective ways for the digital (and smart) era to obtain relevant knowledge for social processes, ecological states, and technological innovations"*  @wellmann2020
+
+Presently the cost of implementing remote sensing techniques into smaller boroughs is seen as outweighing the benefits that this can bring. However as we see from the quote above from @wellmann2020 remotely sensed data is beginning to move more into mainstream particularly when you look Google Earth Engine which removes much of the overheads of dealing with EO data.
+
+Now that more readily available, cost effective tools are in place we must now showcase the benefits remote sensing brings at a policy level. The foundations for this were beginning to be put in place by the Geospatial Commission but the very recent news that they have now become part of the Government Digital Service has potentially derailed this. Although it is very early days to say anything concrete on this so I will be following updates closely.
+
+This bring the fight back to those within individual authorities so the best way is to bring the technology into focus and specific pilot analysis project can be broached to showcase the benefits of such analysis and at a reasonable cost. I am certainly keen to produce tangible products to present at Camden. I can already start to see how the benefits of temporal analysis at this level can helped to guide and focus projects, particularly in the Green Space and climate change spaces where similar analysis can benefit both areas as we have seen with the overlaps in the London Plan policies already discussed.
