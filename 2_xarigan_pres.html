@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Pleiades Neo</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul McNicholas" />
+    <script src="libs/header-attrs-2.29/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Pleiades Neo
+]
+.author[
+### Paul McNicholas
+]
+.institute[
+### UCL CASA
+]
+.date[
+### 2025/01/21 (updated: 2025-02-10)
+]
+
+---
+
+
+```
+## Warning: package 'RefManageR' was built under R version 4.4.2
+```
+
+```
+## Ignoring entry 'almeida2021' (line34) because: 
+## 	The name list field author cannot be parsed
+```
+
+```
+## Warning: package 'knitcitations' was built under R version 4.4.2
+```
+
+# Pléiades Neo Overview
+.pull-left[
+Pléiades Neo is actually a constellation of two* identical satellites
+  - Pléiades Neo 3 launched 28th April 2021 
+  - Pléiades Neo 4 launched 16th August 2021
+  
+Very hi-resolution (VHR) commercial constellation, owned and operated by AirBus Defence and Space
+
+Part of European Space Agency's third party missions
+]
+.pull-right[
+Capacity to capture up to 1 million km2 of imagery per day
+
+&lt;img src="./images/pleiades_neo_background.png" width="75%" style="display: block; margin: auto;" /&gt;
+]
+
+.footnote[\* there are conflicting articles  &lt;a name=cite-eoportal2023&gt;&lt;/a&gt;[eoPortal (2023)](#bib-eoportal2023) stating Pléiades Neo is actually a constellation of 4 satellites, however the official Airbus and European Space Agency websites state only 2 satellites]
+---
+
+#Technical Specification
+
+.pull-left[
+|   |   |
+|---|---|
+|Provider| Airbus Defence and Space |
+|Satellites | 2 |
+|Resolution| 30cm |
+|Swath width| 14km |
+|Bands| Panchromatic: 450-800nm |
+|| Deep Blue 400-450nm |
+|| Blue 450-520nm |
+|| Red 620-690nm |
+|| Red Edge 700-750nm |
+|| Red 620-690nm |
+|Coverage| 500 million sq km per day per satellite |
+|Altitude| 620km |
+|   |   |
+]
+
+.pull-right[
+__Constraints of hi-res sensors__
+
+Increased cost of capture and file size leading to increased storage and processing costs.
+
+Swath width of hi-res sensor is smaller meaning more passes of the Earth are required to capture the same area which further increases costs.
+
+| Sensor | Resolution | Swath Width |
+|---|---|---|
+|Pleiades Neo | Up to 0.3m |14km |
+|Landsat-8 | Up to 15m | 185km |
+|Sentinel 2 | Up to 10m | 185km |
+&lt;a name=cite-sce2022&gt;&lt;/a&gt;[Scholary Community Encyclopedia (2022)](#bib-sce2022)
+]
+---
+
+# Use Cases
+
+- Crisis Management
+- Maritime Monitoring
+- Agriculture
+- Urban Planning
+- Forestry
+- Environmental Monitoring
+
+There are many use cases for Pléiades Neo as shown above. 
+
+These could be reviewed using sample images from the AirBus or ESA's website however in my work at London Borough of Camden we were lucky enough to take part in an EO Pilot scheme for the Public Sector which included access the Pleiades Neo images.
+
+Therefore I can instead talk specifically about the Camden use case which looked at vegetation health. 
+
+---
+
+# Vegetation Health 1
+
+.pull-left[
+A simple RGB image to demonstrate the level of resolution available from Pléiades Neo.
+
+Individual trees are clearly visible and when zooming in vehicles are also identifiable demonstrating the power of the sensor.
+
+&lt;img src="./images/pleiades_rgb.png" width="100%" /&gt;
+]
+.pull-right[
+We then produce an image using the Near-infrared, Edge-infrared and Deep Blue bands.
+
+This helped to really highlight where vegetation is (yellows and greens) against the more urban areas (blue).  Smaller trees are now also identifiable that weren't clearly visible in the RGB image.
+
+&lt;img src="./images/pleiades_NIR_EIR_DeepBlue.png" width="100%" /&gt;
+]
+
+These images were useful for identification purposes however the issues we faced even at this level were due to technological constraints of hosting the data on shared drives and across networks.  Plus the computational power of the machines used were not ideal as processing was very slow. 
+---
+
+# Vegetation Health 2
+
+The next step was to produce and compare a Normalised Difference Vegetation Index (NDVI) to understand vegetation health of the Borough between the two latest years available to us.
+
+.pull-left[
+&lt;img src="./images/ndvi2022.png" width="100%" /&gt;
+NDVI image 2022]
+.pull-right[
+&lt;img src="./images/ndvi2023.png" width="100%" /&gt;
+NDVI image 2023]
+
+This allowed us to compare between the two years and see a clear drop in the vegetation health in the second year.
+
+There could be a multitude of factors that caused this drop but these were not investigated as the main purpose of the pilot was to identify potential use cases rather than full analysis.
+
+---
+
+# Limitations 
+
+At the time of the pilot Camden lacked the time, resource, technology and expertise to analyse the EO data in a timely manner.  As such this was as far as the pilot got so further temporal data could not accessed for further comparison.
+
+Other issues we faced included accessing images for the right time of year. The images shown were from Autumn 2022 and 2023, therefore not the optimal time to accurately represent vegetation health.  Ideally images from Spring/early Summer would be used however the presence of excessive cloud cover in these images prevented their use.
+
+---
+
+# The future
+### Pléiades Neo Next
+.pull-left[
+In April 2024 AirBus annouced the Pléiades Neo Next programme.
+
+Few details are currently available but it Will provide native 20cm resolution imagery.
+
+To launch in next few years and continue till at least 2040.
+
+----
+AirBus and others continue to push commercial EO capabilities with higher resolution capture.  This be seen by looking at the increase in high resolution sensors that are in orbit &lt;a name=cite-belward2015&gt;&lt;/a&gt;[Belward and Skøien (2015)](#bib-belward2015)
+]
+
+.pull-right[
+&lt;img src="./images/sensors_per_res_chart.jpg" width="100%" /&gt;
+]
+---
+
+# Reflection
+
+Pléiades Neo is already a very powerful constellation and with Pléiades Neo Next to follow in the next few years with an increased resolution there is a clear trend to constant push to higher resolutions.
+
+However, whilst increased spatial resolution is no doubt a good thing in certain cases we must be mindful of the use cases of such data.  For example for land use classification sub 20cm resolution is excessive. Whereas if we need to identify individual trees, vehicles then this increased resolution can bring greater accuracy to analysis and policy making.
+
+There is work ongoing that aims to make higher resolution imagery more accessible, particularly in UK Local Government, so we could be seeing a shift to more EO based decision making in Local Government in the coming years. Although access to data is one thing and possessing and implementing the skills to effectively make use of this is another issue entirely.
+
+---
+
+#References
+&lt;a name=bib-belward2015&gt;&lt;/a&gt;[Belward, A. S. and J. O.
+Skøien](#cite-belward2015) (2015). "Who Launched What, When and Why;
+Trends in Global Land-Cover Observation Capacity from Civilian Earth
+Observation Satellites". In: _ISPRS Journal of Photogrammetry and
+Remote Sensing_. Global Land Cover Mapping and Monitoring 103, pp.
+115-128.
+
+&lt;a name=bib-eoportal2023&gt;&lt;/a&gt;[eoPortal](#cite-eoportal2023) (2023).
+_Pleiades Neo - eoPortal_.
+
+&lt;a name=bib-sce2022&gt;&lt;/a&gt;[Scholary Community
+Encyclopedia](#cite-sce2022) (2022). _Comparison of Remote Sensing
+Satellites_.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
