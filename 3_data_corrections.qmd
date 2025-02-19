@@ -1,6 +1,6 @@
-# Remote Sensing Data and Corrections
+# Remote Sensing Data and Corrections {#remote-sensing-data-corrections}
 
-## Summary {#sec-summary}
+## Summary {#sec-3-summary}
 
 This week we delved deeper into remote sensing topics particularly data corrections, joining and enhancements. Lots of new terms were raised and some of the concepts were challenging to understand so it's easiest to summarise these terms by building a @tbl-remote-sensing-glossary. A lot of these terms could have entire lectures dedicated to them so I attempt to put these into a simple terms as possible. Due to the large number of terms considered, ChatGPT was used to provide an initial sweep of terms and sources, then these were fact checked and more detail added where necessary. Sources include NASA, ESA, USGS, Landsat Science, ESRI and many of the sources listed in the references.
 
@@ -21,18 +21,18 @@ glos <- readxl::read_excel(here("tables", "rs_glossary.xlsx"))%>%
 ```
 
 ```{r echo=FALSE}
-#| label: tbl-remote_sensing_glossary
+#| label: tbl-remote-sensing-glossary
 #| tbl-cap: "Glossary of remote sensing terminology"
 glos
 ```
 
-Another key point raised throughout the lecture was that regression plays a key part in many of the corrections that we looked into. This links back to the @wk1-applications discussion were I initially found it difficult to understand some of the comparisons that were being made. So this lecture really helped to consolidate those comparison by clearly explaining the important role that regression plays in remote sensing.
+Another key point raised throughout the lecture was that regression plays a key part in many of the corrections that we looked into. This links back to (@sec-wk1-application) discussion were I initially found it difficult to understand some of the comparisons that were being made. So this lecture really helped to consolidate those comparison by clearly explaining the important role that regression plays in remote sensing.
 
-## Applications - Effectiveness of relative and absolute correction {#sec-applications}
+## Applications - Effectiveness of relative and absolute correction {#sec-3-application}
 
 There is almost endless possibilities to expand on in the topics covered this week so it's a difficult job to focus on any one area. However, in week 1 I said that I'd like to investigate was atmospheric scattering therefore I will focus this section on atmospheric correction but also comparing against radiometric normalisation. This specifically looks at the differences and inaccuracy of **relative** and **absolute** correction.
 
-### @bernando2016 {#sec-bernando}
+### @bernardo2016 {#sec-bernando}
 
 The availability of absolute atmospheric correction inputs can be generalised over an area or season leading the potential accuracy issues. This is why @bernardo2016 investigated the effectiveness of an absolute atmospheric correction against a relative radiometric normalisation. Their study was specifically to estimate total suspended matter (TSM) concentrations in the Barra Bonita Hydroelectric Reservior, São Paulo however the general methodology could potentially be applied to other areas.
 
@@ -50,7 +50,7 @@ referrors <- read_csv(here("tables","flaash_irmad_comparison.csv"), locale = loc
 
 ```{r echo=FALSE}
 #| label: tbl-refectance-errors
-#| tbl-cap: "Reflectance errors from FLAASH and IRMAD corrections @bernando2016"
+#| tbl-cap: "Reflectance errors from FLAASH and IRMAD corrections (@bernardo2016)"
 referrors
 ```
 
@@ -69,7 +69,7 @@ So I have picked a similar study with a similar methodology in @hu2011. I will f
 -   uses FLAASH for absolute atmospheric correction
 -   uses multivariate alternative detection (MAD) for relative radiometric normalisation
 
-Although the use of MAD is similar to @bernando2016's technique of iteratively reweighted MAD (IRMAD), it provides a more basic detection of change as it is a one-pass approach and does not iteratively refine the results, also IRMAD are much less noisy than MAD(@nielson2005, @nielson2007). There is also a third approach, regularised IRMAD which can perform even better but this was not part of the studies being compared.
+Although the use of MAD is similar to @bernardo2016's technique of iteratively reweighted MAD (IRMAD), it provides a more basic detection of change as it is a one-pass approach and does not iteratively refine the results, also IRMAD are much less noisy than MAD(@nielsen2005, @nielsen2007). There is also a third approach, regularised IRMAD which can perform even better but this was not part of the studies being compared.
 
 Despite the differences in the relative correction calculations we can still review the results to help our comparison. @hu2011 used regression to assess the difference between absolute and relative corrections and the findings can be reviewed through the standard deviation results of each method.
 
@@ -89,7 +89,7 @@ sdcomp
 
 The overall results show that both methods reduce radiometric distortion, but relative normalisation corrects it more effectively. This is shown by the lower standard deviations of relative normalisation versus atmospheric correction across all bands (@tbl-std-comparison).
 
-### Review {#sec-review}
+### Review {#sec-3-review}
 
 I suspect that whilst the papers talk about absolute corrections having high percentage error in certain bands that this could be specific to the location of the study and the assumptions made throughout. There are so many variables at play that it would be highly improbable to produce a study that could feasible review all of these aspects.
 
@@ -97,11 +97,11 @@ In an ideal world we would be able to say exactly what corrections and enhanceme
 
 This is evident in both the papers discussed and have previously seen in other papers. It could appear that the scope is quite limited as they focus on very small samples (Bernando - Barra Bonita Hydroelectric Reservior area, São Paulo; Hu et al - Yellow River Source, Eastern Tibet) for their analysis (previously discussed in week 1). However if we consider this from a technical point of view then simply the amount of computational power required to process much larger samples is very restrictive and time-consuming.
 
-## Reflection {#sec-refection}
+## Reflection {#sec-3-refection}
 
-Before reflecting on some of the more technical aspects discussed I think it's first important to highlight the role that Virginia Norwood played in modern remote sensing. This was covered right at the beginning of the lecture and is quite an interesting story. A whole review could written about this but I think the fact the Virginia Norwood is known as the "mother of Landsat" says a great deal, and the full story of her life can be found in multiple articles including @mcclain2023 and @inventorshallofhame2025.
+Before reflecting on some of the more technical aspects discussed I think it's first important to highlight the role that Virginia Norwood played in modern remote sensing. This was covered right at the beginning of the lecture and is quite an interesting story. A whole review could written about this but I think the fact the Virginia Norwood is known as the "mother of Landsat" says a great deal, and the full story of her life can be found in multiple articles including @mcclain2023 and @inventorshalloffame2025.
 
-So back to the reflection, this week was definitely challenging, particularly with the amount of different terms, ideas and formulas raised. However when I really began to delve deeper into these concepts and particularly those discussed in @sec-applications they really become clearer. You can really start to see the benefit these corrections and enhancements can have as part of wider studies.
+So back to the reflection, this week was definitely challenging, particularly with the amount of different terms, ideas and formulas raised. However when I really began to delve deeper into these concepts and particularly those discussed in @sec-3-application they really become clearer. You can really start to see the benefit these corrections and enhancements can have as part of wider studies.
 
 As mentioned previously I'm looking forward to putting this ideas into practice through the Earth Observation Data Hub pilot scheme that Camden will soon have access to. I want to explore what data we will get access to and can finally understand the differences between products and particular what information can be derived from different bands. This will be a big improvement in the previous EO work that I've done which involved blindly following guides to try to get a result that seems similar.
 

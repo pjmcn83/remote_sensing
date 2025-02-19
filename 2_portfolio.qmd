@@ -1,4 +1,4 @@
-# Portfolio
+# Portfolio {#portfolio}
 
 This week we discussed how to build our online portfolio using Quarto (web page) and Xarigan (presentation). This also included how to host pages through GitHub.
 

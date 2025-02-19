@@ -1,6 +1,6 @@
-# Introduction to Remote Sensing
+# Introduction to Remote Sensing {intro-remote-sensing}
 
-## Summary {#sec-summary}
+## Summary {#sec-1-summary}
 
 As a relative newbie to Remote Sensing there was so much new information this week that it's very difficult to choose even a few things to talk about without writing an whole essay. Therefore I have decided that the best way to summarise this would be through a mind map @fig-rsintro.
 
@@ -8,7 +8,7 @@ As a relative newbie to Remote Sensing there was so much new information this we
 
 There is so much information that could be discussed here but I'd like to focus on the bands. Images produced at different bands are what makes up the creation of useful and relevant images. Personally I have previously attempted to use earth observation data without understanding the differences between the bands and this made the task at hand incredibly difficult and mainly involved mindlessly following guides and videos just to get a semi-readable output. So this weeks introduction to remote sensing really helped me to understand what bands relate to which information on the ground. And importantly how the different bands can be combined depending on the purpose of any analysis.
 
-## Application {#sec-application}
+## Application {#sec-1-application}
 
 There are numerous applications for remote sensing which have been discussed widely in many articles. Just by searching scholarly articles published in just the past month for the term "remote sensing", hundreds of articles are returned. By scanning the first few pages articles ranging from fire monitoring, wheat yield prediction, military and flooding are evident. Also, the number of different landscapes that can be monitored are also highly evident, including polar regions, mountains, wetlands, cities, forests and agricultural land.
 
@@ -58,7 +58,7 @@ The first output was a range of comparison images @fig-ls8_sent2_comp which help
 
 The second output was more in-depth evaluation
 
-### Review {#sec-review}
+### Review {#sec-1-review}
 
 Despite lacking some knowledge around the specific calculations in the analysis and found these to be two very interesting articles. The comparison between the methodologies is quite clear with @nasiri2022 being easier to follow mainly due to it's use of more visual representation of the data.
 
@@ -66,7 +66,7 @@ The methodology for @mandanici2016 appears to be a lot less reproducible as ther
 
 The main limitations I see with both articles if that the number of samples used was quite low and therefore it cannot be said with absolute certainty whether the results would be replicated in other areas. Mandanici does look at multiple sites but they are chosen for their differing landscapes and climate. Nasiri on the other hand only uses one sample area but with clearly distinguished land uses, Whilst this is useful as it identified variations in accuracy across land uses (artificial land 95-100%, bare earth 71-86%) it is not clear whether similar results would be expected in other areas of interest.
 
-## Reflection {#sec-refection}
+## Reflection {#sec-1-refection}
 
 Both articles discussed in @sec-application provide a good overview of both Landsat-8 and Sentinel-2 which helps to consolidate some of the topics taught in class this week. Especially in relation to how different bands can be used for different purposes. This will be extremely useful in the coming months as we look at our own analysis in this course and in CASA0025, but also as part of work as we begin to use a new Earth Observation Data Hub.
 

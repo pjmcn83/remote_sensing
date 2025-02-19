@@ -1,6 +1,6 @@
 # Policy Applications
 
-## Introduction {#sec-intro}
+## Introduction {#sec-4-intro}
 
 ### London {#sec-london}
 
@@ -94,15 +94,15 @@ NDVI imagery was produced using Pleiades Neo data to identify areas of vegetatio
 
 ------------------------------------------------------------------------
 
-## Reflection {#sec-refection}
+## Reflection {#sec-4-reflection}
 
 Having worked in Local Government for almost 20 years and within the London Borough of Camden for nearly 9 of those I believe I can give a good insight into how remote sensing is and could be used to help meet the policies of the London Plan.
 
-Firstly how is remote sensing used currently, and the answer is....barely at all! 
+Firstly how is remote sensing used currently, and the answer is....barely at all!
 
 Camden were fortunate to become part of the Geospatial commission Earth Observation Pilot which ran between 2023/24 but other than that use of remotely sensed data has been virtually non-existent. This is due to previously scare availability of EO data, cost, lack of appropriate software and technical knowledge. Even some projects from the overarching remit of the GLA are outsourced, such as their analysis of Climate Risk which was completed by Bloomberg Associates (@gla2024) rather than procuring, processing and analysing the data in house.
 
-> *"The view from above offers repeatable, independent, and cost effective ways for the digital (and smart) era to obtain relevant knowledge for social processes, ecological states, and technological innovations"*  @wellmann2020
+> *"The view from above offers repeatable, independent, and cost effective ways for the digital (and smart) era to obtain relevant knowledge for social processes, ecological states, and technological innovations"* @wellmann2020
 
 Presently the cost of implementing remote sensing techniques into smaller boroughs is seen as outweighing the benefits that this can bring. However as we see from the quote above from @wellmann2020 remotely sensed data is beginning to move more into mainstream particularly when you look Google Earth Engine which removes much of the overheads of dealing with EO data.
 
