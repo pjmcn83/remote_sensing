@@ -4,10 +4,9 @@
 
 As a relative newbie to Remote Sensing there was so much new information this week that it's very difficult to choose even a few things to talk about without writing an whole essay. Therefore I have decided that the best way to summarise this would be through a mind map @fig-rsintro.
 
-[![Introduction to Remote Sensing Mind map](images/RS_intro_mindmap.png){width=400px}](images/RS_intro_mindmap.png){lightbox="true"}
-
-
-![Introduction to Remote Sensing Mind map](images/RS_intro_mindmap.png){#fig-rsintro lightbox="true"}
+:::{#fig-rsintro fig-cap="Introduction to remote sensing mind-map"}
+[![](images/RS_intro_mindmap.png){width=800px}](images/RS_intro_mindmap.png)
+:::
 
 There is so much information that could be discussed here but I'd like to focus on the bands. Images produced at different bands are what makes up the creation of useful and relevant images. Personally I have previously attempted to use earth observation data without understanding the differences between the bands and this made the task at hand incredibly difficult and mainly involved mindlessly following guides and videos just to get a semi-readable output. So this weeks introduction to remote sensing really helped me to understand what bands relate to which information on the ground. And importantly how the different bands can be combined depending on the purpose of any analysis.
 
@@ -69,9 +68,9 @@ The methodology for @mandanici2016 appears to be a lot less reproducible as ther
 
 The main limitations I see with both articles if that the number of samples used was quite low and therefore it cannot be said with absolute certainty whether the results would be replicated in other areas. Mandanici does look at multiple sites but they are chosen for their differing landscapes and climate. Nasiri on the other hand only uses one sample area but with clearly distinguished land uses, Whilst this is useful as it identified variations in accuracy across land uses (artificial land 95-100%, bare earth 71-86%) it is not clear whether similar results would be expected in other areas of interest.
 
-## Reflection {#sec-1-refection}
+## Reflection {#sec-1-reflection}
 
-Both articles discussed in @sec-application provide a good overview of both Landsat-8 and Sentinel-2 which helps to consolidate some of the topics taught in class this week. Especially in relation to how different bands can be used for different purposes. This will be extremely useful in the coming months as we look at our own analysis in this course and in CASA0025, but also as part of work as we begin to use a new Earth Observation Data Hub.
+Both articles discussed in @sec-1-application provide a good overview of both Landsat-8 and Sentinel-2 which helps to consolidate some of the topics taught in class this week. Especially in relation to how different bands can be used for different purposes. This will be extremely useful in the coming months as we look at our own analysis in this course and in CASA0025, but also as part of work as we begin to use a new Earth Observation Data Hub.
 
 Some of the methodology of both papers is still difficult for me to process, particularly around the specific analysis and calculations, but hopefully this is because it is still the first week of remote sensing. However reading these articles really helped my understanding of the use cases of both satellites and specifically their similiarities and importantly how the spectral resolution of the same bands have slight variations to be aware of. Also understanding how bands, can be combined in different ways and in different applications to produce similar images for analysis. This then helps to provide even more comparable images across a larger temporal scale as any gaps in imagery (possibly due to constraints such as scattering and in particular cloud cover) from one satellite may be able to be filled by the other.
 

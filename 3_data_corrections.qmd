@@ -26,7 +26,7 @@ glos <- readxl::read_excel(here("tables", "rs_glossary.xlsx"))%>%
 glos
 ```
 
-Another key point raised throughout the lecture was that regression plays a key part in many of the corrections that we looked into. This links back to (@sec-wk1-application) discussion were I initially found it difficult to understand some of the comparisons that were being made. So this lecture really helped to consolidate those comparison by clearly explaining the important role that regression plays in remote sensing.
+Another key point raised throughout the lecture was that regression plays a key part in many of the corrections that we looked into. This links back to (@sec-1-application) discussion were I initially found it difficult to understand some of the comparisons that were being made. So this lecture really helped to consolidate those comparison by clearly explaining the important role that regression plays in remote sensing.
 
 ## Applications - Effectiveness of relative and absolute correction {#sec-3-application}
 

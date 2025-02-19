@@ -24,16 +24,6 @@ format:
   html:
     theme: cosmo
     lightbox: true
-    fig-responsive: true
-    include-in-header: 
-      - text: |
-          <script>
-            document.addEventListener("DOMContentLoaded", function() {
-              document.querySelectorAll('img').forEach(img => {
-                img.setAttribute('data-lightbox', 'gallery');
-              });
-            });
-          </script>
   pdf:
     documentclass: scrreprt
 
