@@ -18,6 +18,7 @@ book:
 bibliography: 
   - references.bib
 #  - pleiades_references.bib
+  - 2_xarigan_pres.html
 
 format:
   html:

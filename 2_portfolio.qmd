@@ -8,7 +8,7 @@ I choose to create my presentation on the commercial satellite, Pleiades Neo, as
 
 ```{r}
 xaringanExtra::embed_xaringan(
-  url = "https://pjmcn83.github.io/remote-sensing/2_xarigan_pres.html",
+  url = "https://pjmcn83.github.io/remote-sensing/2_xarigan_pres",
   ratio = "16:9"
 )
 ```
