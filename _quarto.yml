@@ -10,6 +10,7 @@ book:
     - index.qmd
     - 1_intro.qmd
     - 2_portfolio.qmd
+    - 2_xarigan_pres.html
     - 3_data_corrections.qmd
     - 4_policy_applications.qmd
     - references.qmd
@@ -18,7 +19,6 @@ book:
 bibliography: 
   - references.bib
 #  - pleiades_references.bib
-  - 2_xarigan_pres.html
 
 format:
   html:
