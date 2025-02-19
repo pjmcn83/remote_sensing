@@ -83,6 +83,13 @@ div.csl-indent {
 
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('img').forEach(img => {
+      img.setAttribute('data-lightbox', 'gallery');
+    });
+  });
+</script>
 
 
 </head>
@@ -208,9 +215,15 @@ div.csl-indent {
 <section id="sec-1-summary" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="sec-1-summary"><span class="header-section-number">1.1</span> Summary</h2>
 <p>As a relative newbie to Remote Sensing there was so much new information this week that it’s very difficult to choose even a few things to talk about without writing an whole essay. Therefore I have decided that the best way to summarise this would be through a mind map <a href="#fig-rsintro">Figure&nbsp;<span>1.1</span></a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/RS_intro_mindmap.png" data-lightbox="true"><img src="images/RS_intro_mindmap.png" class="img-fluid figure-img" width="400"></a></p>
+<figcaption class="figure-caption">Introduction to Remote Sensing Mind map</figcaption>
+</figure>
+</div>
 <div id="fig-rsintro" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/RS_intro_mindmap.png" class="img-fluid figure-img"></p>
+<p><img src="images/RS_intro_mindmap.png" class="img-fluid figure-img" data-lightbox="true"></p>
 <figcaption class="figure-caption">Figure&nbsp;1.1: Introduction to Remote Sensing Mind map</figcaption>
 </figure>
 </div>

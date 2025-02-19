@@ -4,7 +4,10 @@
 
 As a relative newbie to Remote Sensing there was so much new information this week that it's very difficult to choose even a few things to talk about without writing an whole essay. Therefore I have decided that the best way to summarise this would be through a mind map @fig-rsintro.
 
-![Introduction to Remote Sensing Mind map](images/RS_intro_mindmap.png){#fig-rsintro}
+[![Introduction to Remote Sensing Mind map](images/RS_intro_mindmap.png){width=400px}](images/RS_intro_mindmap.png){lightbox="true"}
+
+
+![Introduction to Remote Sensing Mind map](images/RS_intro_mindmap.png){#fig-rsintro lightbox="true"}
 
 There is so much information that could be discussed here but I'd like to focus on the bands. Images produced at different bands are what makes up the creation of useful and relevant images. Personally I have previously attempted to use earth observation data without understanding the differences between the bands and this made the task at hand incredibly difficult and mainly involved mindlessly following guides and videos just to get a semi-readable output. So this weeks introduction to remote sensing really helped me to understand what bands relate to which information on the ground. And importantly how the different bands can be combined depending on the purpose of any analysis.
 
