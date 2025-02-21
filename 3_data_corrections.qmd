@@ -2,7 +2,9 @@
 
 ## Summary {#sec-3-summary}
 
-This week we delved deeper into remote sensing topics particularly data corrections, joining and enhancements. Lots of new terms were raised and some of the concepts were challenging to understand so it's easiest to summarise these terms by building a @tbl-remote-sensing-glossary. A lot of these terms could have entire lectures dedicated to them so I attempt to put these into a simple terms as possible. Due to the large number of terms considered, ChatGPT was used to provide an initial sweep of terms and sources, then these were fact checked and more detail added where necessary. Sources include NASA, ESA, USGS, Landsat Science, ESRI and many of the sources listed in the references.
+This week we delved deeper into remote sensing topics particularly data corrections, joining and enhancements. Lots of new terms were raised and some of the concepts were challenging to understand so it's easiest to summarise these terms by building a @tbl-remote-sensing-glossary. A lot of these terms could have entire lectures dedicated to them so I attempt to put these into a simple terms as possible.
+
+*sources need to be added to the caption below*
 
 ```{r include=FALSE}
 library(tidyverse)
@@ -22,21 +24,26 @@ glos <- readxl::read_excel(here("tables", "rs_glossary.xlsx"))%>%
 
 ```{r echo=FALSE}
 #| label: tbl-remote-sensing-glossary
-#| tbl-cap: "Glossary of remote sensing terminology"
+#| tbl-cap: "Glossary of remote sensing terminology. **Sources: **"
 glos
 ```
 
-Another key point raised throughout the lecture was that regression plays a key part in many of the corrections that we looked into. This links back to (@sec-1-application) discussion were I initially found it difficult to understand some of the comparisons that were being made. So this lecture really helped to consolidate those comparison by clearly explaining the important role that regression plays in remote sensing.
+A key point raised throughout the lecture was that regression plays a key part in many of the corrections that we looked into. This links back to (@sec-1-application) discussion and the regression based methods used by @mandanici2016. I initially struggled to fully understand this methodology fully so this lecture helped to consolidate those comparisons by clearly explaining the important role that regression plays in remote sensing.
+
+Once again we have near endless options to analyse further but this week I will focus on atmospheric correction by comparing against radiometric normalisation. This specifically looks at the differences and accuracy of **relative** and **absolute** correction.
 
 ## Applications - Effectiveness of relative and absolute correction {#sec-3-application}
 
-There is almost endless possibilities to expand on in the topics covered this week so it's a difficult job to focus on any one area. However, in week 1 I said that I'd like to investigate was atmospheric scattering therefore I will focus this section on atmospheric correction but also comparing against radiometric normalisation. This specifically looks at the differences and inaccuracy of **relative** and **absolute** correction.
+The is an interesting area to investigate is because the availability of the inputs required for absolute atmospheric correction is often generalised over an specified area or season potentially leading to accuracy issues. Both @hu2011 and @bernardo2016 investigation the impact of this generalisation, whilst there are differences between the two methodologies which will be discussed later but first lets look at the similarities:
 
-### @bernardo2016 {#sec-bernando}
+-   compares using Landsat imagery
+-   compares a single study area using time series images
+-   uses FLAASH for absolute atmospheric correction
+-   uses multivariate alternative detection (MAD) for relative radiometric normalisation
 
-The availability of absolute atmospheric correction inputs can be generalised over an area or season leading the potential accuracy issues. This is why @bernardo2016 investigated the effectiveness of an absolute atmospheric correction against a relative radiometric normalisation. Their study was specifically to estimate total suspended matter (TSM) concentrations in the Barra Bonita Hydroelectric Reservior, São Paulo however the general methodology could potentially be applied to other areas.
+### Absolute Vs Relative methods and results
 
-The reflectance errors were measured compared by assessing root mean squared error (RMSE) and the mean absolute percent error (MAPE). With a comparison made agaisnt the FLAASH (absolute method) against IRMAD - iteratively reweighted multivariate alteration detection (relative method) correction methods.
+@bernardo2016 investigated the reflectance errors comparing by assessing root mean squared error (RMSE) and the mean absolute percent error (MAPE). A comparison was made against the FLAASH (absolute method) against IRMAD - iteratively reweighted multivariate alteration detection (relative method) correction methods. The results in @tbl-reflectance-errors clearly show greater levels in inaccuracy from the absolute method (FLAASH) in both methods of comparison across nearly all bands.
 
 ```{r include=FALSE}
 #read in data
@@ -49,29 +56,14 @@ referrors <- read_csv(here("tables","flaash_irmad_comparison.csv"), locale = loc
 ```
 
 ```{r echo=FALSE}
-#| label: tbl-refectance-errors
-#| tbl-cap: "Reflectance errors from FLAASH and IRMAD corrections (@bernardo2016)"
+#| label: tbl-reflectance-errors
+#| tbl-cap: "Reflectance errors from FLAASH and IRMAD corrections **[@bernardo2016]**"
 referrors
 ```
 
-The findings clearly show greater levels in inaccuracy from the absolute method (FLAASH) in both methods of comparison across nearly all bands. The only exception is the Green band's RMSE percentage using the relative method (IRMAD). The percentage difference in correction methods for the coastal band of 131-133% (absolute) versus 25-31% (relative) is a staggering figure. It would have been really interesting to see other examples of this analysis to see if this is a general trend or just an anomaly for the area.
+@hu2011 used MAD, over @bernardo2016's technique of IRMAD, which provides a more basic detection of change as it is a one-pass approach and does not iteratively refine the results, also IRMAD are much less noisy than MAD(@nielsen2005, @nielsen2007). There is also a third approach, regularised IRMAD which can perform even better but this was not part of the studies being compared.
 
-The authors do state various limitations to their study including the assumptions made in each methods potentially leading to errors themselves. This could be a good area for further investigations but what I'd really like to see is a similar paper comparing these methods in various locations to identify whether this is a general trend.
-
-### @hu2011 {#sec-hu}
-
-We have seen one example of a comparison between absolute and relative corrections but we shouldn't just accept one study's conclusion. We need to be more critical and if we can't question findings ourselves through our own study then we can use other articles to help challenge or support these findings.
-
-So I have picked a similar study with a similar methodology in @hu2011. I will focus on the key differences in the methodology but first let's summarise the similarities:
-
--   compares using landsat images
--   compares a single study area using time series images
--   uses FLAASH for absolute atmospheric correction
--   uses multivariate alternative detection (MAD) for relative radiometric normalisation
-
-Although the use of MAD is similar to @bernardo2016's technique of iteratively reweighted MAD (IRMAD), it provides a more basic detection of change as it is a one-pass approach and does not iteratively refine the results, also IRMAD are much less noisy than MAD(@nielsen2005, @nielsen2007). There is also a third approach, regularised IRMAD which can perform even better but this was not part of the studies being compared.
-
-Despite the differences in the relative correction calculations we can still review the results to help our comparison. @hu2011 used regression to assess the difference between absolute and relative corrections and the findings can be reviewed through the standard deviation results of each method.
+@hu2011 used regression to assess the difference between corrections and the findings can be reviewed through the standard deviation results of each method. Generally the results are comparable to @bernardo2016 with both methods reducing radiometric distortion, however relative normalisation corrects it more effectively. This is shown by the lower standard deviations of relative normalisation versus atmospheric correction across all bands (@tbl-std-comparison).
 
 ```{r include=FALSE}
 #read in data
@@ -82,20 +74,16 @@ sdcomp <- read_csv(here("tables","sd_rel_ab_comparison.csv"), locale = locale(en
 ```
 
 ```{r echo=FALSE}
-#| label: tbl-std_comparison
+#| label: tbl-std-comparison
 #| tbl-cap: "Standard Deviation of the difference in each band for relative normalisation against atmospheric correction"
 sdcomp
 ```
 
-The overall results show that both methods reduce radiometric distortion, but relative normalisation corrects it more effectively. This is shown by the lower standard deviations of relative normalisation versus atmospheric correction across all bands (@tbl-std-comparison).
+### Review
 
-### Review {#sec-3-review}
+Whilst the papers talk about absolute corrections having high percentage error in certain bands this could be specific to the location of the study and any assumptions made throughout. There are so many variables that it would be highly improbable to produce a study that could feasibly review all of these aspects. Ideally it would be possible to say exactly what corrections/enhancements to apply to any image to provide the optimal output. However that is just not possible, considering variables including atmospheric conditions, topological factors, sensor differences, then we can begin to see why there is no single set of tools for analysis.
 
-I suspect that whilst the papers talk about absolute corrections having high percentage error in certain bands that this could be specific to the location of the study and the assumptions made throughout. There are so many variables at play that it would be highly improbable to produce a study that could feasible review all of these aspects.
-
-In an ideal world we would be able to say exactly what corrections and enhancements to apply to an image to provide the optimal output. However that is just not possible, if we think about the sheer amount of variables, including atmospheric conditions, topological factors, sensor differences, then we can begin to see why there is no simple set of tools for analysis.
-
-This is evident in both the papers discussed and have previously seen in other papers. It could appear that the scope is quite limited as they focus on very small samples (Bernando - Barra Bonita Hydroelectric Reservior area, São Paulo; Hu et al - Yellow River Source, Eastern Tibet) for their analysis (previously discussed in week 1). However if we consider this from a technical point of view then simply the amount of computational power required to process much larger samples is very restrictive and time-consuming.
+This is evident in both papers and also seen in other papers such as @mandanici2016 and @nasiri2022. It could appear that the scope is quite limited as they focus on very small samples for their analysis (previously discussed in week 1). However if we consider this from a technical point of view then simply the amount of computational power required to process much larger samples is very restrictive and time-consuming.
 
 ## Reflection {#sec-3-refection}
 

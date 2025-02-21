@@ -177,9 +177,8 @@ div.csl-indent {
   <li><a href="#sec-3-summary" id="toc-sec-3-summary" class="nav-link active" data-scroll-target="#sec-3-summary"><span class="header-section-number">3.1</span> Summary</a></li>
   <li><a href="#sec-3-application" id="toc-sec-3-application" class="nav-link" data-scroll-target="#sec-3-application"><span class="header-section-number">3.2</span> Applications - Effectiveness of relative and absolute correction</a>
   <ul class="collapse">
-  <li><a href="#sec-bernando" id="toc-sec-bernando" class="nav-link" data-scroll-target="#sec-bernando"><span class="header-section-number">3.2.1</span> <span class="citation" data-cites="bernardo2016">Bernardo et al. (2016)</span></a></li>
-  <li><a href="#sec-hu" id="toc-sec-hu" class="nav-link" data-scroll-target="#sec-hu"><span class="header-section-number">3.2.2</span> <span class="citation" data-cites="hu2011">Hu et al. (2011)</span></a></li>
-  <li><a href="#sec-3-review" id="toc-sec-3-review" class="nav-link" data-scroll-target="#sec-3-review"><span class="header-section-number">3.2.3</span> Review</a></li>
+  <li><a href="#absolute-vs-relative-methods-and-results" id="toc-absolute-vs-relative-methods-and-results" class="nav-link" data-scroll-target="#absolute-vs-relative-methods-and-results"><span class="header-section-number">3.2.1</span> Absolute Vs Relative methods and results</a></li>
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review"><span class="header-section-number">3.2.2</span> Review</a></li>
   </ul></li>
   <li><a href="#sec-3-refection" id="toc-sec-3-refection" class="nav-link" data-scroll-target="#sec-3-refection"><span class="header-section-number">3.3</span> Reflection</a></li>
   </ul>
@@ -207,12 +206,13 @@ div.csl-indent {
 
 <section id="sec-3-summary" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-3-summary"><span class="header-section-number">3.1</span> Summary</h2>
-<p>This week we delved deeper into remote sensing topics particularly data corrections, joining and enhancements. Lots of new terms were raised and some of the concepts were challenging to understand so it’s easiest to summarise these terms by building a <a href="#tbl-remote-sensing-glossary">Table&nbsp;<span>3.1</span></a>. A lot of these terms could have entire lectures dedicated to them so I attempt to put these into a simple terms as possible. Due to the large number of terms considered, ChatGPT was used to provide an initial sweep of terms and sources, then these were fact checked and more detail added where necessary. Sources include NASA, ESA, USGS, Landsat Science, ESRI and many of the sources listed in the references.</p>
+<p>This week we delved deeper into remote sensing topics particularly data corrections, joining and enhancements. Lots of new terms were raised and some of the concepts were challenging to understand so it’s easiest to summarise these terms by building a <a href="#tbl-remote-sensing-glossary">Table&nbsp;<span>3.1</span></a>. A lot of these terms could have entire lectures dedicated to them so I attempt to put these into a simple terms as possible.</p>
+<p><em>sources need to be added to the caption below</em></p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="tbl-remote-sensing-glossary" class="anchored">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;3.1: Glossary of remote sensing terminology</caption>
+<caption>Table&nbsp;3.1: Glossary of remote sensing terminology. <strong>Sources: </strong></caption>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">Term</th>
@@ -363,20 +363,26 @@ div.csl-indent {
 
 </div>
 </div>
-<p>Another key point raised throughout the lecture was that regression plays a key part in many of the corrections that we looked into. This links back to (<a href="1_intro.html#sec-1-application"><span>Section&nbsp;1.2</span></a>) discussion were I initially found it difficult to understand some of the comparisons that were being made. So this lecture really helped to consolidate those comparison by clearly explaining the important role that regression plays in remote sensing.</p>
+<p>A key point raised throughout the lecture was that regression plays a key part in many of the corrections that we looked into. This links back to (<a href="1_intro.html#sec-1-application"><span>Section&nbsp;1.2</span></a>) discussion and the regression based methods used by <span class="citation" data-cites="mandanici2016">Mandanici and Bitelli (<a href="references.html#ref-mandanici2016" role="doc-biblioref">2016</a>)</span>. I initially struggled to fully understand this methodology fully so this lecture helped to consolidate those comparisons by clearly explaining the important role that regression plays in remote sensing.</p>
+<p>Once again we have near endless options to analyse further but this week I will focus on atmospheric correction by comparing against radiometric normalisation. This specifically looks at the differences and accuracy of <strong>relative</strong> and <strong>absolute</strong> correction.</p>
 </section>
 <section id="sec-3-application" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="sec-3-application"><span class="header-section-number">3.2</span> Applications - Effectiveness of relative and absolute correction</h2>
-<p>There is almost endless possibilities to expand on in the topics covered this week so it’s a difficult job to focus on any one area. However, in week 1 I said that I’d like to investigate was atmospheric scattering therefore I will focus this section on atmospheric correction but also comparing against radiometric normalisation. This specifically looks at the differences and inaccuracy of <strong>relative</strong> and <strong>absolute</strong> correction.</p>
-<section id="sec-bernando" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="sec-bernando"><span class="header-section-number">3.2.1</span> <span class="citation" data-cites="bernardo2016">Bernardo et al. (<a href="references.html#ref-bernardo2016" role="doc-biblioref">2016</a>)</span></h3>
-<p>The availability of absolute atmospheric correction inputs can be generalised over an area or season leading the potential accuracy issues. This is why <span class="citation" data-cites="bernardo2016">Bernardo et al. (<a href="references.html#ref-bernardo2016" role="doc-biblioref">2016</a>)</span> investigated the effectiveness of an absolute atmospheric correction against a relative radiometric normalisation. Their study was specifically to estimate total suspended matter (TSM) concentrations in the Barra Bonita Hydroelectric Reservior, São Paulo however the general methodology could potentially be applied to other areas.</p>
-<p>The reflectance errors were measured compared by assessing root mean squared error (RMSE) and the mean absolute percent error (MAPE). With a comparison made agaisnt the FLAASH (absolute method) against IRMAD - iteratively reweighted multivariate alteration detection (relative method) correction methods.</p>
+<p>The is an interesting area to investigate is because the availability of the inputs required for absolute atmospheric correction is often generalised over an specified area or season potentially leading to accuracy issues. Both <span class="citation" data-cites="hu2011">Hu et al. (<a href="references.html#ref-hu2011" role="doc-biblioref">2011</a>)</span> and <span class="citation" data-cites="bernardo2016">Bernardo et al. (<a href="references.html#ref-bernardo2016" role="doc-biblioref">2016</a>)</span> investigation the impact of this generalisation, whilst there are differences between the two methodologies which will be discussed later but first lets look at the similarities:</p>
+<ul>
+<li>compares using Landsat imagery</li>
+<li>compares a single study area using time series images</li>
+<li>uses FLAASH for absolute atmospheric correction</li>
+<li>uses multivariate alternative detection (MAD) for relative radiometric normalisation</li>
+</ul>
+<section id="absolute-vs-relative-methods-and-results" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="absolute-vs-relative-methods-and-results"><span class="header-section-number">3.2.1</span> Absolute Vs Relative methods and results</h3>
+<p><span class="citation" data-cites="bernardo2016">Bernardo et al. (<a href="references.html#ref-bernardo2016" role="doc-biblioref">2016</a>)</span> investigated the reflectance errors comparing by assessing root mean squared error (RMSE) and the mean absolute percent error (MAPE). A comparison was made against the FLAASH (absolute method) against IRMAD - iteratively reweighted multivariate alteration detection (relative method) correction methods. The results in <a href="#tbl-reflectance-errors">Table&nbsp;<span>3.2</span></a> clearly show greater levels in inaccuracy from the absolute method (FLAASH) in both methods of comparison across nearly all bands.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="tbl-refectance-errors" class="anchored">
+<div id="tbl-reflectance-errors" class="anchored">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;3.2: Reflectance errors from FLAASH and IRMAD corrections (<span class="citation" data-cites="bernardo2016">Bernardo et al. (<a href="references.html#ref-bernardo2016" role="doc-biblioref">2016</a>)</span>)</caption>
+<caption>Table&nbsp;3.2: Reflectance errors from FLAASH and IRMAD corrections <strong><span class="citation" data-cites="bernardo2016">(<a href="references.html#ref-bernardo2016" role="doc-biblioref">Bernardo et al. 2016</a>)</span></strong></caption>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">OLI band</th>
@@ -429,24 +435,11 @@ div.csl-indent {
 
 </div>
 </div>
-<p>The findings clearly show greater levels in inaccuracy from the absolute method (FLAASH) in both methods of comparison across nearly all bands. The only exception is the Green band’s RMSE percentage using the relative method (IRMAD). The percentage difference in correction methods for the coastal band of 131-133% (absolute) versus 25-31% (relative) is a staggering figure. It would have been really interesting to see other examples of this analysis to see if this is a general trend or just an anomaly for the area.</p>
-<p>The authors do state various limitations to their study including the assumptions made in each methods potentially leading to errors themselves. This could be a good area for further investigations but what I’d really like to see is a similar paper comparing these methods in various locations to identify whether this is a general trend.</p>
-</section>
-<section id="sec-hu" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="sec-hu"><span class="header-section-number">3.2.2</span> <span class="citation" data-cites="hu2011">Hu et al. (<a href="references.html#ref-hu2011" role="doc-biblioref">2011</a>)</span></h3>
-<p>We have seen one example of a comparison between absolute and relative corrections but we shouldn’t just accept one study’s conclusion. We need to be more critical and if we can’t question findings ourselves through our own study then we can use other articles to help challenge or support these findings.</p>
-<p>So I have picked a similar study with a similar methodology in <span class="citation" data-cites="hu2011">Hu et al. (<a href="references.html#ref-hu2011" role="doc-biblioref">2011</a>)</span>. I will focus on the key differences in the methodology but first let’s summarise the similarities:</p>
-<ul>
-<li>compares using landsat images</li>
-<li>compares a single study area using time series images</li>
-<li>uses FLAASH for absolute atmospheric correction</li>
-<li>uses multivariate alternative detection (MAD) for relative radiometric normalisation</li>
-</ul>
-<p>Although the use of MAD is similar to <span class="citation" data-cites="bernardo2016">Bernardo et al. (<a href="references.html#ref-bernardo2016" role="doc-biblioref">2016</a>)</span>’s technique of iteratively reweighted MAD (IRMAD), it provides a more basic detection of change as it is a one-pass approach and does not iteratively refine the results, also IRMAD are much less noisy than MAD(<span class="citation" data-cites="nielsen2005">Nielsen (<a href="references.html#ref-nielsen2005" role="doc-biblioref">2005</a>)</span>, <span class="citation" data-cites="nielsen2007">Nielsen (<a href="references.html#ref-nielsen2007" role="doc-biblioref">2007</a>)</span>). There is also a third approach, regularised IRMAD which can perform even better but this was not part of the studies being compared.</p>
-<p>Despite the differences in the relative correction calculations we can still review the results to help our comparison. <span class="citation" data-cites="hu2011">Hu et al. (<a href="references.html#ref-hu2011" role="doc-biblioref">2011</a>)</span> used regression to assess the difference between absolute and relative corrections and the findings can be reviewed through the standard deviation results of each method.</p>
+<p><span class="citation" data-cites="hu2011">Hu et al. (<a href="references.html#ref-hu2011" role="doc-biblioref">2011</a>)</span> used MAD, over <span class="citation" data-cites="bernardo2016">Bernardo et al. (<a href="references.html#ref-bernardo2016" role="doc-biblioref">2016</a>)</span>’s technique of IRMAD, which provides a more basic detection of change as it is a one-pass approach and does not iteratively refine the results, also IRMAD are much less noisy than MAD(<span class="citation" data-cites="nielsen2005">Nielsen (<a href="references.html#ref-nielsen2005" role="doc-biblioref">2005</a>)</span>, <span class="citation" data-cites="nielsen2007">Nielsen (<a href="references.html#ref-nielsen2007" role="doc-biblioref">2007</a>)</span>). There is also a third approach, regularised IRMAD which can perform even better but this was not part of the studies being compared.</p>
+<p><span class="citation" data-cites="hu2011">Hu et al. (<a href="references.html#ref-hu2011" role="doc-biblioref">2011</a>)</span> used regression to assess the difference between corrections and the findings can be reviewed through the standard deviation results of each method. Generally the results are comparable to <span class="citation" data-cites="bernardo2016">Bernardo et al. (<a href="references.html#ref-bernardo2016" role="doc-biblioref">2016</a>)</span> with both methods reducing radiometric distortion, however relative normalisation corrects it more effectively. This is shown by the lower standard deviations of relative normalisation versus atmospheric correction across all bands (<a href="#tbl-std-comparison">Table&nbsp;<span>3.3</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="tbl-std_comparison" class="anchored">
+<div id="tbl-std-comparison" class="anchored">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>Table&nbsp;3.3: Standard Deviation of the difference in each band for relative normalisation against atmospheric correction</caption>
 <thead>
@@ -486,13 +479,11 @@ div.csl-indent {
 
 </div>
 </div>
-<p>The overall results show that both methods reduce radiometric distortion, but relative normalisation corrects it more effectively. This is shown by the lower standard deviations of relative normalisation versus atmospheric correction across all bands (<span class="quarto-unresolved-ref">?tbl-std-comparison</span>).</p>
 </section>
-<section id="sec-3-review" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="sec-3-review"><span class="header-section-number">3.2.3</span> Review</h3>
-<p>I suspect that whilst the papers talk about absolute corrections having high percentage error in certain bands that this could be specific to the location of the study and the assumptions made throughout. There are so many variables at play that it would be highly improbable to produce a study that could feasible review all of these aspects.</p>
-<p>In an ideal world we would be able to say exactly what corrections and enhancements to apply to an image to provide the optimal output. However that is just not possible, if we think about the sheer amount of variables, including atmospheric conditions, topological factors, sensor differences, then we can begin to see why there is no simple set of tools for analysis.</p>
-<p>This is evident in both the papers discussed and have previously seen in other papers. It could appear that the scope is quite limited as they focus on very small samples (Bernando - Barra Bonita Hydroelectric Reservior area, São Paulo; Hu et al - Yellow River Source, Eastern Tibet) for their analysis (previously discussed in week 1). However if we consider this from a technical point of view then simply the amount of computational power required to process much larger samples is very restrictive and time-consuming.</p>
+<section id="review" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="review"><span class="header-section-number">3.2.2</span> Review</h3>
+<p>Whilst the papers talk about absolute corrections having high percentage error in certain bands this could be specific to the location of the study and any assumptions made throughout. There are so many variables that it would be highly improbable to produce a study that could feasibly review all of these aspects. Ideally it would be possible to say exactly what corrections/enhancements to apply to any image to provide the optimal output. However that is just not possible, considering variables including atmospheric conditions, topological factors, sensor differences, then we can begin to see why there is no single set of tools for analysis.</p>
+<p>This is evident in both papers and also seen in other papers such as <span class="citation" data-cites="mandanici2016">Mandanici and Bitelli (<a href="references.html#ref-mandanici2016" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="nasiri2022">Nasiri et al. (<a href="references.html#ref-nasiri2022" role="doc-biblioref">2022</a>)</span>. It could appear that the scope is quite limited as they focus on very small samples for their analysis (previously discussed in week 1). However if we consider this from a technical point of view then simply the amount of computational power required to process much larger samples is very restrictive and time-consuming.</p>
 </section>
 </section>
 <section id="sec-3-refection" class="level2" data-number="3.3">
@@ -513,8 +504,14 @@ Hu, Yong, Liangyun Liu, Lingling Liu, and Quanjun Jiao. 2011. <span>“Compariso
 <div id="ref-inventorshalloffame2025" class="csl-entry" role="listitem">
 Inventors Hall of Fame. 2025. <span>“Virginia <span>Norwood</span> | <span>National Inventors Hall</span> of <span>Fame</span>® <span>Inductee</span>.”</span> January 31, 2025. <a href="https://www.invent.org/inductees/virginia-norwood">https://www.invent.org/inductees/virginia-norwood</a>.
 </div>
+<div id="ref-mandanici2016" class="csl-entry" role="listitem">
+Mandanici, Emanuele, and Gabriele Bitelli. 2016. <span>“Preliminary <span>Comparison</span> of <span>Sentinel-2</span> and <span>Landsat</span> 8 <span>Imagery</span> for a <span>Combined Use</span>.”</span> <em>Remote Sensing</em> 8 (12, 12): 1014. <a href="https://doi.org/10.3390/rs8121014">https://doi.org/10.3390/rs8121014</a>.
+</div>
 <div id="ref-mcclain2023" class="csl-entry" role="listitem">
 McClain, Dylan Loeb. 2023. <span>“Virginia <span>Norwood</span>, <span>‘<span>Mother</span>’</span> of <span>Satellite Imaging Systems</span>, <span>Dies</span> at 96.”</span> <em>The New York Times: Science</em>, April 12, 2023. <a href="https://www.nytimes.com/2023/04/12/science/space/virginia-norwood-dead.html">https://www.nytimes.com/2023/04/12/science/space/virginia-norwood-dead.html</a>.
+</div>
+<div id="ref-nasiri2022" class="csl-entry" role="listitem">
+Nasiri, Vahid, Azade Deljouei, Fardin Moradi, Seyed Mohammad Moein Sadeghi, and Stelian Alexandru Borz. 2022. <span>“Land <span>Use</span> and <span>Land Cover Mapping Using Sentinel-2</span>, <span>Landsat-8 Satellite Images</span>, and <span>Google Earth Engine</span>: <span>A Comparison</span> of <span>Two Composition Methods</span>.”</span> <em>Remote Sensing</em> 14 (9, 9): 1977. <a href="https://doi.org/10.3390/rs14091977">https://doi.org/10.3390/rs14091977</a>.
 </div>
 <div id="ref-nielsen2005" class="csl-entry" role="listitem">
 Nielsen, Allan Aasbjerg. 2005. <span>“<span>AN ITERATIVE EXTENSION TO THE MAD TRANSFORMATION FOR CHANGE DETECTION IN MULTI- AND HYPERSPECTRAL REMOTE SENSING DATA</span>.”</span>
