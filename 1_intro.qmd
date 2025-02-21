@@ -2,25 +2,19 @@
 
 ## Summary {#sec-1-summary}
 
-As a relative newbie to Remote Sensing there was so much new information this week that it's very difficult to choose even a few things to talk about without writing an whole essay. Therefore I have decided that the best way to summarise this would be through a mind map @fig-rsintro.
+As a relative newbie to remote sensing there was so much new information this week that it's very difficult to choose even a few things to talk about without writing an whole essay. Therefore I have decided that the best way to summarise this would be through a mind map @fig-rsintro.
 
-:::{#fig-rsintro fig-cap="Introduction to remote sensing mind-map"}
-[![](images/RS_intro_mindmap.png){width=800px}](images/RS_intro_mindmap.png)
+::: {#fig-rsintro fig-cap="Introduction to remote sensing mind-map"}
+[![](images/RS_intro_mindmap.png){width="800px"}](images/RS_intro_mindmap.png)
 :::
 
-There is so much information that could be discussed here but I'd like to focus on the bands. Images produced at different bands are what makes up the creation of useful and relevant images. Personally I have previously attempted to use earth observation data without understanding the differences between the bands and this made the task at hand incredibly difficult and mainly involved mindlessly following guides and videos just to get a semi-readable output. So this weeks introduction to remote sensing really helped me to understand what bands relate to which information on the ground. And importantly how the different bands can be combined depending on the purpose of any analysis.
+There is so many topics that could be discussed further but to focus quickly on the spectral bands. Images produced at different bands are what make up the creation of useful and relevant images. Personally I have previously attempted to use earth observation data without understanding the differences between the bands and this made the task at hand incredibly difficult and mainly involved mindlessly following guides and videos just to get a semi-readable output. So this weeks introduction to remote sensing really helped me to understand what bands relate to which information on the ground. And importantly how the different bands can be combined depending on the purpose of any analysis. The list of use cases from combining spectral bands is incredible, @eos2025 and @usgs2024 provide a succinct summary of some of the common use cases.
 
 ## Application {#sec-1-application}
 
-There are numerous applications for remote sensing which have been discussed widely in many articles. Just by searching scholarly articles published in just the past month for the term "remote sensing", hundreds of articles are returned. By scanning the first few pages articles ranging from fire monitoring, wheat yield prediction, military and flooding are evident. Also, the number of different landscapes that can be monitored are also highly evident, including polar regions, mountains, wetlands, cities, forests and agricultural land.
+Whilst many of the use cases available are fascinating, as this is an introduction to remote sensing it would be easy to get lost in the amount of use cases on offer. As such I have instead decided to focus on a comparison between two of the more openly available satellites, Landsat-8 and Sentinel-2.
 
-Whilst many of the use cases available are fascinating, as this is an introduction to remote sensing it would be easy to get lost in the array of use cases on offer. As such I have instead decided to focuses on a comparison between Landsat-8 and Sentinel-2. There are still a huge amount of articles to consider in this topic, many again with very different use cases however I will consider two more general comparison articles.
-
-### Prelimary Sentinel-2 and Landsat 8 Comparison {#sec-prelim-comparison}
-
-Despite the many variables in sensor technology it is possible to compare imagery from Landsat-8 and Sentinel-2 due to an overlap in the bands captured by each. @mandanici2016 prepared an initial comparison approximately a year after Sentinel-2 was launched in 2015. Landsat-8 was launched in 2013.
-
-Mandanici and Bitelli begin with a basic summary of the sensor which provides useful context for their comparison which summarised in @tbl-landsat_sentinel_comparison.
+Beginning with a basic summary to provide useful context for their comparison @tbl-landsat_sentinel_comparison as prepared by @mandanici2016. Providing an initial comparison approximately a year after Sentinel-2 (S2) was launched in 2015. Landsat-8 (L8) was launched in 2013.
 
 ```{r include=FALSE}
 library(tidyverse)
@@ -40,38 +34,34 @@ comp <- read.csv(here("tables", "landsat_sentinel_comparison.csv"), check.names 
 
 ```{r echo=FALSE}
 #| label: tbl-landsat_sentinel_comparison
-#| tbl-cap: "Summary comparison of basic Landsat-8 and Sentinel-2 specifications"
+#| tbl-cap: "Summary comparison of basic Landsat-8 and Sentinel-2 specifications @mandanici2016"
 comp
 ```
 
-Six sites across the Earth were chosen to compare Sentinel/Landsat images, the sites were chosen to provide a mix of land cover types and climatic conditions, the comparison images were taken on the same day to build as close a comparison as possible. Correlation and regression coefficients were then calculated across the bands for the study areas.
+We can quickly see some key differences particularly with the spatial resolution and revisit times and number of bands. However we can also see that there a range of six comparable spectral bands which means that we are able to use the data from both satellites to compare against each other. This also has the key bonus of meaning there is a greater temporal availability of data at these bands. Although we must also be wary that there are subtle difference between the wavelengths when making these comparisons. For example the Near Infrared band of Landsat-8 is 842nm whereas Sentinel-2 is 865nm. The differences in spatial resolution also need to be considered and may require resampling dependent on the specific use case.
 
-From my currently limited remote sensing knowledge I found this methodology difficult to follow due to it's highly mathematical model, however the overall results showed there was a very good correlation between the corresponding bands. Although limitations were identified including radiometric differences requiring careful evaluation and investigating discrepancies in reflectance values relevance.
+There are various methodologies that could be employed to compare Landsat-8 and Sentinel-2, we see this with @mandanici2016 using a regression and correlation based methodology whereas @nasiri2022 complement this with a visual comparison. Both options make their point well but the visual elements would be simpler to understand for non-academic readers if these were to be used be policy makers rather than just sensor comparison.
 
-### Comparison using Google Earth Engine {#sec-gee-comparison}
+The more statistically focused approach of @mandanici2016 showed there was a very good correlation between the corresponding bands. Although limitations were identified including radiometric differences requiring careful evaluation and investigating discrepancies in reflectance values relevance. These radiometric differences are identified as \~2.5% for all common spectral bands (@barsi2018), the significance of this difference will be dependent on the individual use case.
 
-The article by @nasiri2022 was chosen due to it's more contemporary nature providing a useful and relevant comparison against the preliminary comparison. A further advantage of reviewing this research was it's methodology of using Google Earth Engine (GEE). We will begin using Google Earth Engine later in the course so it seemed even more appropriate to use this paper.
+However the importance of statistical methods can be highlighted by visualising the differences between LS8 and S2 @fig-nasiri-fci. Apart from a slightly darker S2 image particularly in Spring this false colour image from @nasiri2022 is difficult to spot any key differences. Therefore for this level of analysis it may be suitable to use either sensor's data.
 
-The specific methodology for comparing Landsat-8 and Sentinel-2 involved producing time-series analysis of a single study area (Tehran Province, Iran) using images from both satellites. As the resolutions did not match the MSI data was downsampled to the match that of OLI.
+![Landsat-8 and Sentinel-2 image comparison - using False-colour images (R: NIR, G:red, B: green) across seasons: (a) Spring, (b) Summer and (c) Autumn](images/nasiri_image_comparison.webp){#fig-nasiri-fci}
 
-The first output was a range of comparison images @fig-ls8_sent2_comp which help demonstrate how difficult it is for the human eye to identify variations in accuracy of this level of data.
+If the use case requires more nuanced analysis then the differences in the sensors begins to have a bigger influence as we can see in @fig-nasiri-results. This is particularly evident when comparing the bottom row of images, where the area of artificial land identified by LS8 within the water body (D4) is far greater than the respective S2 image (D2). Therefore once again dependent on the specific use case we must be mindful that we compare like for like datasets in these instances.
 
-![Landsat-8 and Sentinel-2 image comparison - using False-colour images (R: NIR, G:red, B: green) across seasons: (a) Spring, (b) Summer and (c) Autumn](images/nasiri_image_comparison.webp){#fig-ls8_sent2_comp}
+![Comparison between the classification results of different parts of the study area. (D-1) S-2 seasonal composites, (D-2) S-2 percentile metrics, (D-3) L-8 seasonal composites, and (D-4) L-8 percentile metrics.](images/nasiri-fig5.webp){#fig-nasiri-results}
 
-The second output was more in-depth evaluation
+### Limitations {#sec-1-limitations}
 
-### Review {#sec-1-review}
+I have so far concentrated on the output comparisons between LS8 and S2 however what about some of the limitations which are evident in these comparisons.
 
-Despite lacking some knowledge around the specific calculations in the analysis and found these to be two very interesting articles. The comparison between the methodologies is quite clear with @nasiri2022 being easier to follow mainly due to it's use of more visual representation of the data.
+At face value the work of @mandanici2016 appears to be a lot less reproducible as there is less transparency about the tools used. This is likely due to the need for propitiatory applications to produce the analysis. Also as this is a straight forward comparison paper the specific methodology and tools used may have been seen as insignificant compared to the results. @nasiri2022 on the other hand is more transparent about it's use of Google Earth Engine (GEE). GEE has the added bonus of avoiding local storage issues and providing greater computing power for analysis and processing [@carrasco2019] making it more accessible at a lower cost. This could be simply due to the fact that Google Earth Engine wasn't as widely used or known in 2016 as it is was 2022.
 
-The methodology for @mandanici2016 appears to be a lot less reproducible as there is less detail in this section, it also does not refer to which languages, applications, etc. that were used. Nasiri on the otherhand was more reproducible due to it's use of Google Earth Engine which has the added bonus of avoiding local storage issues and providing greater computing power for analysis and processing [@carrasco2019]. This may just be due to the fact that Google Earth Engine wasn't as widely used or known in 2016 as it is was 2022.
-
-The main limitations I see with both articles if that the number of samples used was quite low and therefore it cannot be said with absolute certainty whether the results would be replicated in other areas. Mandanici does look at multiple sites but they are chosen for their differing landscapes and climate. Nasiri on the other hand only uses one sample area but with clearly distinguished land uses, Whilst this is useful as it identified variations in accuracy across land uses (artificial land 95-100%, bare earth 71-86%) it is not clear whether similar results would be expected in other areas of interest.
+Another limitation I see with both articles is the number of sample images used was low and therefore it cannot be said with absolute certainty whether the results would be replicated in other areas. Whilst Mandanici does look at multiple sites they are specifically chosen for their differing landscapes and climate. Nasiri only uses one sample area but with clearly distinguished land uses, Whilst this is useful as it identified variations in accuracy across land uses (artificial land 95-100%, bare earth 71-86%) it is not clear whether similar results would be expected in other areas of interest with a similar land cover.
 
 ## Reflection {#sec-1-reflection}
 
-Both articles discussed in @sec-1-application provide a good overview of both Landsat-8 and Sentinel-2 which helps to consolidate some of the topics taught in class this week. Especially in relation to how different bands can be used for different purposes. This will be extremely useful in the coming months as we look at our own analysis in this course and in CASA0025, but also as part of work as we begin to use a new Earth Observation Data Hub.
+This week brought a range of new topics that we could barely scratch the surface of, however this diary entry and reading the articles discussed in @sec-1-application has really helped to shape my understanding in these areas. Before this I was very much focused on the highest spatial resolution must always be the best but it obviously isn't that clear cut. The specific use case must be considered to ensure that the correct balance of resolution (all types), spectral bands and costs is made for the expected output.
 
-Some of the methodology of both papers is still difficult for me to process, particularly around the specific analysis and calculations, but hopefully this is because it is still the first week of remote sensing. However reading these articles really helped my understanding of the use cases of both satellites and specifically their similiarities and importantly how the spectral resolution of the same bands have slight variations to be aware of. Also understanding how bands, can be combined in different ways and in different applications to produce similar images for analysis. This then helps to provide even more comparable images across a larger temporal scale as any gaps in imagery (possibly due to constraints such as scattering and in particular cloud cover) from one satellite may be able to be filled by the other.
-
-Another topic I would have liked to explore is the effect that different types of scattering has on the images captured and how any pre-processing by the agencies responsible for the data affects the images that we see.
+A key part of this is how the different spectral bands (and their wavelengths) can be used for different purposes. This will be extremely useful in the coming months as we look at our own analysis in this course and in CASA0025, but also as part of my work in Local Government as we begin to use a new Earth Observation Data Hub. So I'm looking forward to finding out more about the tools at our disposal and how identifying the right sensor's data can dictate the success of our work.
