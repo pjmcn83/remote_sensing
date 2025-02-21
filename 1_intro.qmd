@@ -10,11 +10,11 @@ As a relative newbie to remote sensing there was so much new information this we
 
 There is so many topics that could be discussed further but to focus quickly on the spectral bands. Images produced at different bands are what make up the creation of useful and relevant images. Personally I have previously attempted to use earth observation data without understanding the differences between the bands and this made the task at hand incredibly difficult and mainly involved mindlessly following guides and videos just to get a semi-readable output. So this weeks introduction to remote sensing really helped me to understand what bands relate to which information on the ground. And importantly how the different bands can be combined depending on the purpose of any analysis. The list of use cases from combining spectral bands is incredible, @eos2025 and @usgs2024 provide a succinct summary of some of the common use cases.
 
-## Application {#sec-1-application}
-
 Whilst many of the use cases available are fascinating, as this is an introduction to remote sensing it would be easy to get lost in the amount of use cases on offer. As such I have instead decided to focus on a comparison between two of the more openly available satellites, Landsat-8 and Sentinel-2.
 
-Beginning with a basic summary to provide useful context for their comparison @tbl-landsat_sentinel_comparison as prepared by @mandanici2016. Providing an initial comparison approximately a year after Sentinel-2 (S2) was launched in 2015. Landsat-8 (L8) was launched in 2013.
+## Application {#sec-1-application}
+
+Using the basic summary (@tbl-landsat_sentinel_comparison) we can quickly see key differences between Landsat-8 (LS8) and Sentinel-2 (S2) particularly the spatial resolution and number of bands. However there are six comparable bands which means we can use the data of each satellite to compare against each other. This has the bonus of greater temporal availability. Although we should be wary of subtle differences between wavelengths when making comparisons. The differences in spatial resolution should also be considered and may require resampling dependent on use case.
 
 ```{r include=FALSE}
 library(tidyverse)
@@ -37,28 +37,21 @@ comp <- read.csv(here("tables", "landsat_sentinel_comparison.csv"), check.names 
 #| tbl-cap: "Summary comparison of basic Landsat-8 and Sentinel-2 specifications @mandanici2016"
 comp
 ```
+Various methodologies can be employed to compare LS8 and S2, @mandanici2016 uses regression/correlation methods whereas @nasiri2022 complements this using visual comparisons. Both options are effective but the visual elements would be simpler to understand if used for policy makers rather than sensor comparison.
 
-We can quickly see some key differences particularly with the spatial resolution and revisit times and number of bands. However we can also see that there a range of six comparable spectral bands which means that we are able to use the data from both satellites to compare against each other. This also has the key bonus of meaning there is a greater temporal availability of data at these bands. Although we must also be wary that there are subtle difference between the wavelengths when making these comparisons. For example the Near Infrared band of Landsat-8 is 842nm whereas Sentinel-2 is 865nm. The differences in spatial resolution also need to be considered and may require resampling dependent on the specific use case.
+The statistical approach [@mandanici2016] showed a positive correlation between the corresponding bands. Although limitations identified included radiometric differences and discrepancies in reflectance value's relevance. The radiometric differences are identified as \~2.5% for all common bands (@barsi2018), the significance of which is dependent on use-case. The importance of statistical methods is highlighted by visualising differences between LS8 and S2 @fig-nasiri-fci. The S2 image is slightly darker but it is difficult to spot any key differences. Therefore at this level of analysis it could be suitable to use either sensor's data.
 
-There are various methodologies that could be employed to compare Landsat-8 and Sentinel-2, we see this with @mandanici2016 using a regression and correlation based methodology whereas @nasiri2022 complement this with a visual comparison. Both options make their point well but the visual elements would be simpler to understand for non-academic readers if these were to be used be policy makers rather than just sensor comparison.
+![Landsat-8 and Sentinel-2 image comparison - using False-colour images (R: NIR, G:red, B: green) across seasons: (a) Spring, (b) Summer and (c) Autumn. **@nasiri2022**](images/nasiri_image_comparison.webp){#fig-nasiri-fci}
 
-The more statistically focused approach of @mandanici2016 showed there was a very good correlation between the corresponding bands. Although limitations were identified including radiometric differences requiring careful evaluation and investigating discrepancies in reflectance values relevance. These radiometric differences are identified as \~2.5% for all common spectral bands (@barsi2018), the significance of this difference will be dependent on the individual use case.
-
-However the importance of statistical methods can be highlighted by visualising the differences between LS8 and S2 @fig-nasiri-fci. Apart from a slightly darker S2 image particularly in Spring this false colour image from @nasiri2022 is difficult to spot any key differences. Therefore for this level of analysis it may be suitable to use either sensor's data.
-
-![Landsat-8 and Sentinel-2 image comparison - using False-colour images (R: NIR, G:red, B: green) across seasons: (a) Spring, (b) Summer and (c) Autumn](images/nasiri_image_comparison.webp){#fig-nasiri-fci}
-
-If the use case requires more nuanced analysis then the differences in the sensors begins to have a bigger influence as we can see in @fig-nasiri-results. This is particularly evident when comparing the bottom row of images, where the area of artificial land identified by LS8 within the water body (D4) is far greater than the respective S2 image (D2). Therefore once again dependent on the specific use case we must be mindful that we compare like for like datasets in these instances.
+For more nuanced analysis the sensor's differences begin to have greater influence. Particularly evident in [@fig-nasiri-results] where artificial land identified by LS8 (DS4) within the water body is far greater than the S2 image (D2). This emphasises the significance of different use cases that comparable datasets are used.
 
 ![Comparison between the classification results of different parts of the study area. (D-1) S-2 seasonal composites, (D-2) S-2 percentile metrics, (D-3) L-8 seasonal composites, and (D-4) L-8 percentile metrics.](images/nasiri-fig5.webp){#fig-nasiri-results}
 
 ### Limitations {#sec-1-limitations}
 
-I have so far concentrated on the output comparisons between LS8 and S2 however what about some of the limitations which are evident in these comparisons.
+The work of @mandanici2016 appears less reproducible as there is less transparency about the tools used. This is likely due to the need for propitiatory applications to produce the analysis. This is also a comparison paper so the specific methodology and tools used may be seen as insignificant compared to the results. @nasiri2022 are more transparent about their use of Google Earth Engine (GEE). GEE avoids local storage issues and provides greater computing power for analysis and processing [@carrasco2019] making it accessible at a lower cost.
 
-At face value the work of @mandanici2016 appears to be a lot less reproducible as there is less transparency about the tools used. This is likely due to the need for propitiatory applications to produce the analysis. Also as this is a straight forward comparison paper the specific methodology and tools used may have been seen as insignificant compared to the results. @nasiri2022 on the other hand is more transparent about it's use of Google Earth Engine (GEE). GEE has the added bonus of avoiding local storage issues and providing greater computing power for analysis and processing [@carrasco2019] making it more accessible at a lower cost. This could be simply due to the fact that Google Earth Engine wasn't as widely used or known in 2016 as it is was 2022.
-
-Another limitation I see with both articles is the number of sample images used was low and therefore it cannot be said with absolute certainty whether the results would be replicated in other areas. Whilst Mandanici does look at multiple sites they are specifically chosen for their differing landscapes and climate. Nasiri only uses one sample area but with clearly distinguished land uses, Whilst this is useful as it identified variations in accuracy across land uses (artificial land 95-100%, bare earth 71-86%) it is not clear whether similar results would be expected in other areas of interest with a similar land cover.
+A general issue of remote sensing papers is the small samples used. Therefore it cannot be said with certainty whether results would be replicated in other areas. @mandanici2016 choose sites of differing landscapes and climate, @nasiri2022 used a single area with distinguishable land uses. Whilst useful it's not clear whether similar results are expected in other areas of interest. Although computational resource and time would restrict larger area analysis.
 
 ## Reflection {#sec-1-reflection}
 

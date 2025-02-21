@@ -24,6 +24,7 @@ format:
   html:
     theme: cosmo
     lightbox: true
+    word-count: true
   pdf:
     documentclass: scrreprt
 
