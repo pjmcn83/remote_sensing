@@ -207,12 +207,11 @@ div.csl-indent {
 <section id="sec-3-summary" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-3-summary"><span class="header-section-number">3.1</span> Summary</h2>
 <p>This week we delved deeper into remote sensing topics particularly data corrections, joining and enhancements. Lots of new terms were raised and some of the concepts were challenging to understand so it’s easiest to summarise these terms by building a <a href="#tbl-remote-sensing-glossary">Table&nbsp;<span>3.1</span></a>. A lot of these terms could have entire lectures dedicated to them so I attempt to put these into a simple terms as possible.</p>
-<p><em>sources need to be added to the caption below</em></p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="tbl-remote-sensing-glossary" class="anchored">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;3.1: Glossary of remote sensing terminology. <strong>Sources: </strong></caption>
+<caption>Table&nbsp;3.1: Glossary of remote sensing terminology. <strong>Sources: <span class="citation" data-cites="gisgeography2015">GISGeography (<a href="references.html#ref-gisgeography2015" role="doc-biblioref">2015</a>)</span>. <span class="citation" data-cites="esri2025">ESRI (<a href="references.html#ref-esri2025" role="doc-biblioref">2025</a>)</span>, <span class="citation" data-cites="usgs2025">USGS (<a href="references.html#ref-usgs2025" role="doc-biblioref">2025</a>)</span>, <span class="citation" data-cites="jaadi2024">Jaadi (<a href="references.html#ref-jaadi2024" role="doc-biblioref">2024</a>)</span>, <span class="citation" data-cites="irons1981">Irons and Petersen (<a href="references.html#ref-irons1981" role="doc-biblioref">1981</a>)</span>, <span class="citation" data-cites="wen2024">Wen et al. (<a href="references.html#ref-wen2024" role="doc-biblioref">2024</a>)</span></strong></caption>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">Term</th>
@@ -220,22 +219,6 @@ div.csl-indent {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">RBV sensor</td>
-<td style="text-align: left;">Return Beam Vidicon - A camera-based sensor used on early Landsat missions for capturing panchromatic images.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">MSS sensor</td>
-<td style="text-align: left;">Multispectral Scanner - The sensor onboard early Landsat satellites that captured data in several broad spectral bands.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Push broom</td>
-<td style="text-align: left;">A type of sensor that uses linear arrays to capture imagery as the platform moves forward, capturing a swath in one go.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Whisk broom</td>
-<td style="text-align: left;">A sensor that uses a mirror to scan the ground cross-track while capturing data one pixel at a time.</td>
-</tr>
 <tr class="odd">
 <td style="text-align: left;">Scan Line Corrector</td>
 <td style="text-align: left;">Device that compensates for motion distortions in satellite imagery caused by satellite movement.</td>
@@ -250,7 +233,7 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td style="text-align: left;">Dark Object Subtraction (DOS)</td>
-<td style="text-align: left;">A technique for atmospheric correction that finds the values of the darkest values and then subtracts the that from each pixel. Could also be termed hostogram adjustment.</td>
+<td style="text-align: left;">A technique for atmospheric correction that finds the values of the darkest values and then subtracts the that from each pixel. The simplest and mot widely used atmospheric correction technique.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Pseudo-invariant features (PIF)</td>
@@ -298,7 +281,7 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td style="text-align: left;">Digital Number (DN)</td>
-<td style="text-align: left;">The raw output value (with no units) recorded by a sensor, wuth each number indicating a range of colours, e.g. an 8 bit image has value 0 (black) to 255 (white). These represent the radiance or reflectance.</td>
+<td style="text-align: left;">The raw output value (with no units) recorded by a sensor, with each number indicating a range of colours, e.g. an 8 bit image has value 0 (black) to 255 (white). These represent the radiance or reflectance.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Radiance</td>
@@ -306,53 +289,49 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td style="text-align: left;">Surface Reflectance</td>
-<td style="text-align: left;">The fraction of incoming light that a surface reflects, corrected to account for atmospheric effects and light source.</td>
+<td style="text-align: left;">The ratio of incoming electromagnetic energy that a surface reflects, corrected to account for atmospheric effects and light source.</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Irradiance</td>
 <td style="text-align: left;">Radiation that is reaching the Earth such as from the Sun</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Mosiacking</td>
-<td style="text-align: left;">The process of combining multiple images into a single and seamless image.</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Contrast Enhancement</td>
 <td style="text-align: left;">Techniques used to improve image visibility by increasing the contrast between features.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Band ratioing</td>
 <td style="text-align: left;">Dividing the pixel values of one spectral band by another to highlight specific features (e.g., vegetation indices).</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Filtering</td>
 <td style="text-align: left;">The process of enhancing or suppressing specific spatial frequencies in an image.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Edge enhancement</td>
 <td style="text-align: left;">Techniques to highlight boundaries and transitions in imagery.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Embossing</td>
 <td style="text-align: left;">An image processing technique that simulates 3D surface relief.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Principal Comonent Analysis (PCA)</td>
-<td style="text-align: left;">A statistical technique used to transform multi-spectral data by reducing the dimensions of the data whilst retaining the key information.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Texture</td>
-<td style="text-align: left;">The spatial variation in pixel values, representing surface roughness or pattern.</td>
+<td style="text-align: left;">A technique to take a large complex dataset and reduce it's dimensionality to provide a simplified dataset whilst maintaining the significant patterns and trends. (Jaadi, 2024)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Image fusion</td>
-<td style="text-align: left;">A subset of data fusion that focuses on merging images to improve resoluton. This can be used to combine certain Landsat and Sentinel images into a single working image.</td>
+<td style="text-align: left;">Texture</td>
+<td style="text-align: left;">The spatial variation/similarity of visual patterns in pixel values, representing surface roughness or smoothness. (Irons, 1981)</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Image fusion</td>
+<td style="text-align: left;">A subset of data fusion that focuses on merging images to improve resoluton. This technique migtigates for the differences in spatial, temporaral and spectral resolutions in data collection between satelittes. So this can be used to combine certain Landsat and Sentinel images into a single working image (Wen, 2024).</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Pan Sharpen</td>
 <td style="text-align: left;">A technique used to enhance the spatial resolution of multispectral images by combining them with a high resolution panchromatic image.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Data fusion</td>
 <td style="text-align: left;">The process of combining data from multiple sources with the goal of improving accuracy and usefulness.</td>
 </tr>
@@ -497,8 +476,20 @@ div.csl-indent {
 <div id="ref-bernardo2016" class="csl-entry" role="listitem">
 Bernardo, Nariane, Fernanda Watanabe, Thanan Rodrigues, and Enner Alcântara. 2016. <span>“An Investigation into the Effectiveness of Relative and Absolute Atmospheric Correction for Retrieval the <span>TSM</span> Concentration in Inland Waters.”</span> <em>Modeling Earth Systems and Environment</em> 2 (3): 114. <a href="https://doi.org/10.1007/s40808-016-0176-9">https://doi.org/10.1007/s40808-016-0176-9</a>.
 </div>
+<div id="ref-esri2025" class="csl-entry" role="listitem">
+ESRI. 2025. <span>“<span>GIS Dictionary</span>.”</span> 2025. <a href="https://support.esri.com/en-us/gis-dictionary">https://support.esri.com/en-us/gis-dictionary</a>.
+</div>
+<div id="ref-gisgeography2015" class="csl-entry" role="listitem">
+GISGeography. 2015. <span>“What Is <span>Atmospheric Correction</span> in <span>Remote Sensing</span>?”</span> GIS Geography. November 7, 2015. <a href="https://gisgeography.com/atmospheric-correction/">https://gisgeography.com/atmospheric-correction/</a>.
+</div>
 <div id="ref-hu2011" class="csl-entry" role="listitem">
 Hu, Yong, Liangyun Liu, Lingling Liu, and Quanjun Jiao. 2011. <span>“Comparison of Absolute and Relative Radiometric Normalization Use <span>Landsat</span> Time Series Images.”</span> In <em><span>MIPPR</span> 2011: <span>Remote</span> Sensing Image Processing, Geographic Information Systems, and Other Applications</em>, edited by Faxiong Zhang and Faxiong Zhang, 8006:800616. <span>SPIE / International Society for Optics and Photonics</span>. <a href="https://doi.org/10.1117/12.902076">https://doi.org/10.1117/12.902076</a>.
+</div>
+<div id="ref-irons1981" class="csl-entry" role="listitem">
+Irons, James R, and Gary W Petersen. 1981. <span>“Texture Transforms of Remote Sensing Data.”</span> <em>Remote Sensing of Environment</em> 11 (January): 359–70. <a href="https://doi.org/10.1016/0034-4257(81)90033-X">https://doi.org/10.1016/0034-4257(81)90033-X</a>.
+</div>
+<div id="ref-jaadi2024" class="csl-entry" role="listitem">
+Jaadi. 2024. <span>“Principal <span>Component Analysis</span> (<span>PCA</span>) <span>Explained</span>.”</span> Built In. 2024. <a href="https://builtin.com/data-science/step-step-explanation-principal-component-analysis">https://builtin.com/data-science/step-step-explanation-principal-component-analysis</a>.
 </div>
 <div id="ref-mandanici2016" class="csl-entry" role="listitem">
 Mandanici, Emanuele, and Gabriele Bitelli. 2016. <span>“Preliminary <span>Comparison</span> of <span>Sentinel-2</span> and <span>Landsat</span> 8 <span>Imagery</span> for a <span>Combined Use</span>.”</span> <em>Remote Sensing</em> 8 (12, 12): 1014. <a href="https://doi.org/10.3390/rs8121014">https://doi.org/10.3390/rs8121014</a>.
@@ -511,6 +502,12 @@ Nielsen, Allan Aasbjerg. 2005. <span>“<span>AN ITERATIVE EXTENSION TO THE MAD 
 </div>
 <div id="ref-nielsen2007" class="csl-entry" role="listitem">
 ———. 2007. <span>“The <span>Regularized Iteratively Reweighted MAD Method</span> for <span>Change Detection</span> in <span>Multi-</span> and <span>Hyperspectral Data</span>.”</span> <em>IEEE Transactions on Image Processing</em> 16 (2): 463–78. <a href="https://doi.org/10.1109/TIP.2006.888195">https://doi.org/10.1109/TIP.2006.888195</a>.
+</div>
+<div id="ref-usgs2025" class="csl-entry" role="listitem">
+USGS. 2025. <span>“<span>USGS Isis</span>: <span>Glossary</span>.”</span> 2025. <a href="https://isis.astrogeology.usgs.gov/8.1.0/documents/Glossary/Glossary.html">https://isis.astrogeology.usgs.gov/8.1.0/documents/Glossary/Glossary.html</a>.
+</div>
+<div id="ref-wen2024" class="csl-entry" role="listitem">
+Wen, Yanfeng, Peng Chen, Zhenhua Zhang, and Yunzhou Li. 2024. <span>“Cross-<span>Attention-Based High Spatial-Temporal Resolution Fusion</span> of <span>Sentinel-2</span> and <span>Sentinel-3 Data</span> for <span>Ocean Water Quality Assessment</span>.”</span> <em>Remote Sensing</em> 16 (24, 24): 4781. <a href="https://doi.org/10.3390/rs16244781">https://doi.org/10.3390/rs16244781</a>.
 </div>
 </div>
 </section>

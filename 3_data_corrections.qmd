@@ -4,8 +4,6 @@
 
 This week we delved deeper into remote sensing topics particularly data corrections, joining and enhancements. Lots of new terms were raised and some of the concepts were challenging to understand so it's easiest to summarise these terms by building a @tbl-remote-sensing-glossary. A lot of these terms could have entire lectures dedicated to them so I attempt to put these into a simple terms as possible.
 
-*sources need to be added to the caption below*
-
 ```{r include=FALSE}
 library(tidyverse)
 library(knitr)
@@ -16,7 +14,6 @@ library(kableExtra)
 glos <- readxl::read_excel(here("tables", "rs_glossary.xlsx"))%>% 
   knitr::kable(booktabs = TRUE)%>% 
   kable_styling(position = "center", full_width = T)%>%
-  # any specifc row changes you want
     row_spec(.,
   row=0,
   bold = TRUE)
@@ -24,7 +21,7 @@ glos <- readxl::read_excel(here("tables", "rs_glossary.xlsx"))%>%
 
 ```{r echo=FALSE}
 #| label: tbl-remote-sensing-glossary
-#| tbl-cap: "Glossary of remote sensing terminology. **Sources: **"
+#| tbl-cap: "Glossary of remote sensing terminology. **Sources: @gisgeography2015. @esri2025, @usgs2025, @jaadi2024, @irons1981, @wen2024**"
 glos
 ```
 
