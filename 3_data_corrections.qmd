@@ -21,7 +21,7 @@ glos <- readxl::read_excel(here("tables", "rs_glossary.xlsx"))%>%
 
 ```{r echo=FALSE}
 #| label: tbl-remote-sensing-glossary
-#| tbl-cap: "Glossary of remote sensing terminology. **Sources: @gisgeography2015. @esri2025, @usgs2025, @jaadi2024, @irons1981, @wen2024**"
+#| tbl-cap: "Glossary of remote sensing terminology. <br> **Sources:** @gisgeography2015. @esri2025, @usgs2025, @jaadi2024, @irons1981, @wen2024"
 glos
 ```
 
