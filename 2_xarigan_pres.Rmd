@@ -1,6 +1,5 @@
 ---
 title: "Pleiades Neo"
-#subtitle: "<br/>with xaringan"
 author: "Paul McNicholas"
 institute: "UCL CASA"
 date: "2025/01/21 (updated: `r Sys.Date()`)"
@@ -14,7 +13,8 @@ output:
 bibliography: references.bib
 
 ---
-```{r, eval=TRUE, echo=FALSE}
+
+```{r, eval=TRUE, include=FALSE}
 library(RefManageR)
 
 BibOptions(check.entries = FALSE,
@@ -35,39 +35,48 @@ Pléiades Neo is actually a constellation of two* identical satellites
   - Pléiades Neo 3 launched 28th April 2021 
   - Pléiades Neo 4 launched 16th August 2021
   
-Very hi-resolution (VHR) commercial constellation, owned and operated by AirBus Defence and Space
+Very hi-resolution (VHR) commercial constellation
 
 Part of European Space Agency's third party missions
 ]
 .pull-right[
-Capacity to capture up to 1 million km2 of imagery per day
+Key facts:
+
+- Provider: Airbus Defence and Space
+- Satellites: 2*
+- Resolution: 30cm
+- Swath width: 14km
+- Coverage: 1000m sq km per day
 
 ```{r echo=FALSE, out.width='75%', fig.align='center'}
 knitr::include_graphics('./images/pleiades_neo_background.png')
 ```
 ]
 
-.footnote[\* there are conflicting articles  `r Citet(myBib, "eoportal2023")` stating Pléiades Neo is actually a constellation of 4 satellites, however the official Airbus and European Space Agency websites state only 2 satellites]
+.footnote[\* there are conflicting articles stating Pléiades Neo is a constellation of 4 satellites, however the official Airbus and European Space Agency websites state only 2 satellites <br>
+Sources: `r Citet(myBib, "airbus_pleiadesneo")`, `r Citet(myBib, "esa2022")`, `r Citet(myBib, "eoportal2023")`, `r Citet(myBib, "geoimage")`
+]
 ---
 
 #Technical Specification
 
 .pull-left[
-|   |   |
-|---|---|
-|Provider| Airbus Defence and Space |
-|Satellites | 2 |
-|Resolution| 30cm |
-|Swath width| 14km |
-|Bands| Panchromatic: 450-800nm |
-|| Deep Blue 400-450nm |
-|| Blue 450-520nm |
-|| Red 620-690nm |
-|| Red Edge 700-750nm |
-|| Red 620-690nm |
-|Coverage| 500 million sq km per day per satellite |
-|Altitude| 620km |
-|   |   |
+__Spectral Bands__
+
+- Panchromatic: 450-800nm
+- Deep Blue 400-450nm
+- Blue 450-520nm
+- Red 620-690nm
+- Red Edge 700-750nm
+- Red 620-690nm
+
+__Sensor comparison__ `r Citet(myBib, "sce2022")`
+
+| Sensor | Resolution | Swath Width |
+|---|---|---|
+|Pleiades Neo | Up to 0.3m |14km |
+|Landsat-8 | Up to 15m | 185km |
+|Sentinel 2 | Up to 10m | 185km |
 ]
 
 .pull-right[
@@ -75,15 +84,11 @@ __Constraints of hi-res sensors__
 
 Increased cost of capture and file size leading to increased storage and processing costs.
 
-Swath width of hi-res sensor is smaller meaning more passes of the Earth are required to capture the same area which further increases costs.
+Small swath width of hi-res sensor means more passes of the Earth required to capture the same area which further increases costs.
 
-| Sensor | Resolution | Swath Width |
-|---|---|---|
-|Pleiades Neo | Up to 0.3m |14km |
-|Landsat-8 | Up to 15m | 185km |
-|Sentinel 2 | Up to 10m | 185km |
-`r Citet(myBib, "sce2022")`
+Increased processing times due to file size and amount of images required to combine to create study area. 
 ]
+
 ---
 
 # Use Cases
@@ -104,85 +109,95 @@ Therefore I can instead talk specifically about the Camden use case which looked
 ---
 
 # Vegetation Health 1
-
 .pull-left[
-A simple RGB image to demonstrate the level of resolution available from Pléiades Neo.
+__Output 1:__ *RGB image*
 
-Individual trees are clearly visible and when zooming in vehicles are also identifiable demonstrating the power of the sensor.
-
+Demonstration of the level of resolution available from Pléiades Neo. Individual trees clearly visible and when zooming in vehicles are identifiable.
 ```{r echo=FALSE, out.width='100%'}
 knitr::include_graphics('./images/pleiades_rgb.png')
 ```
 ]
 .pull-right[
-We then produce an image using the Near-infrared, Edge-infrared and Deep Blue bands.
+__Output 2:__ *Near-infrared, Edge-infrared and Deep Blue image*
 
-This helped to really highlight where vegetation is (yellows and greens) against the more urban areas (blue).  Smaller trees are now also identifiable that weren't clearly visible in the RGB image.
-
+Highlighted where vegetation is (yellows and greens) against the urban areas (blue).  Smaller trees now identifiable.
 ```{r echo=FALSE, out.width='100%'}
 knitr::include_graphics('./images/pleiades_NIR_EIR_DeepBlue.png')
 ```
 ]
 
-These images were useful for identification purposes however the issues we faced even at this level were due to technological constraints of hosting the data on shared drives and across networks.  Plus the computational power of the machines used were not ideal as processing was very slow. 
+Used for identification purposes however faced technological constraints of hosting the data on shared drives and across networks.  Plus computational power of the machines were sub-standard as processing was very slow. 
 ---
 
 # Vegetation Health 2
+__Output 3:__ *Normalised Difference Vegetation Index (NDVI) image.*
 
-The next step was to produce and compare a Normalised Difference Vegetation Index (NDVI) to understand vegetation health of the Borough between the two latest years available to us.
+To understand vegetation health between the two latest years available.
+
+The two years were compared and could see a clear drop in the vegetation health in the second year.
 
 .pull-left[
-```{r echo=FALSE, out.width='100%'}
+```{r echo=FALSE, out.width='100%', fig.cap='NDVI 2022'}
 knitr::include_graphics('./images/ndvi2022.png')
 ```
-NDVI image 2022]
+]
 .pull-right[
-```{r echo=FALSE, out.width='100%'}
+```{r echo=FALSE, out.width='100%', fig.cap='NDVI 2023'}
 knitr::include_graphics('./images/ndvi2023.png')
 ```
-NDVI image 2023]
+]
 
-This allowed us to compare between the two years and see a clear drop in the vegetation health in the second year.
-
-There could be a multitude of factors that caused this drop but these were not investigated as the main purpose of the pilot was to identify potential use cases rather than full analysis.
-
+**Source:** `r Citet(myBib, "camden2024")`
 ---
 
 # Limitations 
 
+__Expertise__
+
 At the time of the pilot Camden lacked the time, resource, technology and expertise to analyse the EO data in a timely manner.  As such this was as far as the pilot got so further temporal data could not accessed for further comparison.
+
+__Data__
 
 Other issues we faced included accessing images for the right time of year. The images shown were from Autumn 2022 and 2023, therefore not the optimal time to accurately represent vegetation health.  Ideally images from Spring/early Summer would be used however the presence of excessive cloud cover in these images prevented their use.
 
+__Cross referencing__
+
+Time delays meant the pilot ended before we could enhance the analysis by identifying potential variables that could have affected the results. These could have included high temperatures, drought or flood events, and tree works affecting vegetation cover. 
+
 ---
 
-# The future
-### Pléiades Neo Next
-.pull-left[
-In April 2024 AirBus annouced the Pléiades Neo Next programme.
+# The future - Pléiades Neo Next
 
-Few details are currently available but it Will provide native 20cm resolution imagery.
+.pull-left[
+In April 2024 AirBus announced the Pléiades Neo Next programme.
+
+Few details are currently available but it will provide native 20cm resolution imagery.
 
 To launch in next few years and continue till at least 2040.
 
+Source: `r Citet(myBib, "airbus2024a")`, `r Citet(myBib, "airbus2024b")`
+
 ----
-AirBus and others continue to push commercial EO capabilities with higher resolution capture.  This be seen by looking at the increase in high resolution sensors that are in orbit `r Citet(myBib, "belward2015")`
+AirBus and others continue to push commercial EO capabilities with higher resolution capture.  This be seen by looking at the increase in high resolution sensors that are in orbit.
 ]
 
 .pull-right[
 ```{r echo=FALSE, out.width='100%'}
 knitr::include_graphics('./images/sensors_per_res_chart.jpg')
 ```
+Source: `r Citet(myBib, "belward2015")`
 ]
 ---
 
 # Reflection
 
-Pléiades Neo is already a very powerful constellation and with Pléiades Neo Next to follow in the next few years with an increased resolution there is a clear trend to constant push to higher resolutions.
+Pléiades Neo is already a very powerful constellation and with Pléiades Neo Next to follow in the next few years with an increased resolution there is a clear trend to constantly push to higher resolutions.
 
-However, whilst increased spatial resolution is no doubt a good thing in certain cases we must be mindful of the use cases of such data.  For example for land use classification sub 20cm resolution is excessive. Whereas if we need to identify individual trees, vehicles then this increased resolution can bring greater accuracy to analysis and policy making.
+However, whilst increased spatial resolution is no doubt a good thing, in certain cases we must be mindful of the use cases of such data.  For example for land use classification sub 20cm resolution is excessive. Whereas if we need to identify individual trees or vehicles then this increased resolution can bring greater accuracy to analysis and policy making.
 
 There is work ongoing that aims to make higher resolution imagery more accessible, particularly in UK Local Government, so we could be seeing a shift to more EO based decision making in Local Government in the coming years. Although access to data is one thing and possessing and implementing the skills to effectively make use of this is another issue entirely.
+
+Particularly in Local Government there is also a prevalence of not optimal computational power which could severely hinder the feasiblity of using data at such a high resolution.
 
 ---
 
