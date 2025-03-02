@@ -56,6 +56,8 @@ Possibly natural disaster and agriculture.
 
 ## Reflection {#sec-5-reflection}
 
+GEE is undoubtedly an exceptional tool which is a great enabler for remote sensing analysis but also of data visualisation with the ease at which apps can be built and published. I'm really looking forward to delving deeper into GEE functionality over the coming weeks and in particularly building applications. Taking this further I'd like to harness the computational power of GEE to identify tree cover and vegetation health in London and the affects this has on air quality. Also to use this to as the basis to explore what measures are effective in improving air quality. This would also help to investigate how useful GEE is "out the box" to deal with issues at a more localised level. In @fig-gee_adv_lim we saw some limitations including only allowing 250gb of user data so if we wanted to use very hi-res commercial satellite data within GEE then this will cause issues especially if wanted to be produce time series analysis that would be especially useful in the use case mentioned.
+
 Summarise benefits over limitations
 and where GEE could be used for Local Government
 
