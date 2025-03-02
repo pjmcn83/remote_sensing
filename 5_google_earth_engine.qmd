@@ -1,0 +1,86 @@
+# Google Earth Engine
+
+## Summary {#sec-5-summary}
+
+Google Earth Engine (GEE) is a cloud product specifically for geospatial analysis. It combines a huge catalogue of satellite and geospatial data with a platform for simplified analysis with the benefit of using Google computational power for data processing at large scale (@google2024). A key part of GEE is that it is designed to make sharing of results and reproducibility easy for researchers with only limited technical expertise (@gorelick2017). GEE provides both a code engine environment and a Python based API that enables automation of process.
+
+We will briefly look at a few of the main advantages/limitations of GEE in this section but the full range of benefits are too numerous to cover here so are summarised in @fig-gee_adv_lim along with some of the limitations.
+
+![Google Earth Engine main advantages and limitatations of big-geo data processing. **@amani2020**](images/gee_advantages_limitations.png){#fig-gee_adv_lim fig-align="center"}
+
+### Terminology {#sec-5-terminology}
+
+At a very besic level there are some terminology and functions that differ to that which we are used to in other remote sensing applications (@fig-gee-terminology).  However this is a relatively minor issue although it could still cause initial confusion and put users off persevering with GEE despite the huge benefits it can bring. Thankfully there is very comprehensive user guides and tutorials available from Google. Also due to the popularity of GEE there is huge amount user-derived content available. 
+
+| Remote Sensing Term/function | GEE Equivalent |
+| --- | --- |
+| Raster | Image |
+| Image Stack | ImageCollection |
+| Vector | Feature |
+| Vector data | FeatureCollection |
+| Join | .distFilter, .spatialFilter |
+
+### Server side processing {sec-5-ssprocessing}
+
+Rather than running locally, GEE uses server-side processing to leverage Google's cloud computing power. This reduces hardware limitations and allows for scalability, often using parallel processing. However, this passes management of the execution process to Google, meaning users have limited visibility and control over optimisation. Whilst this is not an issue for most users, expert researchers who require full control over computational workflows may find this restrictive.
+
+### Processing Speed {#sec-5-speed}
+
+Specifically looking at time savings that can be made by harnessing the computational power of GEE. @hansen2013 states that it took 100 hours to process ~707 terrabytes of Landsat images for global forest change detection in GEE. Without cloud-based processing it would have taken a million hours (@amani2020). That does not even account for the process of retrieval, preparation and storage of those images. For many organisations this wouldn't even be feasible to process without GEE's cloud infrastructure.
+
+Some of the applications of GEE will be explored further in @sec-5-application including @hansen2013.
+
+## Application {#sec-5-application}
+
+One critique that could be aimed at many GEE apps is that do not necessarily analyse the use case they demonstrate. However considering the openness and availability of GEE it cannot just be considered an academic tool but also an operational one @kumar2018 so this is not 
+
+In a key example of GEE application, Global Forest Change (@fig-forest) we clearly see the forest loss across the globe.  However the app itself despite showing a few case study example locations does not look the deeper causes of forest change. Having said that the associated article (@hansen2013) provides some possible causes again in a subset of locations. When considering the global extents and the sheer number of factors that affect localised forest change this is not necessarily surprising.
+
+Does a great job of highlighting forest change however does this ignore 
+
+::: {#fig-forest fig-width="100%"}
+::: {.iframe}
+<iframe src="https://glad.earthengine.app/view/global-forest-change#bl=off;old=off;dl=1;lon=20;lat=10;zoom=3;;" 
+        width="100%" height="600" style="border: none;"></iframe>
+:::
+Global Forest Change Viewer. **Source:** @glad
+:::
+
+
+
+Compare some use cases and the benefits/limitations caused by GEE over other applications and use GEE apps as examples.
+
+Try not to focus on NDVI as mentioned a lot already.
+
+Possibly natural disaster and agriculture.
+
+## Reflection {#sec-5-reflection}
+
+Summarise benefits over limitations
+and where GEE could be used for Local Government
+
+
+-------
+
+
+
+----Talk about specific good things but covering the potential limitations as well
+
+- Server side processing prevents some useful; RS functions being used 
+- code engine v python api
+- data loading - using native gee data but limited to 250gb of user data
+- no SAR data
+
+"In the Google data center, CPUs are abundant. In this environment raw efficiency, while still important, is not as important as the ability to efficiently distribute complex computations across many machines and much of Earth Engine's performance is due to its ability to marshal and manage a large number of CPUs on a user's behalf. There is a hard ultimate upper limit on the efficiencies that can be achieved through code or query optimization, but there are fewer limitations on the additional computing resources that can be brought to bear." @gorelick2017
+
+"One of the benefits of using Earth Engine is that the user is almost completely shielded from the details of working in a parallel processing environment. The system handles and hides nearly every aspect of how a computation is managed, including resource allocation, parallelism, data distribution, and retries. These decisions are purely administrative, and none of them can affect the result of a query, only the speed at which it is produced. The price of liberation from these details is that the user is unable to influence them: the system is entirely responsible for deciding how to run a computation. This results in some interesting challenges in both the design and use of the system." @gorelick2017
+
+"Batch jobs are each run independently making it much harder for them to negatively impact each other, but to prevent monopolization, jobs are still managed using a shared queuing system, and under heavy load, jobs may wait in the queue until resources become available."
+
+
+"Google Earth Engine is a cloud-based platform that makes it easy to access high-performance computing resources for processing very large geospatial datasets, without having to suffer the IT pains currently surrounding either. Additionally, and unlike most supercomputing centers, Earth Engine is also designed to help researchers easily disseminate their results to other researchers, policy makers, NGOs, field workers, and even the general public. Once an algorithm has been developed on Earth Engine, users can produce systematic data products or deploy interactive applications backed by Earth Engine's resources, without needing to be an expert in application development, web programming or HTML."
+
+"according to Hansen et al. \[8\], it only took 100 h to process 654 178 Landsat-7 images (about 707 terabytes) within GEE and produce a global map of forests. This was reported as a great achievement because if they did not use GEE, this process would have taken a million hours to complete." @amani2020
+
+"it is not possible to mix Earth Engine library calls with standard local processing idioms. This includes some basic language features like conditionals and loops that depend on computed values, as well as standard numerical packages. Users can still use these external tools, but they cannot apply them directly to Earth Engine proxy objects, sometimes leading to confusion."
+

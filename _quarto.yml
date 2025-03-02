@@ -13,6 +13,7 @@ book:
     - 2_xarigan_pres.html
     - 3_data_corrections.qmd
     - 4_policy_applications.qmd
+    - 5_google_earth_engine.qmd
     - references.qmd
   reader-mode: true
 
