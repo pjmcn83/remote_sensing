@@ -32,11 +32,9 @@ Some of the applications of GEE will be explored further in @sec-5-application i
 
 ## Application {#sec-5-application}
 
-One critique that could be aimed at many GEE apps is that do not necessarily analyse the use case they demonstrate. However considering the openness and availability of GEE it cannot just be considered an academic tool but also an operational one @kumar2018 so this is not 
+One critique that could be aimed at GEE apps is that they do not always analyse the use case they demonstrate. However considering the openness and availability of GEE it cannot be considered as just an academic tool but also an operational one (@kumar2018). In fact it provides a very simple way to quickly build an application to raise awareness/profile of a global issue whilst providing the tools for further research into the cause at a local level.
 
-In a key example of GEE application, Global Forest Change (@fig-forest) we clearly see the forest loss across the globe.  However the app itself despite showing a few case study example locations does not look the deeper causes of forest change. Having said that the associated article (@hansen2013) provides some possible causes again in a subset of locations. When considering the global extents and the sheer number of factors that affect localised forest change this is not necessarily surprising.
-
-Does a great job of highlighting forest change however does this ignore 
+In a key example of a GEE application, Global Forest Change (@fig-forest) we clearly see the forest loss across the globe.  However the app itself despite showing a few case study example locations does not identify any deeper cause of forest change. The associated article (@hansen2013) however does provide some possible causes, again in a subset of locations. When considering the global extents and the sheer number of factors including local policies that affect localised forest change this is not necessarily surprising. For academics or researchers this provides the background and visualisations to highlight specific areas of concerns and to focus deeper research and analysis in these areas. Whilst for a non-academic audience it provides the tools to focus resources in the right locations without needing to research and develop the potentially costly tools themselves. This is evident in areas like the Amazon rainforest where Hansen et al's work has been used to fight illegal deforestation (@gonzales2019).
 
 ::: {#fig-forest fig-width="100%"}
 ::: {.iframe}
@@ -46,43 +44,8 @@ Does a great job of highlighting forest change however does this ignore
 Global Forest Change Viewer. **Source:** @glad
 :::
 
-
-
-Compare some use cases and the benefits/limitations caused by GEE over other applications and use GEE apps as examples.
-
-Try not to focus on NDVI as mentioned a lot already.
-
-Possibly natural disaster and agriculture.
+Clearly GEE is useful for analysis that occurs over time but what where near real-time information is required such as in disaster management. The user is constrained to the revisit time of the data supplied by GEE, such as Landsat ~16 days or Sentinel-2 ~5 days. Whilst it is still key to analyse pre and post-disaster imagery such as available through HazMapper (@scheip2021) it does not provide the real-time data that can make the difference in effective disaster management. In such instances use of commercially available SAR data (to prevent cloud cover issues) with a lower revisit time could be preferred. The issue with this is the response is often proportional to the available resources for that area, so less affluent and lower profile areas may not have resources to provide access this data (@scheip2021), therefore tools such as HazMapper may be the only way to aid management of the disaster so are priceless in these instances.
 
 ## Reflection {#sec-5-reflection}
 
 GEE is undoubtedly an exceptional tool which is a great enabler for remote sensing analysis but also of data visualisation with the ease at which apps can be built and published. I'm really looking forward to delving deeper into GEE functionality over the coming weeks and in particularly building applications. Taking this further I'd like to harness the computational power of GEE to identify tree cover and vegetation health in London and the affects this has on air quality. Also to use this to as the basis to explore what measures are effective in improving air quality. This would also help to investigate how useful GEE is "out the box" to deal with issues at a more localised level. In @fig-gee_adv_lim we saw some limitations including only allowing 250gb of user data so if we wanted to use very hi-res commercial satellite data within GEE then this will cause issues especially if wanted to be produce time series analysis that would be especially useful in the use case mentioned.
-
-Summarise benefits over limitations
-and where GEE could be used for Local Government
-
-
--------
-
-
-
-----Talk about specific good things but covering the potential limitations as well
-
-- Server side processing prevents some useful; RS functions being used 
-- code engine v python api
-- data loading - using native gee data but limited to 250gb of user data
-- no SAR data
-
-"In the Google data center, CPUs are abundant. In this environment raw efficiency, while still important, is not as important as the ability to efficiently distribute complex computations across many machines and much of Earth Engine's performance is due to its ability to marshal and manage a large number of CPUs on a user's behalf. There is a hard ultimate upper limit on the efficiencies that can be achieved through code or query optimization, but there are fewer limitations on the additional computing resources that can be brought to bear." @gorelick2017
-
-"One of the benefits of using Earth Engine is that the user is almost completely shielded from the details of working in a parallel processing environment. The system handles and hides nearly every aspect of how a computation is managed, including resource allocation, parallelism, data distribution, and retries. These decisions are purely administrative, and none of them can affect the result of a query, only the speed at which it is produced. The price of liberation from these details is that the user is unable to influence them: the system is entirely responsible for deciding how to run a computation. This results in some interesting challenges in both the design and use of the system." @gorelick2017
-
-"Batch jobs are each run independently making it much harder for them to negatively impact each other, but to prevent monopolization, jobs are still managed using a shared queuing system, and under heavy load, jobs may wait in the queue until resources become available."
-
-
-"Google Earth Engine is a cloud-based platform that makes it easy to access high-performance computing resources for processing very large geospatial datasets, without having to suffer the IT pains currently surrounding either. Additionally, and unlike most supercomputing centers, Earth Engine is also designed to help researchers easily disseminate their results to other researchers, policy makers, NGOs, field workers, and even the general public. Once an algorithm has been developed on Earth Engine, users can produce systematic data products or deploy interactive applications backed by Earth Engine's resources, without needing to be an expert in application development, web programming or HTML."
-
-"according to Hansen et al. \[8\], it only took 100 h to process 654 178 Landsat-7 images (about 707 terabytes) within GEE and produce a global map of forests. This was reported as a great achievement because if they did not use GEE, this process would have taken a million hours to complete." @amani2020
-
-"it is not possible to mix Earth Engine library calls with standard local processing idioms. This includes some basic language features like conditionals and loops that depend on computed values, as well as standard numerical packages. Users can still use these external tools, but they cannot apply them directly to Earth Engine proxy objects, sometimes leading to confusion."
-
