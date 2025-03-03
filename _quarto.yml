@@ -19,7 +19,6 @@ book:
 
 bibliography: 
   - references.bib
-#  - pleiades_references.bib
 
 format:
   html:
