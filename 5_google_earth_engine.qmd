@@ -10,25 +10,36 @@ We will briefly look at a few of the main advantages/limitations of GEE in this 
 
 ### Terminology {#sec-5-terminology}
 
-At a very besic level there are some terminology and functions that differ to that which we are used to in other remote sensing applications (@fig-gee-terminology).  However this is a relatively minor issue although it could still cause initial confusion and put users off persevering with GEE despite the huge benefits it can bring. Thankfully there is very comprehensive user guides and tutorials available from Google. Also due to the popularity of GEE there is huge amount user-derived content available. 
+At a very basic level there are some terminology and functions that differ to that which we are used to in other remote sensing applications (@tbl-gee-terminology).  However this is a relatively minor issue although it could still cause initial confusion and put users off persevering with GEE despite the huge benefits it can bring. Thankfully there is very comprehensive user guides and tutorials available from Google. Also due to the popularity of GEE there is huge amount user-derived content available. 
 
-| Remote Sensing Term/function | GEE Equivalent |
-| --- | --- |
-| Raster | Image |
-| Image Stack | ImageCollection |
-| Vector | Feature |
-| Vector data | FeatureCollection |
-| Join | .distFilter, .spatialFilter |
+```{r include=FALSE}
+library(tidyverse)
+library(knitr)
+library(here)
+library(kableExtra)
 
-### Server side processing {sec-5-ssprocessing}
+#read in data
+gee <- readxl::read_excel(here("tables", "gee_terminology.xlsx"))%>% 
+  knitr::kable(booktabs = TRUE)%>% 
+  kable_styling(position = "center", full_width = T)%>%
+    row_spec(.,
+  row=0,
+  bold = TRUE)
+```
+
+```{r echo=FALSE}
+#| label: tbl-gee-terminology
+#| tbl-cap: "Comparison of Remote Sensing and GEE Terminology"
+gee
+```
+
+### Server side processing {#sec-5-ssprocessing}
 
 Rather than running locally, GEE uses server-side processing to leverage Google's cloud computing power. This reduces hardware limitations and allows for scalability, often using parallel processing. However, this passes management of the execution process to Google, meaning users have limited visibility and control over optimisation. Whilst this is not an issue for most users, expert researchers who require full control over computational workflows may find this restrictive.
 
 ### Processing Speed {#sec-5-speed}
 
 Specifically looking at time savings that can be made by harnessing the computational power of GEE. @hansen2013 states that it took 100 hours to process ~707 terrabytes of Landsat images for global forest change detection in GEE. Without cloud-based processing it would have taken a million hours (@amani2020). That does not even account for the process of retrieval, preparation and storage of those images. For many organisations this wouldn't even be feasible to process without GEE's cloud infrastructure.
-
-Some of the applications of GEE will be explored further in @sec-5-application including @hansen2013.
 
 ## Application {#sec-5-application}
 

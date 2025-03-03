@@ -81,6 +81,9 @@ div.csl-indent {
   }
 }</script>
 
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 </head>
 
@@ -180,7 +183,7 @@ div.csl-indent {
   <li><a href="#sec-5-summary" id="toc-sec-5-summary" class="nav-link active" data-scroll-target="#sec-5-summary"><span class="header-section-number">5.1</span> Summary</a>
   <ul class="collapse">
   <li><a href="#sec-5-terminology" id="toc-sec-5-terminology" class="nav-link" data-scroll-target="#sec-5-terminology"><span class="header-section-number">5.1.1</span> Terminology</a></li>
-  <li><a href="#server-side-processing-sec-5-ssprocessing" id="toc-server-side-processing-sec-5-ssprocessing" class="nav-link" data-scroll-target="#server-side-processing-sec-5-ssprocessing"><span class="header-section-number">5.1.2</span> Server side processing {sec-5-ssprocessing}</a></li>
+  <li><a href="#sec-5-ssprocessing" id="toc-sec-5-ssprocessing" class="nav-link" data-scroll-target="#sec-5-ssprocessing"><span class="header-section-number">5.1.2</span> Server side processing</a></li>
   <li><a href="#sec-5-speed" id="toc-sec-5-speed" class="nav-link" data-scroll-target="#sec-5-speed"><span class="header-section-number">5.1.3</span> Processing Speed</a></li>
   </ul></li>
   <li><a href="#sec-5-application" id="toc-sec-5-application" class="nav-link" data-scroll-target="#sec-5-application"><span class="header-section-number">5.2</span> Application</a></li>
@@ -220,46 +223,54 @@ div.csl-indent {
 </div>
 <section id="sec-5-terminology" class="level3" data-number="5.1.1">
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="sec-5-terminology"><span class="header-section-number">5.1.1</span> Terminology</h3>
-<p>At a very besic level there are some terminology and functions that differ to that which we are used to in other remote sensing applications (<span class="quarto-unresolved-ref">?fig-gee-terminology</span>). However this is a relatively minor issue although it could still cause initial confusion and put users off persevering with GEE despite the huge benefits it can bring. Thankfully there is very comprehensive user guides and tutorials available from Google. Also due to the popularity of GEE there is huge amount user-derived content available.</p>
-<table class="table">
+<p>At a very basic level there are some terminology and functions that differ to that which we are used to in other remote sensing applications (<a href="#tbl-gee-terminology">Table&nbsp;<span>5.1</span></a>). However this is a relatively minor issue although it could still cause initial confusion and put users off persevering with GEE despite the huge benefits it can bring. Thankfully there is very comprehensive user guides and tutorials available from Google. Also due to the popularity of GEE there is huge amount user-derived content available.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-gee-terminology" class="anchored">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table&nbsp;5.1: Comparison of Remote Sensing and GEE Terminology</caption>
 <thead>
 <tr class="header">
-<th>Remote Sensing Term/function</th>
-<th>GEE Equivalent</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">Remote Sensing Term/function</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">GEE Equivalent</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Raster</td>
-<td>Image</td>
+<td style="text-align: left;">Raster</td>
+<td style="text-align: left;">Image</td>
 </tr>
 <tr class="even">
-<td>Image Stack</td>
-<td>ImageCollection</td>
+<td style="text-align: left;">Image Stack</td>
+<td style="text-align: left;">ImageCollection</td>
 </tr>
 <tr class="odd">
-<td>Vector</td>
-<td>Feature</td>
+<td style="text-align: left;">Vector</td>
+<td style="text-align: left;">Feature</td>
 </tr>
 <tr class="even">
-<td>Vector data</td>
-<td>FeatureCollection</td>
+<td style="text-align: left;">Vector data</td>
+<td style="text-align: left;">FeatureCollection</td>
 </tr>
 <tr class="odd">
-<td>Join</td>
-<td>.distFilter, .spatialFilter</td>
+<td style="text-align: left;">Join</td>
+<td style="text-align: left;">.distFilter, .spatialFilter</td>
 </tr>
 </tbody>
 </table>
+</div>
+
+
+</div>
+</div>
 </section>
-<section id="server-side-processing-sec-5-ssprocessing" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="server-side-processing-sec-5-ssprocessing"><span class="header-section-number">5.1.2</span> Server side processing {sec-5-ssprocessing}</h3>
+<section id="sec-5-ssprocessing" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="sec-5-ssprocessing"><span class="header-section-number">5.1.2</span> Server side processing</h3>
 <p>Rather than running locally, GEE uses server-side processing to leverage Google’s cloud computing power. This reduces hardware limitations and allows for scalability, often using parallel processing. However, this passes management of the execution process to Google, meaning users have limited visibility and control over optimisation. Whilst this is not an issue for most users, expert researchers who require full control over computational workflows may find this restrictive.</p>
 </section>
 <section id="sec-5-speed" class="level3" data-number="5.1.3">
 <h3 data-number="5.1.3" class="anchored" data-anchor-id="sec-5-speed"><span class="header-section-number">5.1.3</span> Processing Speed</h3>
 <p>Specifically looking at time savings that can be made by harnessing the computational power of GEE. <span class="citation" data-cites="hansen2013">Hansen et al. (<a href="references.html#ref-hansen2013" role="doc-biblioref">2013</a>)</span> states that it took 100 hours to process ~707 terrabytes of Landsat images for global forest change detection in GEE. Without cloud-based processing it would have taken a million hours (<span class="citation" data-cites="amani2020">Amani et al. (<a href="references.html#ref-amani2020" role="doc-biblioref">2020</a>)</span>). That does not even account for the process of retrieval, preparation and storage of those images. For many organisations this wouldn’t even be feasible to process without GEE’s cloud infrastructure.</p>
-<p>Some of the applications of GEE will be explored further in <a href="#sec-5-application"><span>Section&nbsp;5.2</span></a> including <span class="citation" data-cites="hansen2013">Hansen et al. (<a href="references.html#ref-hansen2013" role="doc-biblioref">2013</a>)</span>.</p>
 </section>
 </section>
 <section id="sec-5-application" class="level2" data-number="5.2">
