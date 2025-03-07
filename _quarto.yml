@@ -14,6 +14,7 @@ book:
     - 3_data_corrections.qmd
     - 4_policy_applications.qmd
     - 5_google_earth_engine.qmd
+    - 6_classification_I.qmd
     - references.qmd
   reader-mode: true
 

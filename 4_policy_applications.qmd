@@ -97,9 +97,7 @@ Firstly how is remote sensing used currently? The short answer is....*barely at 
 
 Even some projects overseen by GLA such as their Climate Risk analysis are outsourced to companies like Bloomberg Associates (@gla2024) rather than procuring, processing and analysing the data in house.
 
-
-> *"The view from above offers repeatable, independent, and cost effective ways for the digital (and smart) era to obtain relevant knowledge for social processes, ecological states, and technological innovations* — **@wellmann2020**
-
+> *"The view from above offers repeatable, independent, and cost effective ways for the digital (and smart) era to obtain relevant knowledge for social processes, ecological states, and technological innovations* — @wellmann2020
 
 The cost of implementing remote sensing techniques into smaller boroughs is seen as outweighing the benefits. However as the quote from @wellmann2020 alludes to remotely sensed data is beginning to move more mainstream particularly with Google Earth Engine which removes much of the associated overheads.
 

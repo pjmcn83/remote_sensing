@@ -215,5 +215,47 @@
     "title": "5  Google Earth Engine",
     "section": "5.1 Summary",
     "text": "5.1 Summary\nGoogle Earth Engine (GEE) is a cloud product specifically for geospatial analysis. It combines a huge catalogue of satellite and geospatial data with a platform for simplified analysis with the benefit of using Google computational power for data processing at large scale (Google (2024)). A key part of GEE is that it is designed to make sharing of results and reproducibility easy for researchers with only limited technical expertise (Gorelick et al. (2017)). GEE provides both a code engine environment and a Python based API that enables automation of process.\nWe will briefly look at a few of the main advantages/limitations of GEE in this section but the full range of benefits are too numerous to cover here so are summarised in Figure 5.1 along with some of the limitations.\n\n\n\nFigure 5.1: Google Earth Engine main advantages and limitatations of big-geo data processing. Amani et al. (2020)\n\n\n\n5.1.1 Terminology\nAt a very basic level there are some terminology and functions that differ to that which we are used to in other remote sensing applications (Table 5.1). However this is a relatively minor issue although it could still cause initial confusion and put users off persevering with GEE despite the huge benefits it can bring. Thankfully there is very comprehensive user guides and tutorials available from Google. Also due to the popularity of GEE there is huge amount user-derived content available.\n\n\n\n\nTable 5.1: Comparison of Remote Sensing and GEE Terminology\n\n\nRemote Sensing Term/function\nGEE Equivalent\n\n\n\n\nRaster\nImage\n\n\nImage Stack\nImageCollection\n\n\nVector\nFeature\n\n\nVector data\nFeatureCollection\n\n\nJoin\n.distFilter, .spatialFilter\n\n\n\n\n\n\n\n\n\n\n5.1.2 Server side processing\nRather than running locally, GEE uses server-side processing to leverage Google’s cloud computing power. This reduces hardware limitations and allows for scalability, often using parallel processing. However, this passes management of the execution process to Google, meaning users have limited visibility and control over optimisation. Whilst this is not an issue for most users, expert researchers who require full control over computational workflows may find this restrictive.\n\n\n5.1.3 Processing Speed\nSpecifically looking at time savings that can be made by harnessing the computational power of GEE. Hansen et al. (2013) states that it took 100 hours to process ~707 terrabytes of Landsat images for global forest change detection in GEE. Without cloud-based processing it would have taken a million hours (Amani et al. (2020)). That does not even account for the process of retrieval, preparation and storage of those images. For many organisations this wouldn’t even be feasible to process without GEE’s cloud infrastructure."
+  },
+  {
+    "objectID": "6_classification.html#sec-6-summary",
+    "href": "6_classification.html#sec-6-summary",
+    "title": "6  Classification",
+    "section": "6.1 Summary",
+    "text": "6.1 Summary"
+  },
+  {
+    "objectID": "6_classification.html#sec-6-application",
+    "href": "6_classification.html#sec-6-application",
+    "title": "6  Classification",
+    "section": "6.2 Application",
+    "text": "6.2 Application"
+  },
+  {
+    "objectID": "6_classification.html#sec-6-reflection",
+    "href": "6_classification.html#sec-6-reflection",
+    "title": "6  Classification",
+    "section": "6.3 Reflection",
+    "text": "6.3 Reflection"
+  },
+  {
+    "objectID": "6_classification_I.html#sec-6-summary",
+    "href": "6_classification_I.html#sec-6-summary",
+    "title": "6  Classification I",
+    "section": "6.1 Summary",
+    "text": "6.1 Summary\nThis week we looked at how classification can help build important use cases for remote sensing. Starting with some practical use cases and then onto the theory and methods to produce outputs before practically applying this using Google Earth Engine. A recent example of remote sensing classification was that of the French authorities which identified undeclared private swimming pools and reclaimed €10m in revenue that otherwise wouldn’t have been possible (BBC (2022)). The driver for this was in response to drought, other use cases include illegal logging (Gonzales (2019)) and forest fires (Hansen et al. (2013)).\n\n6.1.1 Classification\nTraditionally there were two main forms of classification, according to Abburu and Babu Golla (2015) these can be defined as:\n\nSupervised: requires human input to build a training set with the accuracy highly dependent on the samples used for training . Methods used include Support Vector Machine (SVM) and Random Forest.\nUnsupervised: uses clustering methods to group pixels into clusters then an analyst assigns labels to the clusters. Most commonly used techniques are ISODATA, SVM and K-means\n\n\n6.1.1.1 Object Based Image Analysis\nBoth the traditional methods use pixel-based processing whereas in the late 1990s object based classification has become increasingly popular through Object Based Image Analysis (OBIA).\nOBIA groups pixels into an object type which are then as training data for the actual analysis.\nThe basic steps for all these forms of classification are expertly summarised by GISGeography (2014) and the steps involved can by shown in ?fig-classification-infographic which also shows how OBIA has increased in popularity since 2006.\n There is a clear trend of increased OBIA use from 2012 and it’s unfortunate that an updated version of this infographic is not available. However\nWhy is OVIA preferred and is this correct??"
+  },
+  {
+    "objectID": "6_classification_I.html#sec-6-application",
+    "href": "6_classification_I.html#sec-6-application",
+    "title": "6  Classification I",
+    "section": "6.2 Application",
+    "text": "6.2 Application\nLook at specific methods of classification with brief description:\nClassification and regression trees (CART)\nRegression Trees\nCross Validation\nRandom Forest\nSupport Vector Machine\nCreate summary table of these methods and their preferred use cases plus pros and cons using specific examples"
+  },
+  {
+    "objectID": "6_classification_I.html#sec-6-reflection",
+    "href": "6_classification_I.html#sec-6-reflection",
+    "title": "6  Classification I",
+    "section": "6.3 Reflection",
+    "text": "6.3 Reflection\ntalk about where to use this - example mentioned in previous weeks\nhow to identify specific method to use - blackbox graph for consideration\n\n\n\n\nAbburu, Sunitha, and Suresh Babu Golla. 2015. “Satellite Image Classification Methods and Techniques: A Review.” International Journal of Computer Applications 119 (8): 20–25. https://doi.org/10.5120/21088-3779.\n\n\nBBC. 2022. “Undeclared Pools in France Uncovered by AI Technology.” BBC News: Europe, August 29, 2022. https://www.bbc.com/news/world-europe-62717599.\n\n\nGISGeography. 2014. “Image Classification Techniques in Remote Sensing.” GIS Geography. May 2, 2014. https://gisgeography.com/image-classification-techniques-remote-sensing/.\n\n\nGonzales, Jenny. 2019. “How a Sheriff in Brazil Is Using Satellites to Stop Deforestation.” Mongabay Environmental News. April 12, 2019. https://news.mongabay.com/2019/04/how-a-sheriff-in-brazil-is-using-satellites-to-stop-deforestation/.\n\n\nHansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, et al. 2013. “High-Resolution Global Maps of 21st-Century Forest Cover Change.” Science 342 (6160): 850–53. https://doi.org/10.1126/science.1244693."
   }
 ]
