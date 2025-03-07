@@ -8,9 +8,8 @@ This week we looked at how classification can help build important use cases for
 
 Traditionally there were two main forms of classification, according to @abburu2015 these can be defined as:
 
- - *Supervised*: requires human input to build a training set with the accuracy highly dependent on the samples used for training . Methods used include Support Vector Machine (SVM) and Random Forest.
- - *Unsupervised*: uses clustering methods to group pixels into clusters then an analyst assigns labels to the clusters. Most commonly used techniques are ISODATA, SVM and K-means
- 
+-   *Supervised*: requires human input to build a training set with the accuracy highly dependent on the samples used for training . Methods used include Support Vector Machine (SVM) and Random Forest.
+-   *Unsupervised*: uses clustering methods to group pixels into clusters then an analyst assigns labels to the clusters. Most commonly used techniques are ISODATA, SVM and K-means
 
 #### Object Based Image Analysis
 
@@ -20,11 +19,11 @@ OBIA groups pixels into an object type which are then as training data for the a
 
 The basic steps for all these forms of classification are expertly summarised by @gisgeography2014 and the steps involved can by shown in @fig-classification-infographic which also shows how OBIA has increased in popularity since 2006.
 
-![Image classification infographic depicting the steps of each classification method (supervised, unsupervised and Object Based Image Analysis), the timeline of their inception and the usage of each method between 2006 and 2013. **Source: @gisgeography2014**](images/image-classification-infographic.png){#fig-classification-infographic fig-align="center"}
+![Image classification infographic depicting the steps of each classification method (supervised, unsupervised and Object Based Image Analysis), the timeline of their inception and the usage of each method between 2006 and 2013. Source: @gisgeography2014](images/image-classification-infographic.png){#fig-classification-infographic fig-align="center"}
+
 There is a clear trend of increased OBIA use from 2012 and it's unfortunate that an updated version of this infographic is not available. However
 
 Why is OVIA preferred and is this correct??
-
 
 ## Application {#sec-6-application}
 
