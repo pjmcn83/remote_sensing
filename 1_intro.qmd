@@ -37,11 +37,12 @@ comp <- read.csv(here("tables", "landsat_sentinel_comparison.csv"), check.names 
 #| tbl-cap: "Summary comparison of basic Landsat-8 and Sentinel-2 specifications @mandanici2016"
 comp
 ```
+
 Various methodologies can be employed to compare LS8 and S2, @mandanici2016 uses regression/correlation methods whereas @nasiri2022 complements this using visual comparisons. Both options are effective but the visual elements would be simpler to understand if used for policy makers rather than sensor comparison.
 
 The statistical approach [@mandanici2016] showed a positive correlation between the corresponding bands. Although limitations identified included radiometric differences and discrepancies in reflectance value's relevance. The radiometric differences are identified as \~2.5% for all common bands (@barsi2018), the significance of which is dependent on use-case. The importance of statistical methods is highlighted by visualising differences between LS8 and S2 @fig-nasiri-fci. The S2 image is slightly darker but it is difficult to spot any key differences. Therefore at this level of analysis it could be suitable to use either sensor's data.
 
-![Landsat-8 and Sentinel-2 image comparison - using False-colour images (R: NIR, G:red, B: green) across seasons: (a) Spring, (b) Summer and (c) Autumn. **@nasiri2022**](images/nasiri_image_comparison.webp){#fig-nasiri-fci}
+![Landsat-8 and Sentinel-2 image comparison - using False-colour images (R: NIR, G:red, B: green) across seasons: (a) Spring, (b) Summer and (c) Autumn. @nasiri2022](images/nasiri_image_comparison.webp){#fig-nasiri-fci}
 
 For more nuanced analysis the sensor's differences begin to have greater influence. Particularly evident in [@fig-nasiri-results] where artificial land identified by LS8 (DS4) within the water body is far greater than the S2 image (D2). This emphasises the significance of different use cases that comparable datasets are used.
 

@@ -6,11 +6,11 @@ Google Earth Engine (GEE) is a cloud product specifically for geospatial analysi
 
 We will briefly look at a few of the main advantages/limitations of GEE in this section but the full range of benefits are too numerous to cover here so are summarised in @fig-gee_adv_lim along with some of the limitations.
 
-![Google Earth Engine main advantages and limitatations of big-geo data processing. **@amani2020**](images/gee_advantages_limitations.png){#fig-gee_adv_lim fig-align="center"}
+![Google Earth Engine main advantages and limitatations of big-geo data processing. @amani2020](images/gee_advantages_limitations.png){#fig-gee_adv_lim fig-align="center"}
 
 ### Terminology {#sec-5-terminology}
 
-At a very basic level there are some terminology and functions that differ to that which we are used to in other remote sensing applications (@tbl-gee-terminology).  However this is a relatively minor issue although it could still cause initial confusion and put users off persevering with GEE despite the huge benefits it can bring. Thankfully there is very comprehensive user guides and tutorials available from Google. Also due to the popularity of GEE there is huge amount user-derived content available. 
+At a very basic level there are some terminology and functions that differ to that which we are used to in other remote sensing applications (@tbl-gee-terminology). However this is a relatively minor issue although it could still cause initial confusion and put users off persevering with GEE despite the huge benefits it can bring. Thankfully there is very comprehensive user guides and tutorials available from Google. Also due to the popularity of GEE there is huge amount user-derived content available.
 
 ```{r include=FALSE}
 library(tidyverse)
@@ -39,23 +39,25 @@ Rather than running locally, GEE uses server-side processing to leverage Google'
 
 ### Processing Speed {#sec-5-speed}
 
-Specifically looking at time savings that can be made by harnessing the computational power of GEE. @hansen2013 states that it took 100 hours to process ~707 terrabytes of Landsat images for global forest change detection in GEE. Without cloud-based processing it would have taken a million hours (@amani2020). That does not even account for the process of retrieval, preparation and storage of those images. For many organisations this wouldn't even be feasible to process without GEE's cloud infrastructure.
+Specifically looking at time savings that can be made by harnessing the computational power of GEE. @hansen2013 states that it took 100 hours to process \~707 terrabytes of Landsat images for global forest change detection in GEE. Without cloud-based processing it would have taken a million hours (@amani2020). That does not even account for the process of retrieval, preparation and storage of those images. For many organisations this wouldn't even be feasible to process without GEE's cloud infrastructure.
 
 ## Application {#sec-5-application}
 
 One critique that could be aimed at GEE apps is that they do not always analyse the use case they demonstrate. However considering the openness and availability of GEE it cannot be considered as just an academic tool but also an operational one (@kumar2018). In fact it provides a very simple way to quickly build an application to raise awareness/profile of a global issue whilst providing the tools for further research into the cause at a local level.
 
-In a key example of a GEE application, Global Forest Change (@fig-forest) we clearly see the forest loss across the globe.  However the app itself despite showing a few case study example locations does not identify any deeper cause of forest change. The associated article (@hansen2013) however does provide some possible causes, again in a subset of locations. When considering the global extents and the sheer number of factors including local policies that affect localised forest change this is not necessarily surprising. For academics or researchers this provides the background and visualisations to highlight specific areas of concerns and to focus deeper research and analysis in these areas. Whilst for a non-academic audience it provides the tools to focus resources in the right locations without needing to research and develop the potentially costly tools themselves. This is evident in areas like the Amazon rainforest where Hansen et al's work has been used to fight illegal deforestation (@gonzales2019).
+In a key example of a GEE application, Global Forest Change (@fig-forest) we clearly see the forest loss across the globe. However the app itself despite showing a few case study example locations does not identify any deeper cause of forest change. The associated article (@hansen2013) however does provide some possible causes, again in a subset of locations. When considering the global extents and the sheer number of factors including local policies that affect localised forest change this is not necessarily surprising. For academics or researchers this provides the background and visualisations to highlight specific areas of concerns and to focus deeper research and analysis in these areas. Whilst for a non-academic audience it provides the tools to focus resources in the right locations without needing to research and develop the potentially costly tools themselves. This is evident in areas like the Amazon rainforest where Hansen et al's work has been used to fight illegal deforestation (@gonzales2019).
 
 ::: {#fig-forest fig-width="100%"}
-::: {.iframe}
-<iframe src="https://glad.earthengine.app/view/global-forest-change#bl=off;old=off;dl=1;lon=20;lat=10;zoom=3;;" 
-        width="100%" height="600" style="border: none;"></iframe>
+::: iframe
+<iframe src="https://glad.earthengine.app/view/global-forest-change#bl=off;old=off;dl=1;lon=20;lat=10;zoom=3;;" width="100%" height="600" style="border: none;">
+
+</iframe>
 :::
+
 Global Forest Change Viewer. **Source:** @glad
 :::
 
-Clearly GEE is useful for analysis that occurs over time but what where near real-time information is required such as in disaster management. The user is constrained to the revisit time of the data supplied by GEE, such as Landsat ~16 days or Sentinel-2 ~5 days. Whilst it is still key to analyse pre and post-disaster imagery such as available through HazMapper (@scheip2021) it does not provide the real-time data that can make the difference in effective disaster management. In such instances use of commercially available SAR data (to prevent cloud cover issues) with a lower revisit time could be preferred. The issue with this is the response is often proportional to the available resources for that area, so less affluent and lower profile areas may not have resources to provide access this data (@scheip2021), therefore tools such as HazMapper may be the only way to aid management of the disaster so are priceless in these instances.
+Clearly GEE is useful for analysis that occurs over time but what where near real-time information is required such as in disaster management. The user is constrained to the revisit time of the data supplied by GEE, such as Landsat \~16 days or Sentinel-2 \~5 days. Whilst it is still key to analyse pre and post-disaster imagery such as available through HazMapper (@scheip2021) it does not provide the real-time data that can make the difference in effective disaster management. In such instances use of commercially available SAR data (to prevent cloud cover issues) with a lower revisit time could be preferred. The issue with this is the response is often proportional to the available resources for that area, so less affluent and lower profile areas may not have resources to provide access this data (@scheip2021), therefore tools such as HazMapper may be the only way to aid management of the disaster so are priceless in these instances.
 
 ## Reflection {#sec-5-reflection}
 
