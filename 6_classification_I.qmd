@@ -11,22 +11,12 @@ Traditionally there were two main forms of classification, according to @abburu2
 -   *Supervised*: requires human input to build a training set with the accuracy highly dependent on the samples used for training . Techniques used include Support Vector Machine (SVM) and Random Forest.
 -   *Unsupervised*: uses clustering methods to group pixels into clusters then an analyst assigns labels to the clusters. Most commonly used techniques are ISODATA and K-means clustering.
 
-#### Object Based Image Analysis {#sec-6-sum-obia}
-
-Both the traditional methods use pixel-based processing whereas in the late 1990s object based classification has become increasingly popular through Object Based Image Analysis (OBIA).
-
-OBIA groups pixels into an object type which are then used as training data for the actual analysis.
-
-The basic steps for all these forms of classification are expertly summarised by @gisgeography2014 and the steps involved can by shown in @fig-classification-infographic which also shows how OBIA has increased in popularity since 2006.
-
-![Image classification infographic depicting the steps of each classification method (supervised, unsupervised and Object Based Image Analysis), the timeline of their inception and the usage of each method between 2006 and 2013. Source: @gisgeography2014](images/image-classification-infographic.png){#fig-classification-infographic fig-align="center"}
-
-There is a clear trend of increased OBIA use from 2012 and it's unfortunate that an updated version of this infographic is not available. However this does illustrate a shift toward OBIA, this is due to higher accuracy results and classifications especially in high-resolution imagery. This approach is more closely aligned to the human visual interpretation of images rather than a pixel based approach and the key to this is segmentation before classification takes place.
+---------*add detail to supervised vs unsupervised*-----------
 
 
 ## Application {#sec-6-application}
 
-Image classification has a vast array of use cases as mentioned previously, however lets look a few examples to compare pixel based approaches to object based.
+Image classification has a vast array of use cases as mentioned previously (@sec-6-summary), however lets look a few examples that compare pixel-based approaches to object-based.
 
 The pixel based approaches includes minimum distance and maximum likelihood algorithms whereas the segmentation approach used by OBIA allows for consideration of colour, scale and texture (@amalisana2017).  Pixel based is often cited as producing a "salt and pepper" output which equates to more noise as individual pixels can be misclassified. Using the segmentation of OBIA this effect is greatly reduced and build a clearer picture of how an area is built (@fig-pixel-v-object). Here we can see how much clearer the classification of the object based approach is and particularly it's accuracy at identifying the Cisadane river running through the city which is not visible at all in the pixel-based output. @amalisana2017 state that pixel based classifications calculated that the accuracy of object based classification was 82.15% where as pixel based only 61.481%. 
 

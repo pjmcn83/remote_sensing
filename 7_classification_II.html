@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CASA0023 Remote Sensing - Learning Diary - 1&nbsp; Introduction to Remote Sensing</title>
+<title>CASA0023 Remote Sensing - Learning Diary - 7&nbsp; Classification II</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,8 +49,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./2_portfolio.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./6_classification_I.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,9 +81,6 @@ div.csl-indent {
   }
 }</script>
 
-<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
 
 </head>
 
@@ -96,7 +93,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Remote Sensing</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./7_classification_II.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classification II</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -136,7 +133,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1_intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./1_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Remote Sensing</span></span></a>
   </div>
 </li>
@@ -172,7 +169,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./7_classification_II.html" class="sidebar-item-text sidebar-link">
+  <a href="./7_classification_II.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classification II</span></span></a>
   </div>
 </li>
@@ -192,12 +189,12 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-1-summary" id="toc-sec-1-summary" class="nav-link active" data-scroll-target="#sec-1-summary"><span class="header-section-number">1.1</span> Summary</a></li>
-  <li><a href="#sec-1-application" id="toc-sec-1-application" class="nav-link" data-scroll-target="#sec-1-application"><span class="header-section-number">1.2</span> Application</a>
+  <li><a href="#sec-7-summary" id="toc-sec-7-summary" class="nav-link active" data-scroll-target="#sec-7-summary"><span class="header-section-number">7.1</span> Summary</a>
   <ul class="collapse">
-  <li><a href="#sec-1-limitations" id="toc-sec-1-limitations" class="nav-link" data-scroll-target="#sec-1-limitations"><span class="header-section-number">1.2.1</span> Limitations</a></li>
+  <li><a href="#sec-7-sum-class" id="toc-sec-7-sum-class" class="nav-link" data-scroll-target="#sec-7-sum-class"><span class="header-section-number">7.1.1</span> Classification type</a></li>
   </ul></li>
-  <li><a href="#sec-1-reflection" id="toc-sec-1-reflection" class="nav-link" data-scroll-target="#sec-1-reflection"><span class="header-section-number">1.3</span> Reflection</a></li>
+  <li><a href="#sec-7-application" id="toc-sec-7-application" class="nav-link" data-scroll-target="#sec-7-application"><span class="header-section-number">7.2</span> Application</a></li>
+  <li><a href="#sec-7-reflection" id="toc-sec-7-reflection" class="nav-link" data-scroll-target="#sec-7-reflection"><span class="header-section-number">7.3</span> Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -206,7 +203,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Remote Sensing</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Classification II</span></h1>
 </div>
 
 
@@ -221,112 +218,47 @@ div.csl-indent {
 
 </header>
 
-<section id="sec-1-summary" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="sec-1-summary"><span class="header-section-number">1.1</span> Summary</h2>
-<p>As a relative newbie to remote sensing there was so much new information this week that it’s very difficult to choose even a few things to talk about without writing an whole essay. Therefore I have decided that the best way to summarise this would be through a mind map <a href="#fig-rsintro">Figure&nbsp;<span>1.1</span></a>.</p>
-<div id="fig-rsintro" class="quarto-figure quarto-figure-center anchored">
+<section id="sec-7-summary" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-7-summary"><span class="header-section-number">7.1</span> Summary</h2>
+<section id="sec-7-sum-class" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="sec-7-sum-class"><span class="header-section-number">7.1.1</span> Classification type</h3>
+<p>Pre-classified vs Self-classified</p>
+<section id="sec-7-sum-obia" class="level4" data-number="7.1.1.1">
+<h4 data-number="7.1.1.1" class="anchored" data-anchor-id="sec-7-sum-obia"><span class="header-section-number">7.1.1.1</span> Object Based Image Analysis</h4>
+<p>Last week (<a href="6_classification_I.html#sec-6-summary"><span>Section&nbsp;6.1</span></a>) we looked at using the more traditional approach of pixel-based classification whereas since the late 1990s object based classification has become increasingly popular through Object Based Image Analysis (OBIA).</p>
+<p>OBIA groups pixels into an object type which are then used as training data for the actual analysis.</p>
+<p>The basic steps for all these forms of classification are expertly summarised by <span class="citation" data-cites="gisgeography2014">GISGeography (<a href="references.html#ref-gisgeography2014" role="doc-biblioref">2014</a>)</span> and the steps involved can by shown in <a href="#fig-classification-infographic">Figure&nbsp;<span>7.1</span></a> which also shows how OBIA has increased in popularity since 2006.</p>
+<div id="fig-classification-infographic" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="images/RS_intro_mindmap.png"><img src="images/RS_intro_mindmap.png" class="img-fluid figure-img" width="800"></a></p>
+<p><img src="images/image-classification-infographic.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;7.1: Image classification infographic depicting the steps of each classification method (supervised, unsupervised and Object Based Image Analysis), the timeline of their inception and the usage of each method between 2006 and 2013. Source: <span class="citation" data-cites="gisgeography2014">GISGeography (<a href="references.html#ref-gisgeography2014" role="doc-biblioref">2014</a>)</span></figcaption>
 </figure>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;1.1: Introduction to remote sensing mind-map</figcaption>
-</figure>
-</div>
-<p>There is so many topics that could be discussed further but to focus quickly on the spectral bands. Images produced at different bands are what make up the creation of useful and relevant images. Personally I have previously attempted to use earth observation data without understanding the differences between the bands and this made the task at hand incredibly difficult and mainly involved mindlessly following guides and videos just to get a semi-readable output. So this weeks introduction to remote sensing really helped me to understand what bands relate to which information on the ground. And importantly how the different bands can be combined depending on the purpose of any analysis. The list of use cases from combining spectral bands is incredible, <span class="citation" data-cites="eos2025">EOS Data Analytics (<a href="references.html#ref-eos2025" role="doc-biblioref">2025</a>)</span> and <span class="citation" data-cites="usgs2024">USGS (<a href="references.html#ref-usgs2024" role="doc-biblioref">2024</a>)</span> provide a succinct summary of some of the common use cases.</p>
-<p>Whilst many of the use cases available are fascinating, as this is an introduction to remote sensing it would be easy to get lost in the amount of use cases on offer. As such I have instead decided to focus on a comparison between two of the more openly available satellites, Landsat-8 and Sentinel-2.</p>
-</section>
-<section id="sec-1-application" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="sec-1-application"><span class="header-section-number">1.2</span> Application</h2>
-<p>Using the basic summary (<a href="#tbl-landsat_sentinel_comparison">Table&nbsp;<span>1.1</span></a>) we can quickly see key differences between Landsat-8 (LS8) and Sentinel-2 (S2) particularly the spatial resolution and number of bands. However there are six comparable bands which means we can use the data of each satellite to compare against each other. This has the bonus of greater temporal availability. Although we should be wary of subtle differences between wavelengths when making comparisons. The differences in spatial resolution should also be considered and may require resampling dependent on use case.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="tbl-landsat_sentinel_comparison" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;1.1: Summary comparison of basic Landsat-8 and Sentinel-2 specifications <span class="citation" data-cites="mandanici2016">Mandanici and Bitelli (<a href="references.html#ref-mandanici2016" role="doc-biblioref">2016</a>)</span></caption>
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">Satellite</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">SpatialResolution</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">SwathWidth</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">Sensor</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">RevisitTime</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">NumberOfBands</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">ComparableBands</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Landsat-8</td>
-<td style="text-align: left;">30m</td>
-<td style="text-align: left;">185km</td>
-<td style="text-align: left;">Operational Land Imager (OLI)</td>
-<td style="text-align: left;">16 days</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: left;">blue: 485 nm, green: 563 nm, red: 655 nm, NIR: 865 nm, short-wave infrared 1 (SWIR1): 1610 nm, SWIR2: 2200 nm</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Sentinel-2</td>
-<td style="text-align: left;">up to 10m</td>
-<td style="text-align: left;">290km</td>
-<td style="text-align: left;">Multispectral Instruments (MSI)</td>
-<td style="text-align: left;">5 days</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">blue: 490 nm, green: 560 nm, red: 665 nm, NIR: 842 nm, SWIR1: 1910 nm, and SWIR2: 2190 nm</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-
-</div>
-</div>
-<p>Various methodologies can be employed to compare LS8 and S2, <span class="citation" data-cites="mandanici2016">Mandanici and Bitelli (<a href="references.html#ref-mandanici2016" role="doc-biblioref">2016</a>)</span> uses regression/correlation methods whereas <span class="citation" data-cites="nasiri2022">Nasiri et al. (<a href="references.html#ref-nasiri2022" role="doc-biblioref">2022</a>)</span> complements this using visual comparisons. Both options are effective but the visual elements would be simpler to understand if used for policy makers rather than sensor comparison.</p>
-<p>The statistical approach <span class="citation" data-cites="mandanici2016">(<a href="references.html#ref-mandanici2016" role="doc-biblioref">Mandanici and Bitelli 2016</a>)</span> showed a positive correlation between the corresponding bands. Although limitations identified included radiometric differences and discrepancies in reflectance value’s relevance. The radiometric differences are identified as ~2.5% for all common bands (<span class="citation" data-cites="barsi2018">Barsi et al. (<a href="references.html#ref-barsi2018" role="doc-biblioref">2018</a>)</span>), the significance of which is dependent on use-case. The importance of statistical methods is highlighted by visualising differences between LS8 and S2 <a href="#fig-nasiri-fci">Figure&nbsp;<span>1.2</span></a>. The S2 image is slightly darker but it is difficult to spot any key differences. Therefore at this level of analysis it could be suitable to use either sensor’s data.</p>
-<div id="fig-nasiri-fci" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/nasiri_image_comparison.webp" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1.2: Landsat-8 and Sentinel-2 image comparison - using False-colour images (R: NIR, G:red, B: green) across seasons: (a) Spring, (b) Summer and (c) Autumn. <span class="citation" data-cites="nasiri2022">Nasiri et al. (<a href="references.html#ref-nasiri2022" role="doc-biblioref">2022</a>)</span></figcaption>
-</figure>
-</div>
-<p>For more nuanced analysis the sensor’s differences begin to have greater influence. Particularly evident in <a href="#fig-nasiri-results">Figure&nbsp;<span>1.3</span></a> where artificial land identified by LS8 (DS4) within the water body is far greater than the S2 image (D2). This emphasises the significance of different use cases that comparable datasets are used.</p>
-<div id="fig-nasiri-results" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/nasiri-fig5.webp" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1.3: Comparison between the classification results of different parts of the study area. (D-1) S-2 seasonal composites, (D-2) S-2 percentile metrics, (D-3) L-8 seasonal composites, and (D-4) L-8 percentile metrics.</figcaption>
-</figure>
-</div>
-<section id="sec-1-limitations" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="sec-1-limitations"><span class="header-section-number">1.2.1</span> Limitations</h3>
-<p>The work of <span class="citation" data-cites="mandanici2016">Mandanici and Bitelli (<a href="references.html#ref-mandanici2016" role="doc-biblioref">2016</a>)</span> appears less reproducible as there is less transparency about the tools used. This is likely due to the need for propitiatory applications to produce the analysis. This is also a comparison paper so the specific methodology and tools used may be seen as insignificant compared to the results. <span class="citation" data-cites="nasiri2022">Nasiri et al. (<a href="references.html#ref-nasiri2022" role="doc-biblioref">2022</a>)</span> are more transparent about their use of Google Earth Engine (GEE). GEE avoids local storage issues and provides greater computing power for analysis and processing <span class="citation" data-cites="carrasco2019">(<a href="references.html#ref-carrasco2019" role="doc-biblioref">Carrasco et al. 2019</a>)</span> making it accessible at a lower cost.</p>
-<p>A general issue of remote sensing papers is the small samples used. Therefore it cannot be said with certainty whether results would be replicated in other areas. <span class="citation" data-cites="mandanici2016">Mandanici and Bitelli (<a href="references.html#ref-mandanici2016" role="doc-biblioref">2016</a>)</span> choose sites of differing landscapes and climate, <span class="citation" data-cites="nasiri2022">Nasiri et al. (<a href="references.html#ref-nasiri2022" role="doc-biblioref">2022</a>)</span> used a single area with distinguishable land uses. Whilst useful it’s not clear whether similar results are expected in other areas of interest. Although computational resource and time would restrict larger area analysis.</p>
+<p>There is a clear trend of increased OBIA use from 2012 and it’s unfortunate that an updated version of this infographic is not available. However this does illustrate a shift toward OBIA, this is due to higher accuracy results and classifications especially in high-resolution imagery. This approach is more closely aligned to the human visual interpretation of images rather than a pixel based approach and the key to this is segmentation before classification takes place.</p>
 </section>
 </section>
-<section id="sec-1-reflection" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="sec-1-reflection"><span class="header-section-number">1.3</span> Reflection</h2>
-<p>This week brought a range of new topics that we could barely scratch the surface of, however this diary entry and reading the articles discussed in <a href="#sec-1-application"><span>Section&nbsp;1.2</span></a> has really helped to shape my understanding in these areas. Before this I was very much focused on the highest spatial resolution must always be the best but it obviously isn’t that clear cut. The specific use case must be considered to ensure that the correct balance of resolution (all types), spectral bands and costs is made for the expected output.</p>
-<p>A key part of this is how the different spectral bands (and their wavelengths) can be used for different purposes. This will be extremely useful in the coming months as we look at our own analysis in this course and in CASA0025, but also as part of my work in Local Government as we begin to use a new Earth Observation Data Hub. So I’m looking forward to finding out more about the tools at our disposal and how identifying the right sensor’s data can dictate the success of our work.</p>
+</section>
+<section id="sec-7-application" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-7-application"><span class="header-section-number">7.2</span> Application</h2>
+<p>Image classification has a vast array of use cases as mentioned previously, however lets concentrate on to comparison between pixel based approaches and object based.</p>
+<p>The pixel based approaches includes minimum distance and maximum likelihood algorithms whereas the segmentation approach used by OBIA allows for consideration of colour, scale and texture (<span class="citation" data-cites="amalisana2017">Amalisana, Rokhmatullah, and Hernina (<a href="references.html#ref-amalisana2017" role="doc-biblioref">2017</a>)</span>). Pixel based is often cited as producing a “salt and pepper” output which equates to more noise as individual pixels can be misclassified. Using the segmentation of OBIA this effect is greatly reduced and builds a clearer picture of how an area is built (<span class="quarto-unresolved-ref">?fig-pixel-v-object</span>). Here we can see how much clearer the classification of the object based approach is and particularly it’s accuracy at identifying the Cisadane river running through the city which is not visible at all in the pixel-based output. <span class="citation" data-cites="amalisana2017">Amalisana, Rokhmatullah, and Hernina (<a href="references.html#ref-amalisana2017" role="doc-biblioref">2017</a>)</span> state that pixel based classifications calculated that the accuracy of object based classification was 82.15% where as pixel based only 61.481%.</p>
+<p>———<em>add caveat about accuracy figures</em>————-</p>
+<p><img src="images/pixel_v_object_classification.png" id="fig-pixel-v-object" class="img-fluid" data-fig-align="center" alt="Pixel-based versus object-based classification of Bogor City in 2016. Source:"> For general land cover we’ve seen a clear example where OBIA out-performs pixel-based however there are other examples where pixel-based may be the preferred option. Picking the study of wetlands and the work of <span class="citation" data-cites="norris2024">Norris et al. (<a href="references.html#ref-norris2024" role="doc-biblioref">2024</a>)</span> where they found using Random Forest classifiers on both pixel and object-based approach that pixel-based was more accurate. This could be attribute to a few variables but most likely the small study area and the number of small-sized plants at the study sites. They also state the key importance of selection of input features, as an vegetation based study it is best to use the images at times of year where the vegetation is developed or flowering.</p>
+<p>So whilst, OBIA appeared to be the obvious choice for classification we must always consider the use case as well as other variables such as image collection dates, spatial resolution and the specific study aims. Overall we must ensure that the use case is clearly defined before finalising methodology or perhaps compare the results ourselves in our research to ensure that the right option guides our decision making.</p>
+</section>
+<section id="sec-7-reflection" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-7-reflection"><span class="header-section-number">7.3</span> Reflection</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-barsi2018" class="csl-entry" role="listitem">
-Barsi, Julia A., Bahjat Alhammoud, Jeffrey Czapla-Myers, Ferran Gascon, Md. Obaidul Haque, Morakot Kaewmanee, Larry Leigh, and Brian L. Markham. 2018. <span>“Sentinel-<span>2A MSI</span> and <span>Landsat-8 OLI</span> Radiometric Cross Comparison over Desert Sites.”</span> <em>European Journal of Remote Sensing</em> 51 (1): 822–37. <a href="https://doi.org/10.1080/22797254.2018.1507613">https://doi.org/10.1080/22797254.2018.1507613</a>.
+<div id="ref-amalisana2017" class="csl-entry" role="listitem">
+Amalisana, Birohmatin, Rokhmatullah, and Revi Hernina. 2017. <span>“Land <span>Cover Analysis</span> by <span>Using Pixel-Based</span> and <span>Object-Based Image Classification Method</span> in <span>Bogor</span>.”</span> <em>IOP Conference Series: Earth and Environmental Science</em> 98 (1): 012005. <a href="https://doi.org/10.1088/1755-1315/98/1/012005">https://doi.org/10.1088/1755-1315/98/1/012005</a>.
 </div>
-<div id="ref-carrasco2019" class="csl-entry" role="listitem">
-Carrasco, Luis, Aneurin W. O’Neil, R. Daniel Morton, and Clare S. Rowland. 2019. <span>“Evaluating <span>Combinations</span> of <span>Temporally Aggregated Sentinel-1</span>, <span>Sentinel-2</span> and <span>Landsat</span> 8 for <span>Land Cover Mapping</span> with <span>Google Earth Engine</span>.”</span> <em>Remote Sensing</em> 11 (3, 3): 288. <a href="https://doi.org/10.3390/rs11030288">https://doi.org/10.3390/rs11030288</a>.
+<div id="ref-gisgeography2014" class="csl-entry" role="listitem">
+GISGeography. 2014. <span>“Image <span>Classification Techniques</span> in <span>Remote Sensing</span>.”</span> GIS Geography. May 2, 2014. <a href="https://gisgeography.com/image-classification-techniques-remote-sensing/">https://gisgeography.com/image-classification-techniques-remote-sensing/</a>.
 </div>
-<div id="ref-eos2025" class="csl-entry" role="listitem">
-EOS Data Analytics. 2025. <span>“Satellite <span>Band Combinations</span>: <span>Analytical Methods For Imagery</span>.”</span> 2025. <a href="https://eos.com/make-an-analysis/">https://eos.com/make-an-analysis/</a>.
-</div>
-<div id="ref-mandanici2016" class="csl-entry" role="listitem">
-Mandanici, Emanuele, and Gabriele Bitelli. 2016. <span>“Preliminary <span>Comparison</span> of <span>Sentinel-2</span> and <span>Landsat</span> 8 <span>Imagery</span> for a <span>Combined Use</span>.”</span> <em>Remote Sensing</em> 8 (12, 12): 1014. <a href="https://doi.org/10.3390/rs8121014">https://doi.org/10.3390/rs8121014</a>.
-</div>
-<div id="ref-nasiri2022" class="csl-entry" role="listitem">
-Nasiri, Vahid, Azade Deljouei, Fardin Moradi, Seyed Mohammad Moein Sadeghi, and Stelian Alexandru Borz. 2022. <span>“Land <span>Use</span> and <span>Land Cover Mapping Using Sentinel-2</span>, <span>Landsat-8 Satellite Images</span>, and <span>Google Earth Engine</span>: <span>A Comparison</span> of <span>Two Composition Methods</span>.”</span> <em>Remote Sensing</em> 14 (9, 9): 1977. <a href="https://doi.org/10.3390/rs14091977">https://doi.org/10.3390/rs14091977</a>.
-</div>
-<div id="ref-usgs2024" class="csl-entry" role="listitem">
-USGS. 2024. <span>“What Are the Best <span>Landsat</span> Spectral Bands for Use in My Research? | <span>U</span>.<span>S</span>. <span>Geological Survey</span>.”</span> March 19, 2024. <a href="https://www.usgs.gov/faqs/what-are-best-landsat-spectral-bands-use-my-research">https://www.usgs.gov/faqs/what-are-best-landsat-spectral-bands-use-my-research</a>.
+<div id="ref-norris2024" class="csl-entry" role="listitem">
+Norris, Gregory S., Armand LaRocque, Brigitte Leblon, Myriam A. Barbeau, and Alan R. Hanson. 2024. <span>“Comparing <span>Pixel-</span> and <span>Object-Based Approaches</span> for <span>Classifying Multispectral Drone Imagery</span> of a <span>Salt Marsh Restoration</span> and <span>Reference Site</span>.”</span> <em>Remote Sensing</em> 16 (6, 6): 1049. <a href="https://doi.org/10.3390/rs16061049">https://doi.org/10.3390/rs16061049</a>.
 </div>
 </div>
 </section>
@@ -567,13 +499,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="./6_classification_I.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Classification I</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./2_portfolio.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Portfolio</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
