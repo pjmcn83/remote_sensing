@@ -220,7 +220,7 @@ div.csl-indent {
 
 <section id="sec-6-summary" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="sec-6-summary"><span class="header-section-number">6.1</span> Summary</h2>
-<p>This week we looked at how classification can help build important use cases for remote sensing. Starting with some practical use cases and then onto the theory and methods to produce outputs before practically applying this using Google Earth Engine. A recent example of remote sensing classification was that of the French authorities which identified undeclared private swimming pools and reclaimed €10m in revenue that otherwise wouldn’t have been possible (<span class="citation" data-cites="bbc2022">BBC (<a href="references.html#ref-bbc2022" role="doc-biblioref">2022</a>)</span>). The driver for this was in response to drought, other use cases include illegal logging (<span class="citation" data-cites="gonzales2019">Gonzales (<a href="references.html#ref-gonzales2019" role="doc-biblioref">2019</a>)</span>) and forest fires (<span class="citation" data-cites="hansen2013">Hansen et al. (<a href="references.html#ref-hansen2013" role="doc-biblioref">2013</a>)</span>).</p>
+<p>This week we looked at how classification can help build important use cases for remote sensing. Starting with some practical use cases and then onto the theory and methods to produce outputs before practically applying this using Google Earth Engine. A recent example of remote sensing classification was that of the French authorities which identified undeclared private swimming pools and reclaimed €10m in revenue that otherwise wouldn’t have been possible (<span class="citation" data-cites="bbc2022">BBC (<a href="references.html#ref-bbc2022" role="doc-biblioref">2022</a>)</span>). The driver for this was in response to major drought, other use cases include illegal logging (<span class="citation" data-cites="gonzales2019">Gonzales (<a href="references.html#ref-gonzales2019" role="doc-biblioref">2019</a>)</span>) and forest fires (<span class="citation" data-cites="hansen2013">Hansen et al. (<a href="references.html#ref-hansen2013" role="doc-biblioref">2013</a>)</span>).</p>
 <section id="sec-6-sum-class" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="sec-6-sum-class"><span class="header-section-number">6.1.1</span> Classification</h3>
 <p>Traditionally there were two main forms of classification, according to <span class="citation" data-cites="abburu2015">Abburu and Babu Golla (<a href="references.html#ref-abburu2015" role="doc-biblioref">2015</a>)</span> these can be defined as:</p>
@@ -228,14 +228,39 @@ div.csl-indent {
 <li><em>Supervised</em>: requires human input to build a training set with the accuracy highly dependent on the samples used for training . Techniques used include Support Vector Machine (SVM) and Random Forest.</li>
 <li><em>Unsupervised</em>: uses clustering methods to group pixels into clusters then an analyst assigns labels to the clusters. Most commonly used techniques are ISODATA and K-means clustering.</li>
 </ul>
-<p>———<em>add detail to supervised vs unsupervised</em>———–</p>
+<p>I had planned to conduct a comparison between supervised and unsupervised classification but <span class="citation" data-cites="gisgeography2016">GISGeography (<a href="references.html#ref-gisgeography2016" role="doc-biblioref">2016</a>)</span> have already produced a very good and clear summary of these methods (<a href="#fig-class-comp">Figure&nbsp;<span>6.1</span></a>).</p>
+<div id="fig-class-comp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/classification_comparison.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;6.1: Table highlighting the differences between unsupervised and supervised classification. <strong>Source: <span class="citation" data-cites="gisgeography2016">GISGeography (<a href="references.html#ref-gisgeography2016" role="doc-biblioref">2016</a>)</span></strong></figcaption>
+</figure>
+</div>
+<p>Picking out some key elements of this, the accuracy of supervised classification is usually more accurate due to the human input of the classification, however this presumes a level of knowledge of the study area in question which may not always be possible.</p>
+<section id="sec-7-sum-obia" class="level4" data-number="6.1.1.1">
+<h4 data-number="6.1.1.1" class="anchored" data-anchor-id="sec-7-sum-obia"><span class="header-section-number">6.1.1.1</span> Object Based Image Analysis</h4>
+<p>These traditional classification techniques were orginally mainly used for pixel-based classifiction but since the late 1990s object based classification has become increasingly popular through Object Based Image Analysis (OBIA).</p>
+<p>OBIA groups pixels into an object type which are then used as training data for the actual analysis. The basic steps for all these forms of classification are expertly summarised by <a href="7_classification_II.html#fig-classification-infographic">Figure&nbsp;<span>7.1</span></a> which also shows how OBIA has increased in popularity since 2008.</p>
+<div id="fig-classification-infographic" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/image-classification-infographic.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;6.2: Image classification infographic depicting the steps of each classification method (supervised, unsupervised and Object Based Image Analysis), the timeline of their inception and the usage of each method between 2006 and 2013. Source: <span class="citation" data-cites="gisgeography2014">GISGeography (<a href="references.html#ref-gisgeography2014" role="doc-biblioref">2014</a>)</span></figcaption>
+</figure>
+</div>
+<p>There is a clear trend of increased OBIA use from 2008 and it’s unfortunate that an updated version of this infographic is not available. However this does illustrate a shift toward OBIA, this is due to higher accuracy results and classifications especially in high-resolution imagery. This approach is more closely aligned to the human visual interpretation of images rather than a pixel based approach and the key to this is segmentation before classification takes place.</p>
+</section>
 </section>
 </section>
 <section id="sec-6-application" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="sec-6-application"><span class="header-section-number">6.2</span> Application</h2>
-<p>Image classification has a vast array of use cases as mentioned previously (<a href="#sec-6-summary"><span>Section&nbsp;6.1</span></a>), however lets look a few examples that compare pixel-based approaches to object-based.</p>
-<p>The pixel based approaches includes minimum distance and maximum likelihood algorithms whereas the segmentation approach used by OBIA allows for consideration of colour, scale and texture (<span class="citation" data-cites="amalisana2017">Amalisana, Rokhmatullah, and Hernina (<a href="references.html#ref-amalisana2017" role="doc-biblioref">2017</a>)</span>). Pixel based is often cited as producing a “salt and pepper” output which equates to more noise as individual pixels can be misclassified. Using the segmentation of OBIA this effect is greatly reduced and build a clearer picture of how an area is built (<span class="quarto-unresolved-ref">?fig-pixel-v-object</span>). Here we can see how much clearer the classification of the object based approach is and particularly it’s accuracy at identifying the Cisadane river running through the city which is not visible at all in the pixel-based output. <span class="citation" data-cites="amalisana2017">Amalisana, Rokhmatullah, and Hernina (<a href="references.html#ref-amalisana2017" role="doc-biblioref">2017</a>)</span> state that pixel based classifications calculated that the accuracy of object based classification was 82.15% where as pixel based only 61.481%.</p>
-<p><img src="images/pixel_v_object_classification.png" id="fig-pixel-v-object" class="img-fluid" data-fig-align="center" alt="Pixel-based versus object-based classification of Bogor City in 2016. Source: Amalisana, Rokhmatullah, and Hernina (2017)"> For general land cover we’ve seen a clear example where OBIA out-performs pixel-based however there are other examples where pixel-based may be the preferred option. Picking the study of wetlands and the work of <span class="citation" data-cites="norris2024">Norris et al. (<a href="references.html#ref-norris2024" role="doc-biblioref">2024</a>)</span> where they found using Random Forest classifiers on both pixel and object-based approach that pixel-based was more accurate. This could be attribute to a few variables but most likely the small study area and the number of small-sized plants at the study sites. They also state the key importance of selection of input features, as an vegetation based study it is best to use the images at times of year where the vegetation is developed or flowering.</p>
+<p>Image classification has a vast array of use cases as mentioned previously, however lets concentrate on to comparison between pixel-based approaches and object-based.</p>
+<p>The pixel based approaches includes minimum distance and maximum likelihood algorithms whereas the segmentation approach used by OBIA allows for consideration of colour, scale and texture (<span class="citation" data-cites="amalisana2017">Amalisana, Rokhmatullah, and Hernina (<a href="references.html#ref-amalisana2017" role="doc-biblioref">2017</a>)</span>). Pixel based is often cited as producing a “salt and pepper” output which equates to more noise as individual pixels can be misclassified. Using the segmentation of OBIA this effect is greatly reduced and builds a clearer picture of how an area is built (<a href="7_classification_II.html#fig-pixel-v-object">Figure&nbsp;<span>7.2</span></a>). Here we can see how much clearer the classification of the object based approach is and particularly it’s accuracy at identifying the Cisadane river running through the city which is not visible at all in the pixel-based output. <span class="citation" data-cites="amalisana2017">Amalisana, Rokhmatullah, and Hernina (<a href="references.html#ref-amalisana2017" role="doc-biblioref">2017</a>)</span> state that pixel based classifications calculated that the accuracy of object based classification was 82.15% where as pixel based only 61.481% (see discussion on accuracy assessments in <a href="7_classification_II.html#sec-7-application"><span>Section&nbsp;7.2</span></a>).</p>
+<div id="fig-pixel-v-object" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/pixel_v_object_classification.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;6.3: Pixel-based versus object-based classification of Bogor City in 2016. Source:</figcaption>
+</figure>
+</div>
+<p>For general land cover we’ve seen a clear example where OBIA out-performs pixel-based however there are other examples where pixel-based may be the preferred option. Picking the study of wetlands and the work of <span class="citation" data-cites="norris2024">Norris et al. (<a href="references.html#ref-norris2024" role="doc-biblioref">2024</a>)</span> where they found using Random Forest classifiers on both pixel and object-based approach that pixel-based was more accurate. This could be attribute to a few variables but most likely the small study area and the number of small-sized plants at the study sites. They also state the key importance of selection of input features, as an vegetation based study it is best to use the images at times of year where the vegetation is developed or flowering.</p>
 <p>So whilst, OBIA appeared to be the obvious choice for classification we must always consider the use case as well as other variables such as image collection dates, spatial resolution and the specific study aims. Overall we must ensure that the use case is clearly defined before finalising methodology or perhaps compare the results ourselves in our research to ensure that the right option guides our decision making.</p>
 </section>
 <section id="sec-6-reflection" class="level2" data-number="6.3">
@@ -245,15 +270,21 @@ div.csl-indent {
 <div id="fig-debugging_meme" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/debugging_meme.webp" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.1: Debugging meme. Source: <span class="citation" data-cites="villalba2023">Villalba (<a href="references.html#ref-villalba2023" role="doc-biblioref">2023</a>)</span></figcaption>
+<figcaption class="figure-caption">Figure&nbsp;6.4: Debugging meme. Source: <span class="citation" data-cites="villalba2023">Villalba (<a href="references.html#ref-villalba2023" role="doc-biblioref">2023</a>)</span></figcaption>
 </figure>
 </div>
-<p>I lost time troubleshooting the errors but this was a blessing as I dug deeper into the code and thus gained a better understanding. Eventually my first classification visualisation was produced (<span class="quarto-unresolved-ref">?fig-classification-output</span>) which appears close to real world but some refinement is needed. Notably a large part of the River Thames is classified as high urban, however this should be resolved by improving the training data.</p>
-<p><img src="images/classification_output.png" id="fig-classification-output" class="img-fluid" data-fig-align="center" alt="My first classification output in Goggle Earth Engine"> As GEE is so quick to train/run I updated the water training polygons and the output was more accurate (<a href="#fig-classification-output2">Figure&nbsp;<span>6.2</span></a>). However, this had the effect of now incorrectly classifying other water bodies. Continual retraining is needed to refine the output - perhaps by separating “standing water” and “flowing water” into individual training datasets. Despite this it really highlighted what a useful tool GEE is.</p>
+<p>I lost time troubleshooting the errors but this was a blessing as I dug deeper into the code and thus gained a better understanding. Eventually my first classification visualisation was produced (<a href="#fig-classification-output">Figure&nbsp;<span>6.5</span></a>) which appears close to real world but some refinement is needed. Notably a large part of the River Thames is classified as high urban, however this should be resolved by improving the training data.</p>
+<div id="fig-classification-output" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/classification_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;6.5: My first classification output in Goggle Earth Engine</figcaption>
+</figure>
+</div>
+<p>As GEE is so quick to train/run I updated the water training polygons and the output was more accurate (<a href="#fig-classification-output2">Figure&nbsp;<span>6.6</span></a>). However, this had the effect of now incorrectly classifying other water bodies. Continual retraining is needed to refine the output - perhaps by separating “standing water” and “flowing water” into individual training datasets. Despite this it really highlighted what a useful tool GEE is.</p>
 <div id="fig-classification-output2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/classification_output2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.2: Retrained output improving the output of the River Thames</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;6.6: Retrained output improving the output of the River Thames</figcaption>
 </figure>
 </div>
 
@@ -267,6 +298,12 @@ Amalisana, Birohmatin, Rokhmatullah, and Revi Hernina. 2017. <span>“Land <span
 </div>
 <div id="ref-bbc2022" class="csl-entry" role="listitem">
 BBC. 2022. <span>“Undeclared Pools in <span>France</span> Uncovered by <span>AI</span> Technology.”</span> <em>BBC News: Europe</em>, August 29, 2022. <a href="https://www.bbc.com/news/world-europe-62717599">https://www.bbc.com/news/world-europe-62717599</a>.
+</div>
+<div id="ref-gisgeography2014" class="csl-entry" role="listitem">
+GISGeography. 2014. <span>“Image <span>Classification Techniques</span> in <span>Remote Sensing</span>.”</span> GIS Geography. May 2, 2014. <a href="https://gisgeography.com/image-classification-techniques-remote-sensing/">https://gisgeography.com/image-classification-techniques-remote-sensing/</a>.
+</div>
+<div id="ref-gisgeography2016" class="csl-entry" role="listitem">
+———. 2016. <span>“Supervised and <span>Unsupervised Classification</span> in <span>Remote Sensing</span>.”</span> GIS Geography. June 30, 2016. <a href="https://gisgeography.com/supervised-unsupervised-classification-arcgis/">https://gisgeography.com/supervised-unsupervised-classification-arcgis/</a>.
 </div>
 <div id="ref-gonzales2019" class="csl-entry" role="listitem">
 Gonzales, Jenny. 2019. <span>“How a Sheriff in <span>Brazil</span> Is Using Satellites to Stop Deforestation.”</span> Mongabay Environmental News. April 12, 2019. <a href="https://news.mongabay.com/2019/04/how-a-sheriff-in-brazil-is-using-satellites-to-stop-deforestation/">https://news.mongabay.com/2019/04/how-a-sheriff-in-brazil-is-using-satellites-to-stop-deforestation/</a>.
