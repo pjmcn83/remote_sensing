@@ -175,6 +175,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./8_temperature_sar.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Temperature/SAR</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -239,7 +245,7 @@ div.csl-indent {
 <section id="sec-7-sum-obia" class="level4" data-number="6.1.1.1">
 <h4 data-number="6.1.1.1" class="anchored" data-anchor-id="sec-7-sum-obia"><span class="header-section-number">6.1.1.1</span> Object Based Image Analysis</h4>
 <p>These traditional classification techniques were orginally mainly used for pixel-based classifiction but since the late 1990s object based classification has become increasingly popular through Object Based Image Analysis (OBIA).</p>
-<p>OBIA groups pixels into an object type which are then used as training data for the actual analysis. The basic steps for all these forms of classification are expertly summarised by <a href="7_classification_II.html#fig-classification-infographic">Figure&nbsp;<span>7.1</span></a> which also shows how OBIA has increased in popularity since 2008.</p>
+<p>OBIA groups pixels into an object type which are then used as training data for the actual analysis. The basic steps for all these forms of classification are expertly summarised by <a href="#fig-classification-infographic">Figure&nbsp;<span>6.2</span></a> which also shows how OBIA has increased in popularity since 2008.</p>
 <div id="fig-classification-infographic" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/image-classification-infographic.png" class="img-fluid figure-img"></p>
@@ -253,7 +259,7 @@ div.csl-indent {
 <section id="sec-6-application" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="sec-6-application"><span class="header-section-number">6.2</span> Application</h2>
 <p>Image classification has a vast array of use cases as mentioned previously, however lets concentrate on to comparison between pixel-based approaches and object-based.</p>
-<p>The pixel based approaches includes minimum distance and maximum likelihood algorithms whereas the segmentation approach used by OBIA allows for consideration of colour, scale and texture (<span class="citation" data-cites="amalisana2017">Amalisana, Rokhmatullah, and Hernina (<a href="references.html#ref-amalisana2017" role="doc-biblioref">2017</a>)</span>). Pixel based is often cited as producing a “salt and pepper” output which equates to more noise as individual pixels can be misclassified. Using the segmentation of OBIA this effect is greatly reduced and builds a clearer picture of how an area is built (<a href="7_classification_II.html#fig-pixel-v-object">Figure&nbsp;<span>7.2</span></a>). Here we can see how much clearer the classification of the object based approach is and particularly it’s accuracy at identifying the Cisadane river running through the city which is not visible at all in the pixel-based output. <span class="citation" data-cites="amalisana2017">Amalisana, Rokhmatullah, and Hernina (<a href="references.html#ref-amalisana2017" role="doc-biblioref">2017</a>)</span> state that pixel based classifications calculated that the accuracy of object based classification was 82.15% where as pixel based only 61.481% (see discussion on accuracy assessments in <a href="7_classification_II.html#sec-7-application"><span>Section&nbsp;7.2</span></a>).</p>
+<p>The pixel based approaches includes minimum distance and maximum likelihood algorithms whereas the segmentation approach used by OBIA allows for consideration of colour, scale and texture (<span class="citation" data-cites="amalisana2017">Amalisana, Rokhmatullah, and Hernina (<a href="references.html#ref-amalisana2017" role="doc-biblioref">2017</a>)</span>). Pixel based is often cited as producing a “salt and pepper” output which equates to more noise as individual pixels can be misclassified. Using the segmentation of OBIA this effect is greatly reduced and builds a clearer picture of how an area is built (<a href="#fig-pixel-v-object">Figure&nbsp;<span>6.3</span></a>). Here we can see how much clearer the classification of the object based approach is and particularly it’s accuracy at identifying the Cisadane river running through the city which is not visible at all in the pixel-based output. <span class="citation" data-cites="amalisana2017">Amalisana, Rokhmatullah, and Hernina (<a href="references.html#ref-amalisana2017" role="doc-biblioref">2017</a>)</span> state that pixel based classifications calculated that the accuracy of object based classification was 82.15% where as pixel based only 61.481% (see discussion on accuracy assessments in <a href="7_classification_II.html#sec-7-application"><span>Section&nbsp;7.2</span></a>).</p>
 <div id="fig-pixel-v-object" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/pixel_v_object_classification.png" class="img-fluid figure-img"></p>

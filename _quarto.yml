@@ -16,6 +16,7 @@ book:
     - 5_google_earth_engine.qmd
     - 6_classification_I.qmd
     - 7_classification_II.qmd
+    - 8_temperature_sar.qmd
     - references.qmd
   reader-mode: true
 
