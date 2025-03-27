@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CASA0023 Remote Sensing - Learning Diary - 8&nbsp; Temperature/SAR</title>
+<title>CASA0023 Remote Sensing - Learning Diary - 8&nbsp; Synthetic Aperature Radar (SAR)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -74,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./8_temperature_sar.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Temperature/SAR</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./8_temperature_sar.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Synthetic Aperature Radar (SAR)</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -157,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./8_temperature_sar.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Temperature/SAR</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Synthetic Aperature Radar (SAR)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -176,7 +195,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-8-summary" id="toc-sec-8-summary" class="nav-link active" data-scroll-target="#sec-8-summary"><span class="header-section-number">8.1</span> Summary</a></li>
+  <li><a href="#sec-8-summary" id="toc-sec-8-summary" class="nav-link active" data-scroll-target="#sec-8-summary"><span class="header-section-number">8.1</span> Summary</a>
+  <ul class="collapse">
+  <li><a href="#sar-versus-optical" id="toc-sar-versus-optical" class="nav-link" data-scroll-target="#sar-versus-optical"><span class="header-section-number">8.1.1</span> SAR versus Optical</a></li>
+  <li><a href="#how-sar-works" id="toc-how-sar-works" class="nav-link" data-scroll-target="#how-sar-works"><span class="header-section-number">8.1.2</span> How SAR works?</a></li>
+  </ul></li>
   <li><a href="#sec-8-application" id="toc-sec-8-application" class="nav-link" data-scroll-target="#sec-8-application"><span class="header-section-number">8.2</span> Application</a></li>
   <li><a href="#sec-8-reflection" id="toc-sec-8-reflection" class="nav-link" data-scroll-target="#sec-8-reflection"><span class="header-section-number">8.3</span> Reflection</a></li>
   </ul>
@@ -187,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Temperature/SAR</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Synthetic Aperature Radar (SAR)</span></h1>
 </div>
 
 
@@ -204,14 +227,85 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="sec-8-summary" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="sec-8-summary"><span class="header-section-number">8.1</span> Summary</h2>
+<p>Throughout this module we have mainly focused on optical satellites and so it was important to look at SAR sensors to understand about how they work and what they can be used for more specifically.</p>
+<section id="sar-versus-optical" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="sar-versus-optical"><span class="header-section-number">8.1.1</span> SAR versus Optical</h3>
+<p>Unlike passive optical sensors that require solar reflectance to capture data, SAR uses active sensors to emit and measure microwave signals directly. Therefore SAR is not dependent on light availability so can collect data constantly, day or night, and in poor atmospheric conditions. This gives SAR a clear advantage over optical imagery as cloud cover and darkness do not affect data acquisition.</p>
+<div id="fig-optical-cloud-meme" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/optical-cloud-meme.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;8.1: <strong>Source: ChatGPT</strong></figcaption>
+</figure>
+</div>
+<p>However, SAR data comes at high costs, larger data volume and greater computational complexity which limits it’s accessibility. Although Sentinel-1 is one such source of freely available SAR data.</p>
+</section>
+<section id="how-sar-works" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="how-sar-works"><span class="header-section-number">8.1.2</span> How SAR works?</h3>
+<section id="amplitude-or-back-scatter" class="level4" data-number="8.1.2.1">
+<h4 data-number="8.1.2.1" class="anchored" data-anchor-id="amplitude-or-back-scatter"><span class="header-section-number">8.1.2.1</span> Amplitude or Back Scatter</h4>
+<p>The key measurement for SAR which refers to the amount of signal that is reflected back to the sensor. Just like optical sensors the signals use different wavelengths for different purposes.</p>
+<div id="fig-sar-bands" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/sar-bands.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;8.2: Source: <span class="citation" data-cites="flores2019">Flores et al. (<a href="references.html#ref-flores2019" role="doc-biblioref">2019</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="bands" class="level4" data-number="8.1.2.2">
+<h4 data-number="8.1.2.2" class="anchored" data-anchor-id="bands"><span class="header-section-number">8.1.2.2</span> Bands</h4>
+<p>C-band is the most commonly used as this is used by Sentinel-1. This has a shorter wavelength which does not fully penetrate dense vegetation so can provide a picture of tree canopies. Another common band is L-band which has a larger wavelength which penetrates deeper into canopies providing a clearer picture of ground features. Therefore when comparing SAR data we must ensure that we compare against the same bands. If both bands are available for the same time period then both can used to build a more comprehensive view of what is happening above and below the tree canopy.</p>
+<div id="fig-sar-penetration" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/sar-band-penetration.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;8.3: Source: <span class="citation" data-cites="flores2019">Flores et al. (<a href="references.html#ref-flores2019" role="doc-biblioref">2019</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="phase" class="level4" data-number="8.1.2.3">
+<h4 data-number="8.1.2.3" class="anchored" data-anchor-id="phase"><span class="header-section-number">8.1.2.3</span> Phase</h4>
+<p>How long it takes the signal to return to the sensor and specifically the point in it’s cycle at which the wave returns to the sensor. As this is related to distance traveled it is very good for identifying changes in ground level that would otherwise extremely difficult to monitor.</p>
+</section>
+<section id="radiometric-terrain-correction" class="level4" data-number="8.1.2.4">
+<h4 data-number="8.1.2.4" class="anchored" data-anchor-id="radiometric-terrain-correction"><span class="header-section-number">8.1.2.4</span> Radiometric Terrain Correction</h4>
+<p>As SAR data is capture off-nadir then it is susceptible to shading (areas not illuminated due to the angle of incidence) and foreshortening (features appear brighter as they are closer to the sensor). Therefore a technique called Radiometric Terrain Correction is applied to correct the images. This uses a Digital Elevation Model to represent the appropriate surface elevation and topography, then the surface reflectance values are adjusted accordingly.</p>
+</section>
+</section>
 </section>
 <section id="sec-8-application" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="sec-8-application"><span class="header-section-number">8.2</span> Application</h2>
+<p>We have seen in the Building Spatial Applications with Big Data module that SAR can be effectively used to monitor conflict damage detection but I wanted to look at some other use cases.</p>
+<p>The NASA SAR Handbook (<span class="citation" data-cites="flores2019">Flores et al. (<a href="references.html#ref-flores2019" role="doc-biblioref">2019</a>)</span>) is an extremely comprehensive look at how SAR can be used for Forest Monitoring but how can this be related to an urban environment? Some of the techniques would need to be refined to identify areas of single tree or smaller tree canopy which are more common in cities. <span class="citation" data-cites="li2019">Li et al. (<a href="references.html#ref-li2019" role="doc-biblioref">2019</a>)</span> investigated the different approaches to monitoring Urban Forestry but SAR was not specifically addressed. Li found many papers championing the use of airborne LiDAR and Very High Spatial Resolution (VHSR) imagery to accurately assess canopy cover. However the high cost and red tape involved in accessing this data is a major barrier to it’s use particularly in local government scenarios.</p>
+<p>Now I spent far too long wondering why SAR isn’t used specifically for canopy calculations until I found <span class="citation" data-cites="mastro2022">Mastro et al. (<a href="references.html#ref-mastro2022" role="doc-biblioref">2022</a>)</span> who specifically investigated the use of Sentinel-1 SAR data for change detection (including urban change) but focusing on extreme events of change. This is when it finally hit me that SAR isn’t needed for general monitoring of this! We don’t a daily, weekly or even monthly update on canopy cover. We only need a at most seasonal but more likely annual recording of this during the peak growing season.</p>
+<p>Why? Because urban tree canopies change gradually, making frequent updates (e.g., daily, weekly, or even monthly) unnecessary. Instead, we only need seasonal or annual assessments during peak growing seasons. Since natural changes are gradual, high-temporal SAR data isn’t required so we can rely on optical data, which can be aggregated to reduce cloud cover effects.</p>
+<p>This led me to consider other practical applications for SAR in local government. One idea was pothole monitoring—a common complaint on council social media—but the scale of potholes makes them unsuitable for SAR detection. However, subsidence monitoring presents a far more viable use case. Utilising Interferometric SAR (InSAR) to monitor ground movement changes allows for accurate monitoring (<span class="citation" data-cites="milillo2018">Milillo et al. (<a href="references.html#ref-milillo2018" role="doc-biblioref">2018</a>)</span>). This is of utmost importance considering the tunneling through London of HS2 and Crossrail which has and could cause subsidence in these areas (<a href="#fig-subsidence-monitoring">Figure&nbsp;<span>8.4</span></a>) leading to costly repairs and legal claims.</p>
+<div id="fig-subsidence-monitoring" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/subsidence-monitoring.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;8.4: Cumulative subsidence in London between April 2011 and December 2015. <em>Source: <span class="citation" data-cites="milillo2018">Milillo et al. (<a href="references.html#ref-milillo2018" role="doc-biblioref">2018</a>)</span></em></figcaption>
+</figure>
+</div>
 </section>
 <section id="sec-8-reflection" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="sec-8-reflection"><span class="header-section-number">8.3</span> Reflection</h2>
+<p>It was tough to choose between Temperature or SAR topics for these week. In the end I choose SAR to round out my knowledge of both because for the group work in <em>Building Spatial Applications with Big Data</em> module we are focusing on temperature and specifically the Urban Heat Island effect.</p>
+<p>In the case of SAR, I think there are many areas that can be explored, particularly complementing optical sensor data with SAR to detect changes in surface types over time.</p>
+<p>Overall I’ve really enjoyed this module and want to push Remote Sensing use in my work environment. We have touched on so many areas where I can see benefits to create consistent and reproducible analysis to help guide decision makers. Particular areas that I would like to investigate are air quality, Urban Heat Island effect and vegetation monitoring. Once confident in my research I would want to present this to London Geospatial (a group of London Borough geospatial professionals for which I am a co-founder) as an area for knowledge growth for all London Boroughs.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-flores2019" class="csl-entry" role="listitem">
+Flores, Africa, K. Herndon, Rajesh Thapa, and Emil Cherrington. 2019. <span>“Synthetic <span>Aperture Radar</span> (<span>SAR</span>) <span>Handbook</span>: <span>Comprehensive Methodologies</span> for <span>Forest Monitoring</span> and <span>Biomass Estimation</span>.”</span> <a href="https://doi.org/10.25966/NR2C-S697">https://doi.org/10.25966/NR2C-S697</a>.
+</div>
+<div id="ref-li2019" class="csl-entry" role="listitem">
+Li, Xun, Wendy Y. Chen, Giovanni Sanesi, and Raffaele Lafortezza. 2019. <span>“Remote <span>Sensing</span> in <span>Urban Forestry</span>: <span>Recent Applications</span> and <span>Future Directions</span>.”</span> <em>Remote Sensing</em> 11 (10, 10): 1144. <a href="https://doi.org/10.3390/rs11101144">https://doi.org/10.3390/rs11101144</a>.
+</div>
+<div id="ref-mastro2022" class="csl-entry" role="listitem">
+Mastro, Pietro, Guido Masiello, Carmine Serio, and Antonio Pepe. 2022. <span>“Change <span>Detection Techniques</span> with <span>Synthetic Aperture Radar Images</span>: <span>Experiments</span> with <span>Random Forests</span> and <span>Sentinel-1 Observations</span>.”</span> <em>Remote Sensing</em> 14 (14, 14): 3323. <a href="https://doi.org/10.3390/rs14143323">https://doi.org/10.3390/rs14143323</a>.
+</div>
+<div id="ref-milillo2018" class="csl-entry" role="listitem">
+Milillo, Pietro, Giorgia Giardina, Matthew J. DeJong, Daniele Perissin, and Giovanni Milillo. 2018. <span>“Multi-<span>Temporal InSAR Structural Damage Assessment</span>: <span>The London Crossrail Case Study</span>.”</span> <em>Remote Sensing</em> 10 (2, 2): 287. <a href="https://doi.org/10.3390/rs10020287">https://doi.org/10.3390/rs10020287</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
