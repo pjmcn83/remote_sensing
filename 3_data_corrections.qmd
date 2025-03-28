@@ -31,7 +31,7 @@ Once again we have near endless options to analyse further but this week I will 
 
 ## Applications - Effectiveness of relative and absolute correction {#sec-3-application}
 
-The is an interesting area to investigate is because the availability of the inputs required for absolute atmospheric correction is often generalised over an specified area or season potentially leading to accuracy issues. Both @hu2011 and @bernardo2016 investigation the impact of this generalisation, whilst there are differences between the two methodologies which will be discussed later but first lets look at the similarities:
+This is an interesting area to investigate because the availability of inputs for absolute atmospheric correction is often generalized over a specified area or season, which can lead to accuracy issues. Both @hu2011 and @bernardo2016 investigate the impact of this generalisation. Although there are differences between the two methodologies, let’s first examine their similarities:
 
 -   compares using Landsat imagery
 -   compares a single study area using time series images
@@ -58,9 +58,9 @@ referrors <- read_csv(here("tables","flaash_irmad_comparison.csv"), locale = loc
 referrors
 ```
 
-@hu2011 used MAD, over @bernardo2016's technique of IRMAD, which provides a more basic detection of change as it is a one-pass approach and does not iteratively refine the results, also IRMAD are much less noisy than MAD(@nielsen2005, @nielsen2007). There is also a third approach, regularised IRMAD which can perform even better but this was not part of the studies being compared.
+@hu2011 used MAD, over @bernardo2016's technique of IRMAD, which provides a more basic detection of change as it is a one-pass approach and does not iteratively refine the results, also IRMAD are much less noisy than MAD (@nielsen2005, @nielsen2007). There is also a third approach, regularised IRMAD which can perform even better but this was not part of the studies being compared.
 
-@hu2011 used regression to assess the difference between corrections and the findings can be reviewed through the standard deviation results of each method. Generally the results are comparable to @bernardo2016 with both methods reducing radiometric distortion, however relative normalisation corrects it more effectively. This is shown by the lower standard deviations of relative normalisation versus atmospheric correction across all bands (@tbl-std-comparison).
+@hu2011 used regression to assess correction differences, with results comparable to those of @bernardo2016. Both methods reduce radiometric distortion, but relative normalization corrects it more effectively, as shown by the lower standard deviations of relative normalization versus atmospheric correction across all bands (@tbl-std-comparison).
 
 ```{r include=FALSE}
 #read in data
@@ -78,13 +78,13 @@ sdcomp
 
 ### Review
 
-Whilst the papers talk about absolute corrections having high percentage error in certain bands this could be specific to the location of the study and any assumptions made throughout. There are so many variables that it would be highly improbable to produce a study that could feasibly review all of these aspects. Ideally it would be possible to say exactly what corrections/enhancements to apply to any image to provide the optimal output. However that is just not possible, considering variables including atmospheric conditions, topological factors, sensor differences, then we can begin to see why there is no single set of tools for analysis.
+Although the papers mention high percentage errors in certain bands for absolute corrections, these may be specific to the study location and the assumptions made during the analysis. With so many variables at play, it’s unlikely that any study could comprehensively address them all. Ideally it would be possible to say exactly what corrections/enhancements to apply to any image to provide the optimal output. However that is just not possible, considering variables including atmospheric conditions, topological factors, sensor differences, then we can begin to see why there is no single set of tools for analysis.
 
-This is evident in both papers and also seen in other papers such as @mandanici2016 and @nasiri2022. It could appear that the scope is quite limited as they focus on very small samples for their analysis (previously discussed in week 1). However if we consider this from a technical point of view then simply the amount of computational power required to process much larger samples is very restrictive and time-consuming.
+This is evident in both papers and also seen in other papers such as @mandanici2016 and @nasiri2022. It could appear that the scope is quite limited as they focus on very small samples for their analysis (previously discussed in week 1). The technical challenge lies in the immense computational power required to process larger samples, making it both restrictive and time-consuming.
 
 ## Reflection {#sec-3-refection}
 
-It was clear early on that the topics discussed this week could have lectures dedicated to them. However as I delved deeper into the concepts I could really start to see the benefit corrections and enhancements have as part of wider studies, as long as the impact of these have on results is considered especially regarding the specific use case that is being analysed.
+It became clear early on that the topics discussed this week could easily fill entire lectures. However as I delved deeper into the concepts I could really start to see the benefit corrections and enhancements have as part of wider studies, as long as the impact of these have on results is considered especially regarding the specific use case that is being analysed.
 
 I'm interested in putting this into practice through the Earth Observation Data Hub that Camden will soon have access to. I want to explore the different data types and can now understand the differences between products and in particular what information can be derived from available bands. Most importantly I will no longer take results at face value and will use this knowledge to be critical and actually think how results can be improved. This is a vast improvement on previous EO work completed which involved blindly following guides to get results that seems similar.
 

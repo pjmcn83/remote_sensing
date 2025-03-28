@@ -8,7 +8,7 @@ Throughout this module we have mainly focused on optical satellites and so it wa
 
 Unlike passive optical sensors that require solar reflectance to capture data, SAR uses active sensors to emit and measure microwave signals directly. Therefore SAR is not dependent on light availability so can collect data constantly, day or night, and in poor atmospheric conditions. This gives SAR a clear advantage over optical imagery as cloud cover and darkness do not affect data acquisition.
 
-![**Source: ChatGPT**](images/optical-cloud-meme.png){#fig-optical-cloud-meme fig-align="center"}
+![Source: @ursa2020](images/optical-cloud-meme.png){#fig-optical-cloud-meme fig-align="center"}
 
 However, SAR data comes at high costs, larger data volume and greater computational complexity which limits it's accessibility. Although Sentinel-1 is one such source of freely available SAR data.
 
@@ -17,12 +17,12 @@ However, SAR data comes at high costs, larger data volume and greater computatio
 #### Amplitude or Back Scatter 
 The key measurement for SAR which refers to the amount of signal that is reflected back to the sensor. Just like optical sensors the signals use different wavelengths for different purposes.
 
-![Source: @flores2019](images/sar-bands.png){#fig-sar-bands fig-align="center"}
+![SAR band descriptions and use casees. Source: @flores2019](images/sar-bands.png){#fig-sar-bands fig-align="center"}
 
 #### Bands 
 C-band is the most commonly used as this is used by Sentinel-1. This has a shorter wavelength which does not fully penetrate dense vegetation so can provide a picture of tree canopies. Another common band is L-band which has a larger wavelength which penetrates deeper into canopies providing a clearer picture of ground features. Therefore when comparing SAR data we must ensure that we compare against the same bands. If both bands are available for the same time period then both can used to build a more comprehensive view of what is happening above and below the tree canopy.
 
-![Source: @flores2019](images/sar-band-penetration.png){#fig-sar-penetration fig-align="center"}
+![Image showing the differing penetration of different bands. Source: @flores2019](images/sar-band-penetration.png){#fig-sar-penetration fig-align="center"}
 
 #### Phase 
 How long it takes the signal to return to the sensor and specifically the point in it's cycle at which the wave returns to the sensor. As this is related to distance traveled it is very good for identifying changes in ground level that would otherwise extremely difficult to monitor.
