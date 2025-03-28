@@ -2,7 +2,7 @@
 
 ## Summary {#sec-6-summary}
 
-This week we looked at how classification can help build important use cases for remote sensing. Starting with some practical use cases and then onto the theory and methods to produce outputs before practically applying this using Google Earth Engine. A recent example of remote sensing classification was that of the French authorities which identified undeclared private swimming pools and reclaimed €10m in revenue that otherwise wouldn't have been possible (@bbc2022). The driver for this was in response to major drought, other use cases include illegal logging (@gonzales2019) and forest fires (@hansen2013).
+This week we looked at how classification can help build important use cases for remote sensing. Starting with some practical use cases and then onto the theory and methods to produce outputs before practically applying this using Google Earth Engine. A recent example of remote sensing classification was the French authorities which identified undeclared private swimming pools and reclaimed €10m in revenue that otherwise wouldn't have been possible (@bbc2022). The driver for this was in response to major drought. Other use cases include illegal logging (@gonzales2019) and forest fires (@hansen2013).
 
 ### Classification {#sec-6-sum-class}
 
@@ -19,35 +19,35 @@ Picking out some key elements of this, the accuracy of supervised classification
 
 #### Object Based Image Analysis {#sec-7-sum-obia}
 
-These traditional classification techniques were orginally mainly used for pixel-based classifiction but since the late 1990s object based classification has become increasingly popular through Object Based Image Analysis (OBIA).
+These traditional classification techniques were originally mainly used for pixel-based classification but more recently object based classification has become increasingly popular through Object Based Image Analysis (OBIA).
 
-OBIA groups pixels into an object type which are then used as training data for the actual analysis. The basic steps for all these forms of classification are expertly summarised by @fig-classification-infographic which also shows how OBIA has increased in popularity since 2008.
+OBIA groups pixels into an object type which are used as training data for the actual analysis. The basic steps for all these forms of classification are expertly summarised by @fig-classification-infographic which also shows how OBIA has increased in popularity since 2008.
 
 ![Image classification infographic depicting the steps of each classification method (supervised, unsupervised and Object Based Image Analysis), the timeline of their inception and the usage of each method between 2006 and 2013. Source: @gisgeography2014](images/image-classification-infographic.png){#fig-classification-infographic fig-align="center"}
 
-There is a clear trend of increased OBIA use from 2008 and it's unfortunate that an updated version of this infographic is not available. However this does illustrate a shift toward OBIA, this is due to higher accuracy results and classifications especially in high-resolution imagery. This approach is more closely aligned to the human visual interpretation of images rather than a pixel based approach and the key to this is segmentation before classification takes place.
+There is a clear trend of increased OBIA use and it's unfortunate that an updated version of this infographic is not available. However this does illustrate a shift toward OBIA, this is due to higher accuracy results and classifications especially in high-resolution imagery. This approach is more closely aligned to the human visual interpretation of images rather than a pixel based approach and the key to this is the segmentation before classification takes place.
 
 ## Application {#sec-6-application}
 
 Image classification has a vast array of use cases as mentioned previously, however lets concentrate on to comparison between pixel-based approaches and object-based.
 
-The pixel based approaches includes minimum distance and maximum likelihood algorithms whereas the segmentation approach used by OBIA allows for consideration of colour, scale and texture (@amalisana2017). Pixel based is often cited as producing a "salt and pepper" output which equates to more noise as individual pixels can be misclassified. Using the segmentation of OBIA this effect is greatly reduced and builds a clearer picture of how an area is built (@fig-pixel-v-object). Here we can see how much clearer the classification of the object based approach is and particularly it's accuracy at identifying the Cisadane river running through the city which is not visible at all in the pixel-based output. @amalisana2017 state that pixel based classifications calculated that the accuracy of object based classification was 82.15% where as pixel based only 61.481% (see discussion on accuracy assessments in @sec-7-application).
+Pixel based approache includes minimum distance and maximum likelihood algorithms whereas the segmentation approach used by OBIA allows for consideration of colour, scale and texture (@amalisana2017). Pixel based is often cited as producing a "salt and pepper" output which equates to more noise as individual pixels can be misclassified. Using the segmentation of OBIA this effect is greatly reduced and builds a clearer picture of how an area is built (@fig-pixel-v-object). Here we can see how much clearer the classification of the object based approach is and particularly it's accuracy at identifying the Cisadane river running through the city which is not visible at all in the pixel-based output. @amalisana2017 state that pixel based classifications calculated that the accuracy of object based classification was 82.15% where as pixel based only 61.481% (see discussion on accuracy assessments in @sec-7-application).
 
 ![Pixel-based versus object-based classification of Bogor City in 2016. Source:](images/pixel_v_object_classification.png){#fig-pixel-v-object fig-align="center"}
 
-For general land cover we've seen a clear example where OBIA out-performs pixel-based however there are other examples where pixel-based may be the preferred option. Picking the study of wetlands and the work of @norris2024 where they found using Random Forest classifiers on both pixel and object-based approach that pixel-based was more accurate. This could be attribute to a few variables but most likely the small study area and the number of small-sized plants at the study sites. They also state the key importance of selection of input features, as an vegetation based study it is best to use the images at times of year where the vegetation is developed or flowering.
+For general land cover we've seen a clear example where OBIA out-performs pixel-based however there are other examples where pixel-based may be the preferred option. Picking the study of wetlands and the work of @norris2024 where they found using Random Forest classifiers on both pixel and object-based approach that pixel-based was more accurate. This can be attributed to a few variables but most likely the small study area and the number of small-sized plants at the study sites. They also state the key importance of input selection - for a vegetation based study it is crucial to use the images at times of year where the vegetation is developed or flowering.
 
-So whilst, OBIA appeared to be the obvious choice for classification we must always consider the use case as well as other variables such as image collection dates, spatial resolution and the specific study aims. Overall we must ensure that the use case is clearly defined before finalising methodology or perhaps compare the results ourselves in our research to ensure that the right option guides our decision making.
+So whilst, OBIA appeared to be the obvious choice for classification we must always consider the use case and other variables such as image collection dates, spatial resolution and the study objectives. Overall we must ensure that the use case is clearly defined before finalising methodologies, or perhaps compare the results ourselves in our research to ensure that the right option is used for our decision making.
 
 ## Reflection {#sec-6-reflection}
 
-The practical session involved producing our first classified output with GEE. This proved troublesome with errors such as the *"Collection query aborted after accumulating over 5000 elements"*. There are many threads covering this with differing interpretations and I tried many different "solutions". However after eventually consulting the GEE coding best practice I realised the issue was related to a print statement not the processing and whilst not ideal this didn't affect the visualisation.
+The practical required producing our first classified output with GEE. This proved troublesome with errors like *"Collection query aborted after accumulating over 5000 elements"*. There are many threads covering this with differing interpretations and I tried many different "solutions". However after eventually consulting the GEE coding best practice I realised the issue was related to a print statement not the processing and whilst not ideal didn't affect the visualisation.
 
 Moral of the story.....
 
 ![Debugging meme. Source: @villalba2023](images/debugging_meme.webp){#fig-debugging_meme fig-align="center"}
 
-I lost time troubleshooting the errors but this was a blessing as I dug deeper into the code and thus gained a better understanding. Eventually my first classification visualisation was produced (@fig-classification-output) which appears close to real world but some refinement is needed. Notably a large part of the River Thames is classified as high urban, however this should be resolved by improving the training data.
+I lost time troubleshooting the errors but this was a blessing as it meant digging deeper into the code and thus gaining increased understanding. Eventually my first classification visualisation was produced (@fig-classification-output) which appears close to real world but some refinement is needed. Notably a large part of the River Thames is classified as high urban, however this should be resolved by improving the training data.
 
 ![My first classification output in Goggle Earth Engine](images/classification_output.png){#fig-classification-output fig-align="center"}
 
